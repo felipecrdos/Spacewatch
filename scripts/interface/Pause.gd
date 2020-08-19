@@ -1,3 +1,5 @@
+# Cena que representa a tela de pause.
+# A tecla 'P' pausa o game.
 extends Node2D
 
 var resume

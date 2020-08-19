@@ -15,6 +15,7 @@ var direction   : Vector2
 var speed    	: Vector2
 var screen_size : Vector2
 var player_data	: Dictionary
+onready var explosion = preload("res://scenes/effect/Explosion.tscn");
 
 func _ready():
 	funcs_names = [	"idle_state", "fly_state", 
@@ -101,8 +102,9 @@ func hurt_state(delta):
 	$ASprite.play("hurt")
 	
 func die_state(delta):
-	$ASprite.play("die")
-	yield($ASprite, "animation_finished")
+	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0));
+#	$ASprite.play("die")
+#	yield($ASprite, "animation_finished")
 	queue_free()
 	
 func on_timer_timeout():

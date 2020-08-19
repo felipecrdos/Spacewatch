@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/levels/BGScroll.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sprite/environment/bg_cloud_two.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprite/environment/bg_cloud_one.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/environment/bg_cloud_three.png" type="Texture" id=5]
+[ext_resource path="res://scripts/levels/Level.gd" type="Script" id=6]
+[ext_resource path="res://scenes/pickup/Crystal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/pickup/Powerup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemy/SpawnBlankey.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemy/BlankeyEnemy.tscn" type="PackedScene" id=10]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BGCloudOne" parent="Background" instance=ExtResource( 1 )]
+texture = ExtResource( 4 )
+centered = false
+speed = Vector2( 0, 1 )
+delay = Vector2( 1, 1 )
+
+[node name="BGCloudTwo" parent="Background" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+centered = false
+speed = Vector2( 0, 2 )
+delay = Vector2( 1, 1 )
+
+[node name="BGCloudThree" parent="Background" instance=ExtResource( 1 )]
+texture = ExtResource( 5 )
+centered = false
+speed = Vector2( 0, 4 )
+delay = Vector2( 1, 1 )
+
+[node name="AmmoContainer" type="Node2D" parent="."]
+
+[node name="ActorContainer" type="Node2D" parent="."]
+
+[node name="Player" parent="ActorContainer" instance=ExtResource( 3 )]
+position = Vector2( 156.843, 161.515 )
+
+[node name="SpawnEnemy" parent="ActorContainer" instance=ExtResource( 9 )]
+position = Vector2( 80, 0 )
+enemy = ExtResource( 10 )
+
+[node name="PickupContainer" type="Node2D" parent="."]
+
+[node name="Crystal" parent="PickupContainer" instance=ExtResource( 7 )]
+position = Vector2( 106.035, -92.4713 )
+
+[node name="Powerup" parent="PickupContainer" instance=ExtResource( 8 )]
+position = Vector2( 115.987, -63.6866 )
+
+[node name="Powerup2" parent="PickupContainer" instance=ExtResource( 8 )]
+position = Vector2( 131.543, -38.2307 )
+
+[node name="Powerup3" parent="PickupContainer" instance=ExtResource( 8 )]
+position = Vector2( 154.878, -46.0089 )
+
+[node name="Powerup4" parent="PickupContainer" instance=ExtResource( 8 )]
+position = Vector2( 142.857, -67.9292 )
+
+[node name="EffectContainer" type="Node2D" parent="."]

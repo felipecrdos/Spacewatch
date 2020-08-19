@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/weapon/MatterGun.gd" type="Script" id=1]
+[ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=2]
+
+[node name="MatterGun" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( -10, -10 )
+rotation = -2.00713
+
+[node name="MLeftBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( -5, -10 )
+rotation = -1.5708
+
+[node name="MRightBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5, -10 )
+rotation = -1.5708
+
+[node name="RightBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10, -10 )
+rotation = -1.13446

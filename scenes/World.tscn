@@ -1,0 +1,479 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://scenes/interface/Transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/World.gd" type="Script" id=3]
+[ext_resource path="res://scenes/interface/TButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/interface/Pause.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprite/player/player_icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/player/player_health.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_ama_00.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_green_02.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_green_01.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_green_03.png" type="Texture" id=11]
+[ext_resource path="res://resources/fontx16.tres" type="DynamicFont" id=12]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_green_00.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_ama_02.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_ama_03.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_ama_01.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_azu_02.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_azu_03.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_azu_01.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/pickup/spr_coin_azu_00.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/boss/rob_boss.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/weapon/mg_side.png" type="Texture" id=22]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 4
+frame_0/texture = ExtResource( 13 )
+frame_1/texture = ExtResource( 10 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 9 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 11 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 4
+frame_0/texture = ExtResource( 8 )
+frame_1/texture = ExtResource( 16 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 14 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 15 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 4
+frame_0/texture = ExtResource( 20 )
+frame_1/texture = ExtResource( 19 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 17 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 18 )
+frame_3/delay_sec = 0.0
+
+[node name="World" type="Node"]
+script = ExtResource( 3 )
+
+[node name="HContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftScreen" type="ViewportContainer" parent="HContainer"]
+margin_right = 78.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="HContainer/LeftScreen"]
+size = Vector2( 78, 180 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="VContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport"]
+margin_right = 78.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TopVContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
+margin_right = 78.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/TopVContainer"]
+margin_top = 4.0
+margin_right = 78.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 12 )
+text = "PLAYER"
+align = 1
+valign = 1
+
+[node name="HContainer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/TopVContainer"]
+margin_top = 21.0
+margin_right = 78.0
+margin_bottom = 39.0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/TopVContainer/HContainer"]
+margin_left = 30.0
+margin_right = 47.0
+margin_bottom = 18.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="MidleVContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
+margin_top = 47.0
+margin_right = 78.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer"]
+margin_right = 78.0
+margin_bottom = 13.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+custom_fonts/font = ExtResource( 12 )
+text = "LIVES"
+align = 1
+valign = 1
+
+[node name="HContainer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer"]
+margin_top = 17.0
+margin_right = 78.0
+margin_bottom = 43.0
+size_flags_vertical = 3
+custom_constants/separation = -2
+
+[node name="Label01" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
+margin_right = 21.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="Label02" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
+margin_left = 19.0
+margin_right = 40.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="Label03" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
+margin_left = 38.0
+margin_right = 59.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="Label04" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
+margin_left = 57.0
+margin_right = 78.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="BottVContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
+margin_top = 94.0
+margin_right = 78.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Crystals" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer"]
+margin_right = 78.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+margin_right = 78.0
+margin_bottom = 13.0
+custom_fonts/font = ExtResource( 12 )
+text = "CRYSTAL"
+align = 1
+valign = 1
+
+[node name="GreenCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+margin_top = 17.0
+margin_right = 78.0
+margin_bottom = 41.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
+margin_right = 16.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+texture = SubResource( 1 )
+stretch_mode = 4
+
+[node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 26.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 12 )
+text = "x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
+margin_left = 30.0
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="YellowCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+visible = false
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 51.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/YellowCrystal"]
+margin_right = 16.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+texture = SubResource( 2 )
+stretch_mode = 4
+
+[node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/YellowCrystal"]
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 26.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 12 )
+text = "x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/YellowCrystal"]
+margin_left = 30.0
+margin_top = 1.0
+margin_right = 78.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="BlueCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+visible = false
+margin_top = 41.0
+margin_right = 78.0
+margin_bottom = 62.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/BlueCrystal"]
+margin_right = 16.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+texture = SubResource( 3 )
+stretch_mode = 4
+
+[node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/BlueCrystal"]
+margin_left = 20.0
+margin_top = 4.0
+margin_right = 26.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 12 )
+text = "x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/BlueCrystal"]
+margin_left = 30.0
+margin_top = 4.0
+margin_right = 78.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Powerup" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer"]
+margin_top = 45.0
+margin_right = 78.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup"]
+margin_right = 78.0
+margin_bottom = 13.0
+custom_fonts/font = ExtResource( 12 )
+text = "POWERUP"
+align = 1
+valign = 1
+
+[node name="HContainer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup"]
+margin_top = 17.0
+margin_right = 78.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer"]
+margin_left = 30.0
+margin_right = 48.0
+margin_bottom = 24.0
+texture = ExtResource( 22 )
+stretch_mode = 4
+
+[node name="LCamera" parent="HContainer/LeftScreen/Viewport" instance=ExtResource( 2 )]
+
+[node name="MidleScreen" type="ViewportContainer" parent="HContainer"]
+margin_left = 82.0
+margin_right = 238.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="HContainer/MidleScreen"]
+size = Vector2( 156, 180 )
+size_override_stretch = true
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="MCamera" parent="HContainer/MidleScreen/Viewport" instance=ExtResource( 2 )]
+
+[node name="RightScreen" type="ViewportContainer" parent="HContainer"]
+margin_left = 242.0
+margin_right = 320.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="VContainer" type="VBoxContainer" parent="HContainer/RightScreen"]
+margin_right = 78.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TopVContainer" type="VBoxContainer" parent="HContainer/RightScreen/VContainer"]
+margin_right = 78.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HContainer/RightScreen/VContainer/TopVContainer"]
+margin_top = 9.0
+margin_right = 78.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 12 )
+text = "BOSS"
+align = 1
+valign = 1
+
+[node name="HContainer" type="HBoxContainer" parent="HContainer/RightScreen/VContainer/TopVContainer"]
+margin_top = 26.0
+margin_right = 78.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/RightScreen/VContainer/TopVContainer/HContainer"]
+margin_left = 26.0
+margin_right = 52.0
+margin_bottom = 22.0
+texture = ExtResource( 21 )
+stretch_mode = 4
+
+[node name="MidleVContainer" type="VBoxContainer" parent="HContainer/RightScreen/VContainer"]
+margin_top = 61.0
+margin_right = 78.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Level" type="Label" parent="HContainer/RightScreen/VContainer/MidleVContainer"]
+margin_top = 13.0
+margin_right = 78.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 12 )
+text = "LEVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelName" type="Label" parent="HContainer/RightScreen/VContainer/MidleVContainer"]
+margin_top = 30.0
+margin_right = 78.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 12 )
+text = "LEVELA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottVContainer" type="VBoxContainer" parent="HContainer/RightScreen/VContainer"]
+margin_top = 122.0
+margin_right = 78.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Viewport" type="Viewport" parent="HContainer/RightScreen"]
+size = Vector2( 78, 180 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="RCamera" parent="HContainer/RightScreen/Viewport" instance=ExtResource( 2 )]
+
+[node name="Transition" parent="." instance=ExtResource( 1 )]
+
+[node name="Pause" type="Node2D" parent="."]
+pause_mode = 2
+visible = false
+position = Vector2( 110, 0 )
+script = ExtResource( 5 )
+
+[node name="VContainer" type="VBoxContainer" parent="Pause"]
+margin_right = 100.0
+margin_bottom = 180.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" parent="Pause/VContainer" instance=ExtResource( 4 )]
+margin_top = 68.0
+margin_bottom = 88.0
+
+[node name="Menu" parent="Pause/VContainer" instance=ExtResource( 4 )]
+margin_top = 92.0
+margin_bottom = 112.0
+scene = "res://scenes/interface/Menu.tscn"
+[connection signal="send_scene" from="Pause/VContainer/Resume" to="Pause" method="on_resume_send_scene"]
+[connection signal="send_scene" from="Pause/VContainer/Menu" to="Pause" method="on_menu_send_scene"]

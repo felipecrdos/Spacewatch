@@ -67,15 +67,23 @@ func load_level():
 	level = load(path).instance()
 	
 func change_level():
-	$Transition.start(0, 1, 1, 0)
-	yield($Transition/Tween, "tween_all_completed")
+	Global.transition.start(0, 1, 1, 0);
+	yield(Global.transition.tween, "tween_all_completed")
 	
 	remove_level()
 	load_level()
 	mviewport.add_child(level)
 	
-	$Transition.start(1, 0, 1, 0)
+	Global.transition.start(1, 0, 1, 0);
+
+func change_scene(scene : String):
+	Global.transition.start(0, 1, 1, 0)
+	yield(Global.transition.tween, "tween_all_completed")
 	
+	get_tree().change_scene(scene)
+	
+	Global.transition.start(1, 0, 1, 0)
+		
 func remove_level():
 	for child in mviewport.get_children():
 		if child is Level:

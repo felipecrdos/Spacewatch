@@ -1,6 +1,13 @@
 extends Node
 
+# Variáveis Globais.
+onready var transition = preload("res://scenes/interface/Transition.tscn");
 var player
+
+func _ready():
+	transition = transition.instance();
+	get_tree().root.call_deferred("add_child", transition);
+
 
 # Save/Load game data
 var game_path = "user://game_data.json"
@@ -22,6 +29,7 @@ var game_data = {
 								"Boss":"RedRibbon"
 							}
 				}
+
 
 func save_data():
 	var file = File.new()

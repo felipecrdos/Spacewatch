@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
-enum State {IDLE, FLY, HURT, DIE}
+enum State {IDLE, FLY, HURT, DIE, WAIT}
 enum Func {INPUT, HMOVE, VMOVE, MOVE}
 
 var funcs_names	: Array
@@ -24,7 +24,7 @@ func _ready():
 	funcs_mask = {	State.IDLE:	[false, false, false, false],
 					State.FLY:	[true, true, true, true],
 					State.HURT:	[true, true, true, true], 
-					State.DIE:	[true, true, true, true]}
+					State.DIE:	[false, true, true, true]}
 					
 	for n in funcs_names:
 		funcs_refs.append(funcref(self, n))
@@ -102,10 +102,11 @@ func hurt_state(delta):
 	$ASprite.play("hurt")
 	
 func die_state(delta):
-	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0));
-#	$ASprite.play("die")
-#	yield($ASprite, "animation_finished")
+	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0))
+	set_deferred("visible", false)
+	get_tree().call_group("world","change_scene","res://scenes/interface/Menu.tscn")
 	queue_free()
+	
 	
 func on_timer_timeout():
 	pass

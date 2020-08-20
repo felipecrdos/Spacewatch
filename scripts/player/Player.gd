@@ -18,6 +18,7 @@ var player_data	: Dictionary
 onready var explosion = preload("res://scenes/effect/Explosion.tscn");
 
 func _ready():
+	print("Player constructor!")
 	funcs_names = [	"idle_state", "fly_state", 
 					"hurt_state", "die_state"]
 					

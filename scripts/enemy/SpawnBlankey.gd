@@ -47,5 +47,5 @@ func spawn_enemy():
 		var px = position.x + (i * (direction.x * offset.x))
 		var py = position.y + (i * (direction.y + offset.y * -1))
 		var new = enemy.instance()
-		Global.findnode("ActorContainer").call_deferred("add_child", new)
 		new.set_deferred("position", Vector2(px, py))
+		Global.findnode("ActorContainer").call_deferred("add_child", new)

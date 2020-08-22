@@ -19,7 +19,7 @@ func _ready():
 	speed = Vector2(100, 100)
 	crystals = 0
 	damage = 1
-	health = 5
+	health = 20
 
 # Função chamada quando um inimigo é elimidado.
 # Também cria os cristais de acordo com o inimigo.
@@ -38,6 +38,8 @@ func on_enemy_body_entered(body):
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
 	health -= area.damage
+	area.queue_free()
+	
 	if health <= 0:
 		Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
 		destroy()

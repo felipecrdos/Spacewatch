@@ -12,7 +12,7 @@ func _ready():
 	var ty = rand_range(position.y - 40, position.y - 80)
 	target = Vector2(tx, ty)
 	speed = Vector2(10, 10)
-	value = "5"
+	value = "1"
 
 # Movimentação
 func _physics_process(delta):
@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 # Sinal recebido quando um body colide com o cristal
 func on_pickup_body_entered(body):
-	get_tree().call_group("world", "update_crystal", 5)
+	get_tree().call_group("world", "update_crystal", int(value))
 	destroy()
 
 # Função chamada para destruir o cristal ao ser coletada.

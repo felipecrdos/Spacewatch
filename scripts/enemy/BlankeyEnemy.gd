@@ -5,9 +5,10 @@ extends Enemy
 # Inicialização
 func _ready():
 	$ASprite.play("flying")
-	crystals = 2
+	crystals = 1
+	health = 10
 
-# Mivimentação 
+# Movimentação 
 func _physics_process(delta):
 	velocity = direction * speed * delta
 	position += velocity

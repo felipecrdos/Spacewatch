@@ -11,7 +11,7 @@ func _ready():
 	var tx = rand_range(position.x, position.x + 200)
 	var ty = rand_range(position.y - 40, position.y - 80)
 	target = Vector2(tx, ty)
-	speed = Vector2(10, 10)
+	speed = Vector2(2, 2)
 	value = "1"
 
 # Movimentação

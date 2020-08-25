@@ -1,4 +1,4 @@
-# Classe responsável por spawnar inimigo Scotty
+# Classe responsável por spawnar inimigo Hermie
 extends Position2D
 
 # Variáveis

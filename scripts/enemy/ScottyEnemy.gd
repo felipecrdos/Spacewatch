@@ -3,8 +3,8 @@ extends Enemy
 var angle : float 
 var time : float
 var clockwise : bool
-var radius : Vector2;
-var sposition : Vector2;
+var radius : Vector2
+var sposition : Vector2
 
 func _ready():
 	$ASprite.play("flying");

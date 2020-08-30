@@ -24,10 +24,14 @@ var game_data = {
 										  "res://assets/sprite/weapon/laser_side.png",
 										  "res://assets/sprite/weapon/rocket_side.png"]
 							},
-					"Level":{	"path":"res://scenes/levels/Level.tscn",
-								"name":"Level", 
+					"Level":{	"name":"Level", 
 								"difficulty":"Easy", 
-								"Boss":"RedRibbon"
+								"boss":"RedRibbon",
+								"index":0,
+								"path":["res://scenes/levels/Level.tscn",
+										"res://scenes/levels/Level.tscn",
+										"res://scenes/levels/LevelB.tscn",
+										"res://scenes/levels/LevelC.tscn"]
 							}
 				}
 var default_game_data = game_data.duplicate(true)

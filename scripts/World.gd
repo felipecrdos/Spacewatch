@@ -13,7 +13,6 @@ var powerup
 var game_data
 var player_data
 var level_data
-
 var level
 
 func _ready():
@@ -54,6 +53,11 @@ func update_health(value : int, body=null):
 func update_crystal(value : int):
 	player_data["crystal"] += value
 	
+	# Change level index test
+	if player_data["crystal"] == 50:
+		level_data["index"] += 1
+		change_level()
+	
 	if player_data["crystal"] > player_data["hcrystal"]:
 		player_data["hcrystal"] = player_data["crystal"]
 		
@@ -70,25 +74,22 @@ func update_powerup(value : int, body=null):
 		body.update_weapon()
 	
 func load_level():
+	var index = level_data["index"]
 	var path = level_data["path"]
-	level = load(path).instance()
+	level = load(path[index]).instance()
 	
 func change_level():
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")
-	
 	remove_level()
 	load_level()
 	mviewport.add_child(level)
-	
 	Global.transition.start(1, 0, 1, 0);
 
 func change_scene(scene : String):
 	Global.transition.start(0, 1, 1, 0)
 	yield(Global.transition.tween, "tween_all_completed")
-	
 	get_tree().change_scene(scene)
-	
 	Global.transition.start(1, 0, 1, 0)
 		
 func remove_level():

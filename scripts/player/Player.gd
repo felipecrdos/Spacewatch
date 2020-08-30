@@ -15,6 +15,7 @@ var direction   : Vector2
 var speed    	: Vector2
 var screen_size : Vector2
 var player_data	: Dictionary
+
 onready var explosion = preload("res://scenes/effect/Explosion.tscn");
 
 func _ready():
@@ -39,7 +40,7 @@ func _ready():
 	player_data = Global.game_data["Player"]
 	weapons = $Weapon.get_children()
 	update_weapon()
-	
+
 func _physics_process(delta):
 	if funcs_mask[state][Func.INPUT]:
 		input()

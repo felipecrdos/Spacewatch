@@ -18,6 +18,7 @@ var game_data = {
 								"powerup":0,
 								"maxpowerup":4, 
 								"crystal":0,
+								"hcrystal":0,
 								"weapon":["res://assets/sprite/weapon/mg_side.png",
 										  "res://assets/sprite/weapon/matter_side.png",
 										  "res://assets/sprite/weapon/laser_side.png",
@@ -29,8 +30,7 @@ var game_data = {
 								"Boss":"RedRibbon"
 							}
 				}
-
-
+var default_game_data = game_data.duplicate(true)
 func save_data():
 	var file = File.new()
 	file.open(game_path, File.WRITE)
@@ -39,9 +39,16 @@ func save_data():
 	
 func load_data():
 	var file = File.new()
+	if !file.file_exists(game_path):
+		return
 	file.open(game_path, File.READ)
 	game_data = parse_json(file.get_as_text())
 	file.close()
+
+func load_default_data():
+	game_data["Player"]["health"] = default_game_data["Player"]["health"]
+	game_data["Player"]["crystal"] = default_game_data["Player"]["crystal"]
+	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
 
 #===
 func choose(values:Array):

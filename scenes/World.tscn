@@ -176,9 +176,10 @@ size_flags_stretch_ratio = 2.0
 
 [node name="Crystals" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer"]
 margin_right = 78.0
-margin_bottom = 41.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 0
 alignment = 1
 
 [node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
@@ -189,25 +190,66 @@ text = "CRYSTAL"
 align = 1
 valign = 1
 
-[node name="GreenCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
-margin_top = 17.0
+[node name="HGreenCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+margin_top = 13.0
 margin_right = 78.0
-margin_bottom = 41.0
+margin_bottom = 28.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/HGreenCrystal"]
+margin_right = 16.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+texture = SubResource( 1 )
+stretch_mode = 4
+
+[node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/HGreenCrystal"]
+margin_left = 20.0
+margin_top = 1.0
+margin_right = 26.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/HGreenCrystal"]
+margin_left = 30.0
+margin_top = 1.0
+margin_right = 78.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="GreenCrystal" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals"]
+margin_top = 28.0
+margin_right = 78.0
+margin_bottom = 43.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
 margin_right = 16.0
-margin_bottom = 24.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 texture = SubResource( 1 )
 stretch_mode = 4
 
 [node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
 margin_left = 20.0
-margin_top = 5.0
+margin_top = 1.0
 margin_right = 26.0
-margin_bottom = 18.0
+margin_bottom = 14.0
 custom_fonts/font = ExtResource( 12 )
 text = "x"
 align = 1
@@ -218,9 +260,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal"]
 margin_left = 30.0
-margin_top = 5.0
+margin_top = 1.0
 margin_right = 78.0
-margin_bottom = 18.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 custom_fonts/font = ExtResource( 12 )
@@ -309,7 +351,7 @@ align = 1
 valign = 1
 
 [node name="Powerup" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer"]
-margin_top = 45.0
+margin_top = 47.0
 margin_right = 78.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
@@ -326,7 +368,7 @@ valign = 1
 [node name="HContainer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup"]
 margin_top = 17.0
 margin_right = 78.0
-margin_bottom = 41.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -334,7 +376,7 @@ alignment = 1
 [node name="Icon" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer"]
 margin_left = 30.0
 margin_right = 48.0
-margin_bottom = 24.0
+margin_bottom = 22.0
 texture = ExtResource( 22 )
 stretch_mode = 4
 
@@ -472,5 +514,7 @@ margin_bottom = 88.0
 margin_top = 92.0
 margin_bottom = 112.0
 scene = "res://scenes/interface/Menu.tscn"
+[connection signal="tree_entered" from="." to="." method="on_world_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="on_world_tree_exited"]
 [connection signal="send_scene" from="Pause/VContainer/Resume" to="Pause" method="on_resume_send_scene"]
 [connection signal="send_scene" from="Pause/VContainer/Menu" to="Pause" method="on_menu_send_scene"]

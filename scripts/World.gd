@@ -6,6 +6,7 @@ var rviewport
 
 var healths
 var crystal
+var hcrystal
 var weapon
 var powerup
 
@@ -24,6 +25,7 @@ func _ready():
 	
 	healths = $HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer
 	crystal = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal/Label
+	hcrystal = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/HGreenCrystal/Label
 	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer/Icon
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/Label
 	
@@ -51,7 +53,12 @@ func update_health(value : int, body=null):
 
 func update_crystal(value : int):
 	player_data["crystal"] += value
+	
+	if player_data["crystal"] > player_data["hcrystal"]:
+		player_data["hcrystal"] = player_data["crystal"]
+		
 	crystal.text = str(player_data["crystal"])
+	hcrystal.text = str(player_data["hcrystal"])
 
 func update_powerup(value : int, body=null):
 	player_data["powerup"] += value
@@ -88,4 +95,12 @@ func remove_level():
 	for child in mviewport.get_children():
 		if child is Level:
 			child.free()
+
+func on_world_tree_entered():
+	Global.load_data()
+	Global.load_default_data()
+	
+func on_world_tree_exited():
+	Global.save_data()
+
 

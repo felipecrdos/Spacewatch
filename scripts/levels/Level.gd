@@ -4,6 +4,9 @@ class_name Level
 var level
 var difficulty
 var boss
+var skycolor
 
 func _ready():
-	pass
+	skycolor = $Background/SkyColor
+	skycolor.color = Color("#28a0ff")
+	VisualServer.set_default_clear_color(Color("#0089ff"))

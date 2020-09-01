@@ -24,14 +24,21 @@ var game_data = {
 										  "res://assets/sprite/weapon/laser_side.png",
 										  "res://assets/sprite/weapon/rocket_side.png"]
 							},
-					"Level":{	"name":"Level", 
-								"difficulty":"Easy", 
-								"boss":"RedRibbon",
+					"Level":{	"difficulty":"Easy", 
+								"boss":{"name":["BlueRibbon", 
+												"OrangeRibbon", 
+												"PurpleRibbon", 
+												"DBlueRibbon"],
+										"texture":["res://assets/sprite/boss/rob_boss.png",
+													"res://assets/sprite/boss/demo_boss.png",
+													"res://assets/sprite/boss/purple_boss.png",
+													"res://assets/sprite/boss/bird_boss.png"]},
 								"index":0,
-								"path":["res://scenes/levels/Level.tscn",
-										"res://scenes/levels/Level.tscn",
+								"name":["LevelA", "LevelB", "LevelC", "LevelD"], 
+								"path":["res://scenes/levels/LevelA.tscn",
 										"res://scenes/levels/LevelB.tscn",
-										"res://scenes/levels/LevelC.tscn"]
+										"res://scenes/levels/LevelC.tscn",
+										"res://scenes/levels/LevelD.tscn"]
 							}
 				}
 var default_game_data = game_data.duplicate(true)

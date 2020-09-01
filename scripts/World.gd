@@ -10,6 +10,10 @@ var hcrystal
 var weapon
 var powerup
 
+var boss_name 
+var boss_texture
+var level_name
+
 var game_data
 var player_data
 var level_data
@@ -28,6 +32,10 @@ func _ready():
 	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer/Icon
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/Label
 	
+	boss_name = $HContainer/RightScreen/VContainer/TopVContainer/Label 
+	boss_texture = $HContainer/RightScreen/VContainer/TopVContainer/HContainer/Icon
+	level_name = $HContainer/RightScreen/VContainer/MidleVContainer/LevelName
+	
 	game_data = Global.game_data
 	player_data = game_data["Player"]
 	level_data = game_data["Level"]
@@ -35,6 +43,8 @@ func _ready():
 	update_health(0)
 	update_crystal(0)
 	update_powerup(0)
+	update_boss()
+	update_level()
 	change_level()
 	
 func update_health(value : int, body=null):
@@ -54,9 +64,11 @@ func update_crystal(value : int):
 	player_data["crystal"] += value
 	
 	# Change level index test
-	if player_data["crystal"] == 50:
-		level_data["index"] += 1
-		change_level()
+	if player_data["crystal"] != 0:
+		if level_data["index"] < level_data["path"].size()-1:
+			if player_data["crystal"]%50 == 0:
+				level_data["index"] += 1
+				change_level()
 	
 	if player_data["crystal"] > player_data["hcrystal"]:
 		player_data["hcrystal"] = player_data["crystal"]
@@ -72,6 +84,15 @@ func update_powerup(value : int, body=null):
 	weapon.texture = load(player_data["weapon"][player_data["powerup"]])
 	if body:
 		body.update_weapon()
+
+func update_boss():
+	var index = level_data["index"]
+	boss_name.text = level_data["boss"]["name"][index]
+	boss_texture.texture = load(level_data["boss"]["texture"][index])
+
+func update_level():
+	var index = level_data["index"]
+	level_name.text = level_data["name"][index]
 	
 func load_level():
 	var index = level_data["index"]
@@ -84,6 +105,8 @@ func change_level():
 	remove_level()
 	load_level()
 	mviewport.add_child(level)
+	update_boss()
+	update_level()
 	Global.transition.start(1, 0, 1, 0);
 
 func change_scene(scene : String):

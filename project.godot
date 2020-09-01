@@ -153,5 +153,5 @@ ui_down={
 [rendering]
 
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color( 0.152941, 0.619608, 0.996078, 1 )
+environment/default_clear_color=Color( 0, 0.537255, 1, 1 )
 environment/default_environment="res://default_env.tres"

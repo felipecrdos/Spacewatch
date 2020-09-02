@@ -18,10 +18,12 @@ var game_data
 var player_data
 var level_data
 var level
+var pause
 
 func _ready():
 	add_to_group("world")
 	
+	pause = $Pause
 	lviewport = $HContainer/LeftScreen/Viewport
 	mviewport = $HContainer/MidleScreen/Viewport
 	rviewport = $HContainer/RightScreen/Viewport
@@ -100,6 +102,7 @@ func load_level():
 	level = load(path[index]).instance()
 	
 func transition_level():
+	level.disable_player()
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")
 	remove_level()

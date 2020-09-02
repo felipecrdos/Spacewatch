@@ -1,14 +1,14 @@
 extends Node2D
 
-var start
+var menu
 var quit
  
 func _ready():
-	start = $VBoxContainer/Start
+	menu = $VBoxContainer/Menu
 	quit = $VBoxContainer/Quit
-	start.grab_focus()
+	menu.grab_focus()
 
-func on_start_send_scene(scene):
+func on_menu_send_scene(scene):
 	Global.change_scene(scene)
 	
 func on_quit_send_scene(scene):

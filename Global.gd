@@ -78,6 +78,12 @@ func findnode(node:String):
 	return find
 
 #==
+func change_scene(scene : String):
+	transition.start(0, 1, 1, 0)
+	yield(transition.tween, "tween_all_completed")
+	get_tree().change_scene(scene)
+	transition.start(1, 0, 1, 0)
+#==
 func create_particle(packed : PackedScene, position : Vector2, color : Color):
 	var particle = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", particle)

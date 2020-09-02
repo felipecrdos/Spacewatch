@@ -45,7 +45,7 @@ func _ready():
 	update_powerup(0)
 	update_boss()
 	update_level()
-	change_level()
+	add_level()
 	
 func update_health(value : int, body=null):
 	player_data["health"] += value
@@ -68,7 +68,7 @@ func update_crystal(value : int):
 		if level_data["index"] < level_data["path"].size()-1:
 			if player_data["crystal"]%50 == 0:
 				level_data["index"] += 1
-				change_level()
+				transition_level()
 	
 	if player_data["crystal"] > player_data["hcrystal"]:
 		player_data["hcrystal"] = player_data["crystal"]
@@ -99,22 +99,20 @@ func load_level():
 	var path = level_data["path"]
 	level = load(path[index]).instance()
 	
-func change_level():
+func transition_level():
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")
 	remove_level()
+	add_level()
+	Global.transition.start(1, 0, 1, 0);
+
+# Add current level
+func add_level():
 	load_level()
 	mviewport.add_child(level)
 	update_boss()
 	update_level()
-	Global.transition.start(1, 0, 1, 0);
-
-func change_scene(scene : String):
-	Global.transition.start(0, 1, 1, 0)
-	yield(Global.transition.tween, "tween_all_completed")
-	get_tree().change_scene(scene)
-	Global.transition.start(1, 0, 1, 0)
-		
+	
 func remove_level():
 	for child in mviewport.get_children():
 		if child is Level:

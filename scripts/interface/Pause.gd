@@ -23,4 +23,4 @@ func on_resume_send_scene(scene):
 func on_menu_send_scene(scene):
 	set_visible(false)
 	get_tree().paused = false
-	get_tree().change_scene(scene)
+	Global.change_scene(scene)

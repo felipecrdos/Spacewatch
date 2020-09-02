@@ -105,9 +105,8 @@ func hurt_state(delta):
 func die_state(delta):
 	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0))
 	set_deferred("visible", false)
-	get_tree().call_group("world","change_scene","res://scenes/interface/Menu.tscn")
+	Global.change_scene("res://scenes/interface/GameOver.tscn")
 	queue_free()
-	
 	
 func on_timer_timeout():
 	pass

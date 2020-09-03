@@ -2,8 +2,8 @@ extends Ammo
 
 # Enemy Bullet
 func _ready():
-	damage = 2
-	speed = Vector2(400, 400)
+	damage = 1
+#	speed = Vector2(30, 30)
 
 func _physics_process(delta):
 	velocity = direction * speed * delta

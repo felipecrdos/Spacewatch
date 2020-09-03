@@ -26,4 +26,3 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
-[connection signal="body_entered" from="." to="." method="on_enemy_body_entered"]

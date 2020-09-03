@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/levels/BGScroll.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprite/environment/bg_cloud_two.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/enemy/SpawnBlankey.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/enemy/SpawnHermie.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/enemy/SpawnScotty.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/weapon/enemy/EMachineGun.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/weapon/enemy/ECircularGun.tscn" type="PackedScene" id=13]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
@@ -78,3 +80,9 @@ position = Vector2( 154.878, -46.0089 )
 position = Vector2( 142.857, -67.9292 )
 
 [node name="EffectContainer" type="Node2D" parent="."]
+
+[node name="CircularGun" parent="EffectContainer" instance=ExtResource( 13 )]
+position = Vector2( 100.051, 78.3418 )
+
+[node name="EMachineGun" parent="EffectContainer" instance=ExtResource( 12 )]
+position = Vector2( 57.5765, 39.6428 )

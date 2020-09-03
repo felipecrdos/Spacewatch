@@ -44,4 +44,3 @@ shape = SubResource( 1 )
 frames = SubResource( 6 )
 animation = "flying"
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
-[connection signal="body_entered" from="." to="." method="on_enemy_body_entered"]

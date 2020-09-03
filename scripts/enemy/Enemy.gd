@@ -26,21 +26,16 @@ func _ready():
 func destroy():
 	for i in crystals:
 		Global.create_crystal(crystal, position)
-	queue_free()
-
-# Sinal recebido quando um body (KinematicBody, RigidBody, StaticBody)
-# entra na área do inimigo.
-func on_enemy_body_entered(body):
 	Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
-	get_tree().call_group("world","update_health",-damage, body)
-	destroy()
+	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
-	health -= area.damage
-	area.queue_free()
+	if area is Ammo:
+		health -= area.damage
+		area.queue_free()
 	
-	if health <= 0:
-		Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
-		destroy()
+		if health <= 0:
+			Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
+			destroy()
 

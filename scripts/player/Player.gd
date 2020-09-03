@@ -29,7 +29,7 @@ func _ready():
 					
 	for n in funcs_names:
 		funcs_refs.append(funcref(self, n))
-		
+	
 	state = State.FLY
 	velocity = Vector2.ZERO
 	direction= Vector2.ZERO
@@ -103,6 +103,7 @@ func hurt_state(delta):
 	$ASprite.play("hurt")
 	
 func die_state(delta):
+	print("die")
 	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0))
 	set_deferred("visible", false)
 	Global.change_scene("res://scenes/interface/GameOver.tscn")
@@ -110,3 +111,10 @@ func die_state(delta):
 	
 func on_timer_timeout():
 	pass
+
+# Sinal disparado quando qualquer tipo de inimigo atinge o player
+func on_area_entered(area):
+	get_tree().call_group("world", "update_health", -area.damage, self)
+	area.destroy()
+		
+		

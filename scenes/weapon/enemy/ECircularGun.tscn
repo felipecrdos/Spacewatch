@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=3]
+
+[node name="CircularGun" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Barrel" parent="." instance=ExtResource( 1 )]
+firerate = 15.0
+ammo_speed = Vector2( 30, 30 )
+ammo = ExtResource( 2 )
+
+[node name="StartShoot" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="StopShoot" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+[connection signal="timeout" from="StartShoot" to="." method="on_start_shoot_timeout"]
+[connection signal="timeout" from="StopShoot" to="." method="on_stop_shoot_timeout"]

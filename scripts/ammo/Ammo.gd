@@ -48,6 +48,9 @@ func set_bounds():
 	if out_screen:
 		queue_free()
 
+func destroy():
+	queue_free()
+	
 # Timer chamado a cada 0.1 para chamar a função set_bounds
 func on_timer_timeout():
 	set_bounds()

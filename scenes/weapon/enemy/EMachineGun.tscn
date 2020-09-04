@@ -11,14 +11,14 @@ __meta__ = {
 }
 
 [node name="LeftBarrel" parent="." instance=ExtResource( 1 )]
-position = Vector2( -10, -10 )
+position = Vector2( -10, 0 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
 
 [node name="RightBarrel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10, -10 )
+position = Vector2( 10, 0 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 60, 60 )

@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/LevelB.gd" type="Script" id=2]
+[ext_resource path="res://scenes/boss/OrangeRBBoss.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 88, 8, 0, 0, 0, 0, 104, -0.222725, 0, 0, 0, 0, 104, -0.222725, 0, 0, 0, 0, 128, -0.222725, 0, 0, 0, 0, 128, -0.222725, 0, 0, 0, 0, 168, 39.7773, 0, 0, 0, 0, 208, 40, 0, 0, 0, 0, 216, 32, 0, 0, 0, 0, 216, 32, 0, 0, 0, 0, 216, 32, 0, 0, 0, 0, 216, 32, 0, 0, 0, 0, 216, 8, 0, 0, 0, 0, 216, 8, 0, 0, 0, 0, 216, 8, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 176, 0, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 96, 40, 0, 0, 0, 0, 96, 40, 0, 0, 0, 0, 88, 32, 0, 0, 0, 0, 88, 32, 0, 0, 0, 0, 88, 8 )
+}
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Path2D
+
+var speed : float
+var follow : PathFollow2D
+
+func _ready():
+	follow = $Follow
+	speed = 45
+
+func _physics_process(delta):
+	follow.offset += speed * delta
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Boss
+
+func _ready():
+	crystals = 20
+	damage = 1
+	health = 300
+"
 
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="BossPath" parent="." index="5"]
+curve = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="OrangeRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
+script = SubResource( 3 )

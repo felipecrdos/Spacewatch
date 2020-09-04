@@ -1,10 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/LevelA.gd" type="Script" id=2]
+[ext_resource path="res://scenes/boss/BlueRBBoss.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -16.379, 12.9142, 16.379, -12.9142, 92.7372, 34.8451, -12.2039, 15.7545, 12.2039, -15.7545, 93.097, 7.14921, -12.5063, -8.73084, 12.5063, 8.73084, 156.101, 1.48597, 0, 0, 0, 0, 217.018, 7.22725, 19.2355, -12.5083, -19.2355, 12.5083, 217.018, 35.736, 80.32, -26.1434, -80.32, 26.1434, 92.7372, 34.8451 )
+}
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Path2D
+
+var speed : float
+var follow : PathFollow2D
+
+func _ready():
+	follow = $Follow
+	speed = 45
+	
+
+func _physics_process(delta):
+	follow.offset += speed * delta
+"
 
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.14902, 0.682353, 1, 1 )
+
+[node name="BossPath" parent="." index="5"]
+curve = SubResource( 1 )
+script = SubResource( 2 )
+
+[node name="Follow" parent="BossPath" index="0"]
+position = Vector2( 92.7372, 34.8451 )
+
+[node name="BlueRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]

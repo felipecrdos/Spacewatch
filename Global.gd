@@ -47,6 +47,7 @@ func save_data():
 	file.open(game_path, File.WRITE)
 	file.store_line(to_json(game_data))
 	file.close()
+	print("Save Game!!")
 	
 func load_data():
 	var file = File.new()

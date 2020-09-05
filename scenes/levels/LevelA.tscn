@@ -34,7 +34,4 @@ color = Color( 0.14902, 0.682353, 1, 1 )
 curve = SubResource( 1 )
 script = SubResource( 2 )
 
-[node name="Follow" parent="BossPath" index="0"]
-position = Vector2( 92.7372, 34.8451 )
-
 [node name="BlueRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]

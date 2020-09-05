@@ -39,5 +39,8 @@ script = ExtResource( 2 )
 curve = SubResource( 1 )
 script = SubResource( 2 )
 
+[node name="Follow" parent="BossPath" index="0"]
+position = Vector2( 88, 8 )
+
 [node name="OrangeRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
 script = SubResource( 3 )

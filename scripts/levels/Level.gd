@@ -13,3 +13,6 @@ func _ready():
 
 func disable_player():
 	$ActorContainer/Player/Shape.set_deferred("disabled", true)
+
+func boss_path_move_down():
+	$BossPath/APlayer.play("down")

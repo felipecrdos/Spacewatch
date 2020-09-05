@@ -12,7 +12,7 @@ func _ready():
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
 	offset = Vector2(10, 0)
-
+	
 # A Função spawn_enemy é chamada quando 
 # um sinal de timeout é disparada.
 func spawn_enemy():
@@ -23,4 +23,5 @@ func spawn_enemy():
 	Global.findnode("ActorContainer").call_deferred("add_child", new)
 
 func on_timer_timeout():
-	spawn_enemy()
+	if Global.get_boss_state() == Global.WAITING:
+		spawn_enemy()

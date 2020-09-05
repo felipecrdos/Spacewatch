@@ -11,8 +11,9 @@ func _ready():
 
 func _physics_process(delta):
 	if can_shooting:
-		update_angle(delta)
-		shoot()
+		if Global.get_boss_state() == Global.FIGHTING:
+			update_angle(delta)
+			shoot()
 
 func update_angle(delta):
 	angle += 2 * PI * delta/time

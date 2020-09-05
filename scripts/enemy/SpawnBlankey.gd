@@ -38,7 +38,8 @@ func set_bounds():
 		direction.x = -1
 		on_bound = true
 	if on_bound:
-		spawn_enemy()
+		if Global.get_boss_state() == Global.WAITING:
+			spawn_enemy()
 
 # A Função spawn_enemy é chamada quando a scene
 # spawner tocar os limites da tela

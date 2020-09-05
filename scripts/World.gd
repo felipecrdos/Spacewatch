@@ -67,11 +67,12 @@ func update_crystal(value : int):
 	
 	# Change level index test
 	if player_data["crystal"] != 0:
-		if level_data["index"] < level_data["path"].size()-1:
-			if player_data["crystal"]%50 == 0:
-				level_data["index"] += 1
-				transition_level()
-	
+		if player_data["crystal"]%50 == 0:
+			if Global.get_boss_state() == Global.WAITING:
+				Global.set_boss_state(Global.FIGHTING)
+				level.boss_path_move_down()
+				print("boss move down")
+				
 	if player_data["crystal"] > player_data["hcrystal"]:
 		player_data["hcrystal"] = player_data["crystal"]
 		
@@ -82,7 +83,6 @@ func update_powerup(value : int, body=null):
 	player_data["powerup"] += value
 	player_data["powerup"] = clamp(	player_data["powerup"], 
 									0, player_data["maxpowerup"]-1)
-									
 	weapon.texture = load(player_data["weapon"][player_data["powerup"]])
 	if body:
 		body.update_weapon()
@@ -101,7 +101,8 @@ func load_level():
 	var path = level_data["path"]
 	level = load(path[index]).instance()
 	
-func transition_level():
+func transition_level(time : float = 0.0):
+	yield(get_tree().create_timer(time), "timeout")
 	level.disable_player()
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")

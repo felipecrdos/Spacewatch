@@ -1,5 +1,5 @@
 extends Weapon
-class_name MachineGun
+class_name EMachineGun
 
 var can_shooting = false
 
@@ -9,7 +9,8 @@ func _ready():
 
 func _physics_process(delta):
 	if can_shooting:
-		shoot()
+		if Global.get_boss_state() == Global.FIGHTING:
+			shoot()
 		
 func on_start_shoot_timeout():
 	can_shooting = true

@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Weapon",
 "class": "EMachineGun",
 "language": "GDScript",
-"path": "res://scripts/weapon/MachineGun.gd"
+"path": "res://scripts/weapon/enemy/EMachineGun.gd"
 }, {
 "base": "Weapon",
 "class": "ERadiusGun",
@@ -62,7 +62,7 @@ _global_script_classes=[ {
 "base": "Weapon",
 "class": "MachineGun",
 "language": "GDScript",
-"path": "res://scripts/weapon/enemy/EMachineGun.gd"
+"path": "res://scripts/weapon/MachineGun.gd"
 }, {
 "base": "Weapon",
 "class": "MatterGun",

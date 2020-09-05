@@ -23,4 +23,5 @@ func spawn_enemy():
 	Global.findnode("ActorContainer").call_deferred("add_child", new)
 
 func on_timer_timeout():
-	spawn_enemy()
+	if Global.get_boss_state() == Global.WAITING:
+		spawn_enemy()

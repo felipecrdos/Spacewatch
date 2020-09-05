@@ -21,24 +21,24 @@ texture = ExtResource( 1 )
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="CircularGun" type="Node2D" parent="Weapons"]
+[node name="ECircularGun" type="Node2D" parent="Weapons"]
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Barrel" parent="Weapons/CircularGun" instance=ExtResource( 3 )]
+[node name="Barrel" parent="Weapons/ECircularGun" instance=ExtResource( 3 )]
 firerate = 15.0
-ammo_speed = Vector2( 40, 40 )
+ammo_speed = Vector2( 30, 30 )
 ammo = ExtResource( 4 )
 
-[node name="StartShoot" type="Timer" parent="Weapons/CircularGun"]
-wait_time = 3.0
+[node name="StartShoot" type="Timer" parent="Weapons/ECircularGun"]
+wait_time = 6.0
 one_shot = true
 
-[node name="StopShoot" type="Timer" parent="Weapons/CircularGun"]
+[node name="StopShoot" type="Timer" parent="Weapons/ECircularGun"]
 wait_time = 4.0
 one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
-[connection signal="timeout" from="Weapons/CircularGun/StartShoot" to="Weapons/CircularGun" method="on_start_shoot_timeout"]
-[connection signal="timeout" from="Weapons/CircularGun/StopShoot" to="Weapons/CircularGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Weapons/ECircularGun/StartShoot" to="Weapons/ECircularGun" method="on_start_shoot_timeout"]
+[connection signal="timeout" from="Weapons/ECircularGun/StopShoot" to="Weapons/ECircularGun" method="on_stop_shoot_timeout"]

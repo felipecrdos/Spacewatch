@@ -3,12 +3,13 @@
 [ext_resource path="res://assets/sprite/boss/rob_boss.png" type="Texture" id=1]
 [ext_resource path="res://scripts/boss/BlueRBBoss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/weapon/enemy/EMachineGun.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -16,45 +17,22 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=6]
-script/source = "extends Weapon
-class_name MachineGun
-
-var can_shooting = false
-
-func _ready():
-	get_barrels()
-	$StartShoot.start()
-
-func _physics_process(delta):
-	if can_shooting:
-		shoot()
-		
-func on_start_shoot_timeout():
-	can_shooting = true
-	$StopShoot.start()
-
-func on_stop_shoot_timeout():
-	can_shooting = false
-	$StartShoot.start()
-"
-
 [node name="BlueRBBoss" type="Area2D"]
 collision_layer = 2
 collision_mask = 33
 script = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 2 )
 animation = "flying"
 
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="EMachineGun" type="Node2D" parent="Weapons"]
-script = SubResource( 6 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }

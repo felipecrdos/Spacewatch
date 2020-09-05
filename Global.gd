@@ -1,5 +1,8 @@
 extends Node
 
+# enum Boss State
+enum {WAITING, FIGHTING, DIED}
+
 # Variáveis Globais.
 onready var transition = preload("res://scenes/interface/Transition.tscn");
 var player
@@ -28,7 +31,11 @@ var game_data = {
 								"boss":{"name":["BlueRibbon", 
 												"OrangeRibbon", 
 												"PurpleRibbon", 
-												"DBlueRibbon"],
+												"DarkRibbon"],
+										"state":[WAITING,
+												 WAITING,
+												 WAITING,
+												 WAITING],
 										"texture":["res://assets/sprite/boss/rob_boss.png",
 													"res://assets/sprite/boss/demo_boss.png",
 													"res://assets/sprite/boss/purple_boss.png",
@@ -77,7 +84,22 @@ func findnode(node:String):
 		if find:
 			break
 	return find
+#==
+func get_boss_state():
+	var boss_states = game_data["Level"]["boss"]["state"]
+	var level_index = game_data["Level"]["index"]
+	return boss_states[level_index]
 
+func set_boss_state(state : int):
+	var boss_states = game_data["Level"]["boss"]["state"]
+	var level_index = game_data["Level"]["index"]
+	boss_states[level_index] = state
+
+func add_level_index():
+	var index = game_data["Level"]["index"]
+	var paths = game_data["Level"]["path"] #array
+	if index < paths.size()-1:
+		game_data["Level"]["index"] += 1
 #==
 func change_scene(scene : String):
 	transition.start(0, 1, 1, 0)

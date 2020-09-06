@@ -68,7 +68,11 @@ func load_default_data():
 	game_data["Player"]["health"] = default_game_data["Player"]["health"]
 	game_data["Player"]["crystal"] = default_game_data["Player"]["crystal"]
 	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
-
+	
+	# reset boss state
+	var n = game_data["Level"]["boss"]["state"].size()
+	for i in range(n):
+		game_data["Level"]["boss"]["state"][i] = WAITING
 #===
 func choose(values:Array):
 	if !values.empty():
@@ -100,6 +104,7 @@ func add_level_index():
 	var paths = game_data["Level"]["path"] #array
 	if index < paths.size()-1:
 		game_data["Level"]["index"] += 1
+		print("index level: ", game_data["Level"]["index"])
 #==
 func change_scene(scene : String):
 	transition.start(0, 1, 1, 0)

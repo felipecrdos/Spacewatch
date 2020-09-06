@@ -21,7 +21,7 @@ func destroy():
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
 	Global.set_boss_state(Global.DIED)
 	Global.add_level_index()
-	get_tree().call_group("world", "transition_level", 2.0)
+	get_tree().call_group("world", "transition_level", 4.0)
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.

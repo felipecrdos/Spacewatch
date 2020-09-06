@@ -1,6 +1,6 @@
 extends Boss
 
 func _ready():
-	crystals = 40
+	crystals = 10
 	damage = 1
 	health = 300

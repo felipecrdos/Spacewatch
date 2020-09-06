@@ -29,11 +29,11 @@ __meta__ = {
 
 [node name="Barrel" parent="Weapons/ECircularGun" instance=ExtResource( 3 )]
 firerate = 15.0
-ammo_speed = Vector2( 30, 30 )
+ammo_speed = Vector2( 50, 50 )
 ammo = ExtResource( 4 )
 
 [node name="StartShoot" type="Timer" parent="Weapons/ECircularGun"]
-wait_time = 6.0
+wait_time = 2.0
 one_shot = true
 
 [node name="StopShoot" type="Timer" parent="Weapons/ECircularGun"]

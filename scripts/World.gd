@@ -67,11 +67,10 @@ func update_crystal(value : int):
 	
 	# Change level index test
 	if player_data["crystal"] != 0:
-		if player_data["crystal"]%50 == 0:
+		if player_data["crystal"]%100 == 0:
 			if Global.get_boss_state() == Global.WAITING:
 				Global.set_boss_state(Global.FIGHTING)
 				level.boss_path_move_down()
-				print("boss move down")
 				
 	if player_data["crystal"] > player_data["hcrystal"]:
 		player_data["hcrystal"] = player_data["crystal"]

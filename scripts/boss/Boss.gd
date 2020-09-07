@@ -20,13 +20,15 @@ func destroy():
 		Global.create_crystal(crystal, global_position)
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
 	Global.set_boss_state(Global.DIED)
-	Global.add_level_index()
-	get_tree().call_group("world", "transition_level", 4.0)
+	if Global.add_level_index():
+		get_tree().call_group("world", "transition_level", 4.0)
+	else:
+		Global.change_scene("res://scenes/interface/Victory.tscn")
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_boss_area_entered(area):
-	if area is Ammo:
+	if area is Ammo and health > 0:
 		health -= area.damage
 		area.queue_free()
 	

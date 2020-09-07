@@ -64,10 +64,10 @@ func update_health(value : int, body=null):
 
 func update_crystal(value : int):
 	player_data["crystal"] += value
-	
+	var aux = [50, 150, 250, 400]
 	# Change level index test
 	if player_data["crystal"] != 0:
-		if player_data["crystal"]%100 == 0:
+		if player_data["crystal"] == aux[level_data["index"]]:
 			if Global.get_boss_state() == Global.WAITING:
 				Global.set_boss_state(Global.FIGHTING)
 				level.boss_path_move_down()

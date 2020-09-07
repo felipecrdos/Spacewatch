@@ -104,7 +104,8 @@ func add_level_index():
 	var paths = game_data["Level"]["path"] #array
 	if index < paths.size()-1:
 		game_data["Level"]["index"] += 1
-		print("index level: ", game_data["Level"]["index"])
+		return true
+	return false
 #==
 func change_scene(scene : String):
 	transition.start(0, 1, 1, 0)

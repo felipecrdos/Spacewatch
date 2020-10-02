@@ -67,7 +67,7 @@ func input():
 		weapons[player_data["powerup"]].shoot()
 
 	if Input.is_key_pressed(KEY_1):
-		Global.findnode("MCamera").shake(10, 60)
+		SoundManager.play_sfx("SelectButton")
 		
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
@@ -115,6 +115,7 @@ func on_timer_timeout():
 # Sinal disparado quando qualquer tipo de inimigo atinge o player
 func on_area_entered(area):
 	get_tree().call_group("world", "update_health", -area.damage, self)
+	Global.findnode("MCamera").shake(5, 30)
 	area.destroy()
 		
 		

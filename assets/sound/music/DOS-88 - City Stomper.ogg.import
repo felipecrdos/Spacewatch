@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DOS-88 - City Stomper.ogg-4c4e8c2cb30c9d88fac331d09794f59b.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/DOS-88 - City Stomper.ogg"
+dest_files=[ "res://.import/DOS-88 - City Stomper.ogg-4c4e8c2cb30c9d88fac331d09794f59b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

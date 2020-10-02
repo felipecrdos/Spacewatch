@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/Enemy.gd"
 }, {
+"base": "Pickup",
+"class": "Health",
+"language": "GDScript",
+"path": "res://scripts/pickup/Health.gd"
+}, {
 "base": "Weapon",
 "class": "LaserGun",
 "language": "GDScript",
@@ -58,6 +63,26 @@ _global_script_classes=[ {
 "class": "Level",
 "language": "GDScript",
 "path": "res://scripts/levels/Level.gd"
+}, {
+"base": "Level",
+"class": "LevelA",
+"language": "GDScript",
+"path": "res://scripts/levels/LevelA.gd"
+}, {
+"base": "Level",
+"class": "LevelB",
+"language": "GDScript",
+"path": "res://scripts/levels/LevelB.gd"
+}, {
+"base": "Level",
+"class": "LevelC",
+"language": "GDScript",
+"path": "res://scripts/levels/LevelC.gd"
+}, {
+"base": "Level",
+"class": "LevelD",
+"language": "GDScript",
+"path": "res://scripts/levels/LevelD.gd"
 }, {
 "base": "Weapon",
 "class": "MachineGun",
@@ -103,8 +128,13 @@ _global_script_class_icons={
 "EMachineGun": "",
 "ERadiusGun": "",
 "Enemy": "",
+"Health": "",
 "LaserGun": "",
 "Level": "",
+"LevelA": "",
+"LevelB": "",
+"LevelC": "",
+"LevelD": "",
 "MachineGun": "",
 "MatterGun": "",
 "Pickup": "",
@@ -120,9 +150,14 @@ config/name="VShooter"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+default_bus_layout="res://resources/bus.tres"
+
 [autoload]
 
 Global="*res://Global.gd"
+SoundManager="*res://scenes/sound/SoundManager.tscn"
 
 [display]
 

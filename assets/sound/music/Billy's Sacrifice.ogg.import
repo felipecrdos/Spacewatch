@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Billy's Sacrifice.ogg-112c82cbe12ecfcb7aa36ff0c52c5a3c.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/Billy's Sacrifice.ogg"
+dest_files=[ "res://.import/Billy's Sacrifice.ogg-112c82cbe12ecfcb7aa36ff0c52c5a3c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

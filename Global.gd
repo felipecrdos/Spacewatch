@@ -132,6 +132,16 @@ func create_crystal(packed : PackedScene, position : Vector2):
 	Global.findnode("PickupContainer").call_deferred("add_child", crystal)
 	crystal.set_deferred("position", position)
 
+func create_powerup(packed : PackedScene, position : Vector2):
+	var power_up = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", power_up);
+	power_up.set_deferred("position", position)
+
+func create_health(packed : PackedScene, position : Vector2):
+	var health = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", health);
+	health.set_deferred("position", position)
+	
 func create_explosion(packed : PackedScene, position : Vector2, anim : String, scale : Vector2):
 	var explosion = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", explosion)

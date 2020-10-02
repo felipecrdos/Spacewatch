@@ -9,9 +9,10 @@ var speed : Vector2
 var crystals : int
 var damage : int
 var health : int
-onready var crystal = preload("res://scenes/pickup/Crystal.tscn")
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
-
+onready var drop_crystal = preload("res://scenes/pickup/Crystal.tscn")
+onready var drop_powerup = preload("res://scenes/pickup/Powerup.tscn")
+onready var drop_health = preload("res://scenes/pickup/Health.tscn")
 # Inicialização
 func _ready():
 	velocity = Vector2.ZERO
@@ -24,8 +25,16 @@ func _ready():
 # Função chamada quando um inimigo é elimidado.
 # Também cria os cristais de acordo com o inimigo.
 func destroy():
+	Global.findnode("MCamera").shake(2, 5)
+	SoundManager.play_sfx("EnemyExplosion")
+	if(Global.choose(range(100)) <= 3):
+		Global.create_powerup(drop_powerup, position)
+	
+	if(Global.choose(range(100)) <= 3):
+		Global.create_powerup(drop_health, position)
+		
 	for i in crystals:
-		Global.create_crystal(crystal, position)
+		Global.create_crystal(drop_crystal, position)
 	Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
 	queue_free()
 

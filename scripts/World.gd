@@ -101,6 +101,8 @@ func load_level():
 	level = load(path[index]).instance()
 	
 func transition_level(time : float = 0.0):
+	var index = level_data["index"]
+	SoundManager.fade_out_music(level_data["name"][index-1])
 	yield(get_tree().create_timer(time), "timeout")
 	level.disable_player()
 	Global.transition.start(0, 1, 1, 0);

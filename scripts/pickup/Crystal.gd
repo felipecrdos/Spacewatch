@@ -29,8 +29,8 @@ func on_pickup_body_entered(body):
 # É criado um popup com o valor do cristal. Também é
 # criado particulas para efeito de coleta do cristal.
 func destroy():
-	Global.create_popup(popup, position, value, Color.chartreuse)
-	Global.create_particle(particle, position, Color.chartreuse)
+	Global.create_popup(popup, position, value, Color.gold, Color.white)
+	Global.create_particle(particle, position, Color.yellow)
 	queue_free()
 
 # Sinal recebido para que o cristal vá de encontro ao player

@@ -120,12 +120,13 @@ func create_particle(packed : PackedScene, position : Vector2, color : Color):
 	particle.set_deferred("modulate", color)
 	particle.set_deferred("emitting", true)
 
-func create_popup(packed : PackedScene, position : Vector2, text : String, color : Color):
+func create_popup(packed : PackedScene, position : Vector2, text : String, color : Color, outline_color:Color):
 	var popup = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", popup)
 	popup.set_deferred("position", position)
 	popup.set_deferred("text", text)
 	popup.set_deferred("color", color)
+	popup.set_deferred("outline_color", outline_color)
 
 func create_crystal(packed : PackedScene, position : Vector2):
 	var crystal = packed.instance()

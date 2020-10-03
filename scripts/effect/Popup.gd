@@ -8,6 +8,7 @@ var velocity : Vector2
 var speed : Vector2
 var text : String setget set_text
 var color : Color setget set_color
+var outline_color : Color setget set_outline_color
 
 # Inicialização
 func _ready():
@@ -36,6 +37,9 @@ func set_color(value : Color):
 	color = value
 	$Label.add_color_override("font_color", color)
 
+func set_outline_color(value: Color):
+	$Label.add_color_override("font_outline_modulate", value)
+	
 # Destruir essa cena (instancia) quando a 
 # interpolação for finalizada
 func on_tween_all_completed():

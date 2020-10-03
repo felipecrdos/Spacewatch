@@ -1,7 +1,7 @@
 # Cena cristal que representa o score do player.
 # Herda da cena Pickup.
 extends Pickup
-class_name Crystal
+class_name Coin
 
 # Variáveis
 var target : Vector2
@@ -29,7 +29,7 @@ func on_pickup_body_entered(body):
 # É criado um popup com o valor do cristal. Também é
 # criado particulas para efeito de coleta do cristal.
 func destroy():
-	Global.create_popup(popup, position, value, Color.gold, Color.white)
+	Global.create_popup(popup, position, value, Color.goldenrod, Color.bisque)
 	Global.create_particle(particle, position, Color.yellow)
 	queue_free()
 

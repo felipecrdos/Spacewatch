@@ -5,8 +5,8 @@ var mviewport
 var rviewport
 
 var healths
-var crystal
-var hcrystal
+var curr_score
+var high_score
 var weapon
 var powerup
 
@@ -29,8 +29,8 @@ func _ready():
 	rviewport = $HContainer/RightScreen/Viewport
 	
 	healths = $HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer
-	crystal = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/GreenCrystal/Label
-	hcrystal = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Crystals/HGreenCrystal/Label
+	curr_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/CurrentScore/Label
+	high_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/HighScore/Label
 	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer/Icon
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/Label
 	
@@ -63,20 +63,20 @@ func update_health(value : int, body=null):
 		body.update_health()
 
 func update_crystal(value : int):
-	player_data["crystal"] += value
+	player_data["cscore"] += value
 	var aux = [50, 150, 250, 400]
 	# Change level index test
-	if player_data["crystal"] != 0:
-		if player_data["crystal"] == aux[level_data["index"]]:
+	if player_data["cscore"] != 0:
+		if player_data["cscore"] == aux[level_data["index"]]:
 			if Global.get_boss_state() == Global.WAITING:
 				Global.set_boss_state(Global.FIGHTING)
 				level.boss_path_move_down()
 				
-	if player_data["crystal"] > player_data["hcrystal"]:
-		player_data["hcrystal"] = player_data["crystal"]
+	if player_data["cscore"] > player_data["hscore"]:
+		player_data["hscore"] = player_data["cscore"]
 		
-	crystal.text = str(player_data["crystal"])
-	hcrystal.text = str(player_data["hcrystal"])
+	curr_score.text = str(player_data["cscore"])
+	high_score.text = str(player_data["hscore"])
 
 func update_powerup(value : int, body=null):
 	player_data["powerup"] += value

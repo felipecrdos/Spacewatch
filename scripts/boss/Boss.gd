@@ -4,7 +4,7 @@ class_name Boss
 var crystals : int
 var damage : int
 var health : int
-onready var crystal = preload("res://scenes/pickup/Crystal.tscn")
+onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
 # Inicialização
@@ -18,7 +18,7 @@ func _ready():
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
 	for i in crystals:
-		Global.create_crystal(crystal, global_position)
+		Global.create_coin(drop_coin, global_position)
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
 	Global.set_boss_state(Global.DIED)
 	if Global.add_level_index():

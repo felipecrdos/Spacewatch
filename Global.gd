@@ -20,8 +20,8 @@ var game_data = {
 								"maxhealth":4, 
 								"powerup":0,
 								"maxpowerup":4, 
-								"crystal":0,
-								"hcrystal":0,
+								"cscore":0,
+								"hscore":0,
 								"weapon":["res://assets/sprite/weapon/mg_side.png",
 										  "res://assets/sprite/weapon/matter_side.png",
 										  "res://assets/sprite/weapon/laser_side.png",
@@ -66,7 +66,7 @@ func load_data():
 
 func load_default_data():
 	game_data["Player"]["health"] = default_game_data["Player"]["health"]
-	game_data["Player"]["crystal"] = default_game_data["Player"]["crystal"]
+	game_data["Player"]["cscore"] = default_game_data["Player"]["cscore"]
 	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
 	
 	# reset boss state
@@ -128,10 +128,10 @@ func create_popup(packed : PackedScene, position : Vector2, text : String, color
 	popup.set_deferred("color", color)
 	popup.set_deferred("outline_color", outline_color)
 
-func create_crystal(packed : PackedScene, position : Vector2):
-	var crystal = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", crystal)
-	crystal.set_deferred("position", position)
+func create_coin(packed : PackedScene, position : Vector2):
+	var coin = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", coin)
+	coin.set_deferred("position", position)
 
 func create_powerup(packed : PackedScene, position : Vector2):
 	var power_up = packed.instance()

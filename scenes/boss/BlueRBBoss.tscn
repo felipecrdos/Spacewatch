@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/sprite/boss/rob_boss.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/boss/BlueRBBoss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/weapon/enemy/EMachineGun.gd" type="Script" id=4]
@@ -9,10 +9,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
+"frames": [ SubResource( 2 ) ],
+"loop": false,
 "name": "flying",
 "speed": 5.0
 } ]
@@ -26,7 +30,7 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "flying"
 
 [node name="Weapons" type="Node2D" parent="."]
@@ -38,14 +42,14 @@ __meta__ = {
 }
 
 [node name="LeftBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
-position = Vector2( -10, 0 )
+position = Vector2( -8, 7 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 80, 80 )
 ammo = ExtResource( 6 )
 
 [node name="RightBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
-position = Vector2( 10, 0 )
+position = Vector2( 8, 7 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 80, 80 )

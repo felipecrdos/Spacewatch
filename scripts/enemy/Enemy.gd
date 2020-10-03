@@ -35,14 +35,14 @@ func destroy():
 		
 	for i in crystals:
 		Global.create_crystal(drop_crystal, position)
-	Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
+	Global.create_explosion(explosion, position, "fire", Vector2(2, 2))
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
 	if area is Ammo:
 		health -= area.damage
-		area.queue_free()
+		area.destroy()
 	
 		if health <= 0:
 			Global.create_explosion(explosion, position, "puff", Vector2(2, 2))

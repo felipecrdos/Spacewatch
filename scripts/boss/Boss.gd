@@ -16,6 +16,7 @@ func _ready():
 # Função chamada quando um inimigo é elimidado.
 # Também cria os cristais de acordo com o inimigo.
 func destroy():
+	SoundManager.play_sfx("MainExplosion")
 	for i in crystals:
 		Global.create_crystal(crystal, global_position)
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
@@ -30,7 +31,7 @@ func destroy():
 func on_boss_area_entered(area):
 	if area is Ammo and health > 0:
 		health -= area.damage
-		area.queue_free()
+		area.destroy()
 	
 		if health <= 0:
 			Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))

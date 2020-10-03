@@ -33,5 +33,6 @@ margin_top = 92.0
 margin_bottom = 112.0
 texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 5 )
+[connection signal="tree_entered" from="." to="." method="on_gameover_tree_entered"]
 [connection signal="send_scene" from="VBoxContainer/Menu" to="." method="on_menu_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/Quit" to="." method="on_quit_send_scene"]

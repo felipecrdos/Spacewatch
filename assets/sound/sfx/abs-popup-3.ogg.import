@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/abs-popup-3.ogg-a7a64313fd1011e7f58abd0082808e8f.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/abs-popup-3.ogg"
+dest_files=[ "res://.import/abs-popup-3.ogg-a7a64313fd1011e7f58abd0082808e8f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -49,8 +49,13 @@ func set_bounds():
 		queue_free()
 
 func destroy():
+	SoundManager.play_sfx("BulletHit")
 	queue_free()
 	
 # Timer chamado a cada 0.1 para chamar a função set_bounds
 func on_timer_timeout():
 	set_bounds()
+
+func set_animation(name:String):
+	$ASprite.play(name)
+	

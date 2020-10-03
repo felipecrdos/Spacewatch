@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
-enum State {IDLE, FLY, HURT, DIE, WAIT}
+enum State {IDLE, FLYING, INVULNERABLE, DYING}
 enum Func {INPUT, HMOVE, VMOVE, MOVE}
 
 var funcs_names	: Array
@@ -15,22 +15,23 @@ var direction   : Vector2
 var speed    	: Vector2
 var screen_size : Vector2
 var player_data	: Dictionary
+var level_data	: Dictionary
 
 onready var explosion = preload("res://scenes/effect/Explosion.tscn");
 
 func _ready():
-	funcs_names = [	"idle_state", "fly_state", 
-					"hurt_state", "die_state"]
+	funcs_names = [	"idle_state", "flying_state", 
+					"invulnerable_state", "dying_state"]
 					
-	funcs_mask = {	State.IDLE:	[false, false, false, false],
-					State.FLY:	[true, true, true, true],
-					State.HURT:	[true, true, true, true], 
-					State.DIE:	[false, true, true, true]}
+	funcs_mask = {	State.IDLE:				[false, false, false, false],
+					State.FLYING:			[true, true, true, true],
+					State.INVULNERABLE:		[true, true, true, true], 
+					State.DYING:			[false, true, true, true]}
 					
 	for n in funcs_names:
 		funcs_refs.append(funcref(self, n))
 	
-	state = State.FLY
+	state = State.FLYING
 	velocity = Vector2.ZERO
 	direction= Vector2.ZERO
 	speed	 = Vector2(100, 100)
@@ -38,6 +39,8 @@ func _ready():
 	
 	Global.player = self
 	player_data = Global.game_data["Player"]
+	level_data = Global.game_data["Level"]
+	
 	weapons = $Weapon.get_children()
 	update_weapon()
 
@@ -84,9 +87,9 @@ func set_limits():
 
 func update_health():
 	if player_data["health"] > 0:
-		state = State.HURT
+		state = State.INVULNERABLE
 	elif player_data["health"] <= 0:
-		state = State.DIE
+		state = State.DYING
 	
 func update_weapon():
 	for weapon in weapons:
@@ -94,16 +97,22 @@ func update_weapon():
 	weapons[player_data["powerup"]].visible = true
 
 func idle_state(delta):
-	$ASprite.play("idle")
+	$ASprite.play("vertical")
 	
-func fly_state(delta):
-	$ASprite.play("fly")
+func flying_state(delta):
+	if direction.x != 0:
+		$ASprite.play("horizontal")
+		$ASprite.flip_h = true if direction.x > 0 else false
+	else:
+		$ASprite.play("vertical")
 	
-func hurt_state(delta):
-	$ASprite.play("hurt")
+func invulnerable_state(delta):
+	$ASprite.play("vertical")
+	state = State.FLYING
 	
-func die_state(delta):
-	print("die")
+func dying_state(delta):
+	SoundManager.play_sfx("MainExplosion")
+	SoundManager.fade_out_music(level_data["name"][level_data["index"]])
 	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0))
 	set_deferred("visible", false)
 	Global.change_scene("res://scenes/interface/GameOver.tscn")
@@ -114,6 +123,7 @@ func on_timer_timeout():
 
 # Sinal disparado quando qualquer tipo de inimigo atinge o player
 func on_area_entered(area):
+	SoundManager.play_sfx("PlayerHurt")
 	get_tree().call_group("world", "update_health", -area.damage, self)
 	Global.findnode("MCamera").shake(5, 30)
 	area.destroy()

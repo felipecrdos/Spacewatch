@@ -12,11 +12,12 @@ func _ready():
 	start.grab_focus()
 
 func on_start_send_scene(scene):
+	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene)
-	SoundManager.fade_out_music("Menu")
 	
 func on_quit_send_scene(scene):
+	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().quit()

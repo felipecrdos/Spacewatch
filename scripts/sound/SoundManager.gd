@@ -2,14 +2,11 @@ extends Node2D
 
 onready var bus_layout = preload("res://resources/bus.tres")
 var tween_music
-var tween_sfx
 
 func _ready():
 	AudioServer.set_bus_layout(bus_layout)
 	#set_bus_volume("SfxBus", -20)
-	
 	tween_music = $Music.get_node("Tween")
-	tween_sfx 	= $Sfx.get_node("Tween")
 	
 func set_bus_volume(bus_name:String, volume:float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)

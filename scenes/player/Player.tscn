@@ -1,90 +1,37 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/sprite/player/ship.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/player/MachineGun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/weapon/player/MatterGun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/weapon/player/LaserGun.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/weapon/player/RocketGun.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sprite/effect/EffectAndItemsTile16x16.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_01_png_processed.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_02_png_processed.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_03_png_processed.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 16 )
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 7 )
-region = Rect2( 16, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 7 )
-region = Rect2( 32, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 7 )
-region = Rect2( 48, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 7 )
-region = Rect2( 64, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 7 )
-region = Rect2( 80, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 7 )
-region = Rect2( 96, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 3 ) ],
-"loop": true,
-"name": "fly",
+"loop": false,
+"name": "vertical",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "horizontal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "hurt",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": false,
-"name": "die",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 12 ) ],
-"loop": false,
-"name": "blink",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 13 ) ],
-"loop": true,
-"name": "idle",
 "speed": 5.0
 } ]
 
@@ -106,8 +53,9 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 14 )
-animation = "die"
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 4 )
+animation = "vertical"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

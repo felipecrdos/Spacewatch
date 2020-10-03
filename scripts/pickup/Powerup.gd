@@ -11,6 +11,7 @@ func _physics_process(delta):
 	position += velocity
 
 func on_pickup_body_entered(body):
+	SoundManager.play_sfx("PowerupPickup")
 	get_tree().call_group("world", "update_powerup", 1, body)
 	destroy()
 

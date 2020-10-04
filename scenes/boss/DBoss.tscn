@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=4]
 [ext_resource path="res://scripts/boss/DBoss.gd" type="Script" id=5]
 [ext_resource path="res://scripts/weapon/enemy/ERadiusGun.gd" type="Script" id=6]
+[ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 12 )
@@ -22,71 +23,121 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 195, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 195, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=26]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 195, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 195, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 195, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 195, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 195, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 195, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 24 ), SubResource( 25 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
+colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="Curve" id=18]
+_data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
+
+[sub_resource type="ParticlesMaterial" id=20]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
+
+[sub_resource type="StreamTexture" id=21]
+load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+
+[sub_resource type="ParticlesMaterial" id=22]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
+
+[sub_resource type="StreamTexture" id=23]
+load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+
+[sub_resource type="ParticlesMaterial" id=24]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
+
+[sub_resource type="StreamTexture" id=25]
+load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="DBoss" type="Area2D"]
+z_index = 10
 collision_layer = 2
 collision_mask = 33
 script = ExtResource( 5 )
@@ -110,47 +161,55 @@ rotation = -1.5708
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="N45Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = -0.785398
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="Z0Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="P45Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = 0.785398
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="P90Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = 1.5708
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="P135Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = 2.35619
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="P180Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = 3.14159
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="P225Barrel" parent="Weapons/ERadiusGun" instance=ExtResource( 1 )]
 rotation = 3.92699
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
+bullet_animation = "green_bullet"
 
 [node name="StartShoot" type="Timer" parent="Weapons/ERadiusGun"]
 one_shot = true
@@ -169,6 +228,7 @@ __meta__ = {
 firerate = 15.0
 ammo_speed = Vector2( 30, 30 )
 ammo = ExtResource( 2 )
+bullet_animation = "red_bullet"
 
 [node name="StartShoot" type="Timer" parent="Weapons/ECircularGun"]
 wait_time = 6.0
@@ -187,8 +247,7 @@ rotation = 0.907571
 scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DLeft"]
-frames = SubResource( 26 )
-frame = 1
+frames = SubResource( 6 )
 playing = true
 
 [node name="DRight" type="Position2D" parent="Exhaust"]
@@ -200,7 +259,7 @@ __meta__ = {
 }
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DRight"]
-frames = SubResource( 27 )
+frames = SubResource( 9 )
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -212,7 +271,7 @@ rotation = 2.44346
 scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/ULeft"]
-frames = SubResource( 16 )
+frames = SubResource( 12 )
 playing = true
 
 [node name="URight" type="Position2D" parent="Exhaust"]
@@ -224,12 +283,39 @@ __meta__ = {
 }
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/URight"]
-frames = SubResource( 17 )
+frames = SubResource( 15 )
 frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Smoke" type="Node2D" parent="."]
+
+[node name="LSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
+use_parent_material = true
+position = Vector2( -12, 0 )
+emitting = false
+amount = 5
+randomness = 0.5
+local_coords = false
+process_material = SubResource( 20 )
+texture = SubResource( 21 )
+
+[node name="RSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
+use_parent_material = true
+position = Vector2( 12, 12 )
+emitting = false
+amount = 5
+randomness = 0.5
+local_coords = false
+process_material = SubResource( 22 )
+texture = SubResource( 23 )
+
+[node name="URSmoke" parent="Smoke" instance=ExtResource( 7 )]
+position = Vector2( 8, -12 )
+process_material = SubResource( 24 )
+texture = SubResource( 25 )
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
 [connection signal="timeout" from="Weapons/ERadiusGun/StartShoot" to="Weapons/ERadiusGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ERadiusGun/StopShoot" to="Weapons/ERadiusGun" method="on_stop_shoot_timeout"]

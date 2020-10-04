@@ -1,4 +1,5 @@
 extends Boss
+class_name ABoss
 
 func _ready():
 	score = 10

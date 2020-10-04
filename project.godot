@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Boss",
+"class": "ABoss",
+"language": "GDScript",
+"path": "res://scripts/boss/ABoss.gd"
+}, {
 "base": "Area2D",
 "class": "Ammo",
 "language": "GDScript",
 "path": "res://scripts/ammo/Ammo.gd"
+}, {
+"base": "Boss",
+"class": "BBoss",
+"language": "GDScript",
+"path": "res://scripts/boss/BBoss.gd"
 }, {
 "base": "Position2D",
 "class": "Barrel",
@@ -29,10 +39,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/player/Bullet.gd"
 }, {
+"base": "Boss",
+"class": "CBoss",
+"language": "GDScript",
+"path": "res://scripts/boss/CBoss.gd"
+}, {
 "base": "Pickup",
 "class": "Coin",
 "language": "GDScript",
 "path": "res://scripts/pickup/Coin.gd"
+}, {
+"base": "Boss",
+"class": "DBoss",
+"language": "GDScript",
+"path": "res://scripts/boss/DBoss.gd"
 }, {
 "base": "Ammo",
 "class": "EBullet",
@@ -130,11 +150,15 @@ _global_script_classes=[ {
 "path": "res://scripts/weapon/Weapon.gd"
 } ]
 _global_script_class_icons={
+"ABoss": "",
 "Ammo": "",
+"BBoss": "",
 "Barrel": "",
 "Boss": "",
 "Bullet": "",
+"CBoss": "",
 "Coin": "",
+"DBoss": "",
 "EBullet": "",
 "ECircularGun": "",
 "EMachineGun": "",

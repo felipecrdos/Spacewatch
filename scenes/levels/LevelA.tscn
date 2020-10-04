@@ -4,7 +4,6 @@
 [ext_resource path="res://scripts/levels/LevelA.gd" type="Script" id=2]
 [ext_resource path="res://scenes/boss/ABoss.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( -16.379, 12.9142, 16.379, -12.9142, 92.7372, 34.8451, -12.2039, 15.7545, 12.2039, -15.7545, 93.097, 7.14921, -12.5063, -8.73084, 12.5063, 8.73084, 156.101, 1.48597, 0, 0, 0, 0, 217.018, 7.22725, 19.2355, -12.5083, -19.2355, 12.5083, 217.018, 35.736, 80.32, -26.1434, -80.32, 26.1434, 92.7372, 34.8451 )

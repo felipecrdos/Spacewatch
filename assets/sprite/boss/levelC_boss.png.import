@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rob_boss.png-a60334eaec016bac8e504506c9ae8db4.stex"
+path="res://.import/levelC_boss.png-725f7a55ab1c0d6b1e416c67203b4966.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/boss/rob_boss.png"
-dest_files=[ "res://.import/rob_boss.png-a60334eaec016bac8e504506c9ae8db4.stex" ]
+source_file="res://assets/sprite/boss/levelC_boss.png"
+dest_files=[ "res://.import/levelC_boss.png-725f7a55ab1c0d6b1e416c67203b4966.stex" ]
 
 [params]
 

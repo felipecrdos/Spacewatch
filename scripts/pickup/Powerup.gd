@@ -1,6 +1,7 @@
 extends Pickup
 class_name Powerup
 
+export (Texture) var particle_texture
 func _ready():
 	direction = Vector2.DOWN
 	speed = Vector2(100, 100)
@@ -16,6 +17,6 @@ func on_pickup_body_entered(body):
 	destroy()
 
 func destroy():
-	Global.create_popup(popup, position, value, Color.goldenrod, Color.bisque)
-	Global.create_particle(particle, position, Color.yellow)
+	Global.create_popup(popup, position, value, Color.blue, Color.bisque)
+	Global.create_particle(particle, position, particle_texture)
 	queue_free()

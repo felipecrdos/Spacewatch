@@ -1,7 +1,7 @@
 extends Area2D
 class_name Boss
 
-var crystals : int
+var score : int
 var damage : int
 var health : int
 onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
@@ -9,7 +9,7 @@ onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
 # Inicialização
 func _ready():
-	crystals = 10
+	score = 10
 	damage = 1
 	health = 20
 
@@ -17,7 +17,7 @@ func _ready():
 # Também cria os cristais de acordo com o inimigo.
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
-	for i in crystals:
+	for i in score:
 		Global.create_coin(drop_coin, global_position)
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
 	Global.set_boss_state(Global.DIED)

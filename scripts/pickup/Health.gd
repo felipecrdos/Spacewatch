@@ -1,6 +1,7 @@
 extends Pickup
 class_name Health
 
+export (Texture) var particle_texture
 func _ready():
 	direction = Vector2.DOWN
 	speed = Vector2(100, 100)
@@ -17,5 +18,5 @@ func on_pickup_body_entered(body):
 
 func destroy():
 	Global.create_popup(popup, position, value, Color.indianred, Color.bisque)
-	Global.create_particle(particle, position, Color.red)
+	Global.create_particle(particle, position, particle_texture)
 	queue_free()

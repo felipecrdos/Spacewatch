@@ -5,6 +5,7 @@ class_name Coin
 
 # Variáveis
 var target : Vector2
+export (Texture) var particle_texture
 
 # Inicialização
 func _ready():
@@ -22,7 +23,7 @@ func _physics_process(delta):
 
 # Sinal recebido quando um body colide com o cristal
 func on_pickup_body_entered(body):
-	get_tree().call_group("world", "update_crystal", int(value))
+	get_tree().call_group("world", "update_score", int(value))
 	destroy()
 
 # Função chamada para destruir o cristal ao ser coletada.
@@ -30,7 +31,7 @@ func on_pickup_body_entered(body):
 # criado particulas para efeito de coleta do cristal.
 func destroy():
 	Global.create_popup(popup, position, value, Color.goldenrod, Color.bisque)
-	Global.create_particle(particle, position, Color.yellow)
+	Global.create_particle(particle, position, particle_texture)
 	queue_free()
 
 # Sinal recebido para que o cristal vá de encontro ao player

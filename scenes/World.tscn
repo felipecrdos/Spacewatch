@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/sprite/interface/resume_selected_button.png" type="Texture" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
@@ -15,142 +15,141 @@
 [ext_resource path="res://assets/sprite/pickup/spr_coin_azu_03.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprite/pickup/spr_coin_azu_01.png" type="Texture" id=19]
 [ext_resource path="res://assets/sprite/pickup/spr_coin_azu_00.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprite/boss/rob_boss.png" type="Texture" id=21]
 [ext_resource path="res://assets/sprite/weapon/mg_side.png" type="Texture" id=22]
 [ext_resource path="res://assets/sprite/interface/resume_normal_button.png" type="Texture" id=23]
 [ext_resource path="res://assets/sprite/interface/menu_selected_button.png" type="Texture" id=24]
 [ext_resource path="res://assets/sprite/interface/menu_normal_button.png" type="Texture" id=25]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=26]
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 26 )
 region = Rect2( 96, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 22 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 26 )
 region = Rect2( 96, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 24 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=27]
-animations = [ {
-"frames": [ SubResource( 26 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=29]
-animations = [ {
-"frames": [ SubResource( 28 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 96, 128, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 26 )
-region = Rect2( 32, 96, 16, 16 )
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 26 )
-region = Rect2( 48, 96, 16, 16 )
+region = Rect2( 96, 128, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 26 )
-region = Rect2( 64, 96, 16, 16 )
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 26 )
-region = Rect2( 80, 96, 16, 16 )
+region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 96, 16, 16 )
+region = Rect2( 16, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 26 )
-region = Rect2( 112, 96, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 26 )
 region = Rect2( 32, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 26 )
 region = Rect2( 48, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 26 )
 region = Rect2( 64, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 26 )
 region = Rect2( 80, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 26 )
 region = Rect2( 96, 96, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 26 )
 region = Rect2( 112, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 26 )
+region = Rect2( 16, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 26 )
+region = Rect2( 32, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 26 )
+region = Rect2( 48, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 26 )
+region = Rect2( 64, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 26 )
+region = Rect2( 80, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 26 )
+region = Rect2( 96, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 26 )
+region = Rect2( 112, 96, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AnimatedTexture" id=27]
 frames = 4
 frame_0/texture = ExtResource( 8 )
 frame_1/texture = ExtResource( 16 )
@@ -160,7 +159,7 @@ frame_2/delay_sec = 0.0
 frame_3/texture = ExtResource( 15 )
 frame_3/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=3]
+[sub_resource type="AnimatedTexture" id=28]
 frames = 4
 frame_0/texture = ExtResource( 20 )
 frame_1/texture = ExtResource( 19 )
@@ -248,55 +247,54 @@ align = 1
 valign = 1
 
 [node name="HContainer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer"]
-margin_left = 4.0
-margin_top = 18.0
+margin_top = 17.0
 margin_right = 78.0
 margin_bottom = 43.0
 size_flags_vertical = 3
 custom_constants/separation = -2
 
 [node name="Label01" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
-margin_right = 20.0
-margin_bottom = 25.0
+margin_right = 21.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer/Label01"]
-frames = SubResource( 23 )
+frames = SubResource( 2 )
 centered = false
 
 [node name="Label02" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
-margin_left = 18.0
-margin_right = 38.0
-margin_bottom = 25.0
+margin_left = 19.0
+margin_right = 40.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer/Label02"]
-frames = SubResource( 25 )
+frames = SubResource( 4 )
 centered = false
 
 [node name="Label03" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
-margin_left = 36.0
-margin_right = 56.0
-margin_bottom = 25.0
+margin_left = 38.0
+margin_right = 59.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer/Label03"]
-frames = SubResource( 27 )
+frames = SubResource( 6 )
 centered = false
 
 [node name="Label04" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer"]
-margin_left = 54.0
-margin_right = 74.0
-margin_bottom = 25.0
+margin_left = 57.0
+margin_right = 78.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer/Label04"]
-frames = SubResource( 29 )
+frames = SubResource( 8 )
 centered = false
 flip_h = true
 
@@ -338,7 +336,7 @@ expand = true
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/HighScore/Icon"]
-frames = SubResource( 12 )
+frames = SubResource( 17 )
 frame = 5
 playing = true
 centered = false
@@ -383,7 +381,8 @@ size_flags_horizontal = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/CurrentScore/Icon"]
-frames = SubResource( 21 )
+frames = SubResource( 26 )
+frame = 1
 playing = true
 centered = false
 
@@ -422,7 +421,7 @@ alignment = 1
 margin_right = 16.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
-texture = SubResource( 2 )
+texture = SubResource( 27 )
 stretch_mode = 4
 
 [node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/YellowCrystal"]
@@ -462,7 +461,7 @@ alignment = 1
 margin_right = 16.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
-texture = SubResource( 3 )
+texture = SubResource( 28 )
 stretch_mode = 4
 
 [node name="X" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/BlueCrystal"]
@@ -562,9 +561,9 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="HContainer/RightScreen/VContainer/TopVContainer"]
-margin_top = 9.0
+margin_top = 20.0
 margin_right = 78.0
-margin_bottom = 22.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 12 )
 text = "BOSS"
@@ -572,16 +571,14 @@ align = 1
 valign = 1
 
 [node name="HContainer" type="HBoxContainer" parent="HContainer/RightScreen/VContainer/TopVContainer"]
-margin_top = 26.0
+margin_top = 37.0
 margin_right = 78.0
-margin_bottom = 48.0
+margin_bottom = 37.0
 alignment = 1
 
 [node name="Icon" type="TextureRect" parent="HContainer/RightScreen/VContainer/TopVContainer/HContainer"]
-margin_left = 26.0
-margin_right = 52.0
-margin_bottom = 22.0
-texture = ExtResource( 21 )
+margin_left = 39.0
+margin_right = 39.0
 stretch_mode = 4
 
 [node name="MidleVContainer" type="VBoxContainer" parent="HContainer/RightScreen/VContainer"]

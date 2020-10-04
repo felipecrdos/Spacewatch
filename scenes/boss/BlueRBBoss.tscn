@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 15 )
+extents = Vector2( 12, 12 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -42,14 +42,14 @@ __meta__ = {
 }
 
 [node name="LeftBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
-position = Vector2( -8, 7 )
+position = Vector2( -8, 12 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 80, 80 )
 ammo = ExtResource( 6 )
 
 [node name="RightBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
-position = Vector2( 8, 7 )
+position = Vector2( 8, 12 )
 rotation = 1.5708
 firerate = 40.0
 ammo_speed = Vector2( 80, 80 )

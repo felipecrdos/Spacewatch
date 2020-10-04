@@ -5,7 +5,7 @@ extends Enemy
 # Inicialização
 func _ready():
 	$ASprite.play("flying")
-	crystals = 1
+	score = 1
 	health = 10
 
 # Movimentação 

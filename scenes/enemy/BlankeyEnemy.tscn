@@ -5,17 +5,17 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 8, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "flying",
 "speed": 5.0
@@ -34,6 +34,6 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 8 )
+frames = SubResource( 4 )
 animation = "flying"
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]

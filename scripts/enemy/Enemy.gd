@@ -6,7 +6,7 @@ class_name Enemy
 var velocity : Vector2
 var direction : Vector2
 var speed : Vector2
-var crystals : int
+var score : int
 var damage : int
 var health : int
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
@@ -18,7 +18,7 @@ func _ready():
 	velocity = Vector2.ZERO
 	direction = Vector2.DOWN
 	speed = Vector2(100, 100)
-	crystals = 0
+	score = 0
 	damage = 1
 	health = 20
 
@@ -33,7 +33,7 @@ func destroy():
 	if(Global.choose(range(100)) <= 3):
 		Global.create_powerup(drop_health, position)
 		
-	for i in crystals:
+	for i in score:
 		Global.create_coin(drop_coin, position)
 	Global.create_explosion(explosion, position, "fire", Vector2(2, 2))
 	queue_free()

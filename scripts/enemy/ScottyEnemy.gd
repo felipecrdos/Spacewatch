@@ -12,7 +12,7 @@ func _ready():
 	angle = 0
 	time = 2
 	health = 20
-	crystals = 2
+	score = 2
 	radius = Vector2(30, 40)
 	speed = Vector2(100, 40)
 	sposition = position

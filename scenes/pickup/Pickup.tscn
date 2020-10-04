@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/pickup/Pickup.gd" type="Script" id=1]
 [ext_resource path="res://scenes/effect/Popup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/effect/PickupParticles.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Pickup" type="Area2D"]
 collision_layer = 4
@@ -16,6 +24,7 @@ popup = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

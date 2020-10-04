@@ -17,7 +17,7 @@ func _ready():
 	speed = Vector2(100, 30)
 	angle = Vector2(0, 90)
 	sposition = position
-	crystals = 1
+	score = 1
 	health = 15
 	time = 2
 	clockwise = Global.choose([true, false])

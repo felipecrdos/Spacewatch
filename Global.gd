@@ -4,7 +4,8 @@ extends Node
 enum {WAITING, FIGHTING, DIED}
 
 # Variáveis Globais.
-onready var transition = preload("res://scenes/interface/Transition.tscn");
+onready var transition = preload("res://scenes/interface/Transition.tscn")
+onready var textures = [preload("res://assets/sprite/other/health_player.png")]
 var player
 
 func _ready():
@@ -36,10 +37,10 @@ var game_data = {
 												 WAITING,
 												 WAITING,
 												 WAITING],
-										"texture":["res://assets/sprite/boss/rob_boss.png",
-													"res://assets/sprite/boss/demo_boss.png",
-													"res://assets/sprite/boss/purple_boss.png",
-													"res://assets/sprite/boss/bird_boss.png"]},
+										"texture":["res://assets/sprite/boss/levelA_boss.png",
+													"res://assets/sprite/boss/levelB_boss.png",
+													"res://assets/sprite/boss/levelC_boss.png",
+													"res://assets/sprite/boss/levelD_boss.png"]},
 								"index":0,
 								"name":["LevelA", "LevelB", "LevelC", "LevelD"], 
 								"path":["res://scenes/levels/LevelA.tscn",
@@ -113,13 +114,13 @@ func change_scene(scene : String):
 	get_tree().change_scene(scene)
 	transition.start(1, 0, 1, 0)
 #==
-func create_particle(packed : PackedScene, position : Vector2, color : Color):
+func create_particle(packed : PackedScene, position : Vector2, texture:Texture):
 	var particle = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", particle)
 	particle.set_deferred("position", position)
-	particle.set_deferred("modulate", color)
+	particle.set_particle_texture(texture)
 	particle.set_deferred("emitting", true)
-
+	
 func create_popup(packed : PackedScene, position : Vector2, text : String, color : Color, outline_color:Color):
 	var popup = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", popup)

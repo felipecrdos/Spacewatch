@@ -43,7 +43,7 @@ func _ready():
 	level_data = game_data["Level"]
 	
 	update_health(0)
-	update_crystal(0)
+	update_score(0)
 	update_powerup(0)
 	update_boss()
 	update_level()
@@ -62,7 +62,7 @@ func update_health(value : int, body=null):
 	if body:
 		body.update_health()
 
-func update_crystal(value : int):
+func update_score(value : int):
 	player_data["cscore"] += value
 	var aux = [50, 150, 250, 400]
 	# Change level index test

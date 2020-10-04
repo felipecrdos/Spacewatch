@@ -13,4 +13,5 @@ firerate = 5.0
 ammo = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 2 )

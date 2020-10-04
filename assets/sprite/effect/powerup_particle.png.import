@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bird_boss.png-f5f1fbaca4fe0bc594740dba1a37a7b8.stex"
+path="res://.import/powerup_particle.png-00eaca54224001830a59673f5c46e635.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/boss/bird_boss.png"
-dest_files=[ "res://.import/bird_boss.png-f5f1fbaca4fe0bc594740dba1a37a7b8.stex" ]
+source_file="res://assets/sprite/effect/powerup_particle.png"
+dest_files=[ "res://.import/powerup_particle.png-00eaca54224001830a59673f5c46e635.stex" ]
 
 [params]
 

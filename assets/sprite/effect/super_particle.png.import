@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/demo_boss.png-1870028406165b06c2feaf7ed9ebf498.stex"
+path="res://.import/super_particle.png-2f8f2e138759dee9ec6bcd0139b89d1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/boss/demo_boss.png"
-dest_files=[ "res://.import/demo_boss.png-1870028406165b06c2feaf7ed9ebf498.stex" ]
+source_file="res://assets/sprite/effect/super_particle.png"
+dest_files=[ "res://.import/super_particle.png-2f8f2e138759dee9ec6bcd0139b89d1c.stex" ]
 
 [params]
 

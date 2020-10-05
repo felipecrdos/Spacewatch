@@ -68,7 +68,10 @@ func input():
 		direction.y = -1
 	if Input.is_action_pressed("ui_accept"):
 		weapons[player_data["powerup"]].shoot()
-
+	if Input.is_action_just_pressed("ui_super"):
+		if player_data["super"] > 0:
+			get_tree().call_group("world", "update_super", -1)
+	
 	if Input.is_key_pressed(KEY_1):
 		SoundManager.play_sfx("SelectButton")
 		
@@ -98,17 +101,18 @@ func update_weapon():
 	weapons[player_data["powerup"]].visible = true
 
 func idle_state(delta):
-	$ASprite.play("vertical")
+	$ASprite.play("default")
 	
 func flying_state(delta):
-	if direction.x != 0:
-		$ASprite.play("horizontal")
-		$ASprite.flip_h = true if direction.x > 0 else false
+	if direction.x > 0:
+		$ASprite.play("right")
+	elif direction.x < 0:
+		$ASprite.play("left")
 	else:
-		$ASprite.play("vertical")
+		$ASprite.play("default")
 	
 func invulnerable_state(delta):
-	$ASprite.play("vertical")
+	$ASprite.play("default")
 	state = State.FLYING
 	
 func dying_state(delta):

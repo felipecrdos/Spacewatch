@@ -1,19 +1,18 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/player/MachineGun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/weapon/player/MatterGun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/weapon/player/LaserGun.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/weapon/player/RocketGun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_01_png_processed.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_02_png_processed.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite/player/PlayerBlue_Frame_03_png_processed.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 const vec3 white = vec3(1.0, 1.0, 1.0);
 uniform bool flashing = false;
@@ -28,25 +27,50 @@ void fragment(){
 }"
 custom_defines = ""
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
-shader = SubResource( 5 )
+shader = SubResource( 3 )
 shader_param/flashing = false
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 256, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 288, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 288, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 224, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 3 ) ],
-"loop": false,
-"name": "vertical",
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "horizontal",
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -73,13 +97,14 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-material = SubResource( 6 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 4 )
-animation = "vertical"
+material = SubResource( 4 )
+frames = SubResource( 6 )
+animation = "left"
+speed_scale = 3.0
+playing = true
 
 [node name="TShader" type="Timer" parent="."]
-wait_time = 0.08
+wait_time = 0.1
 one_shot = true
 
 [node name="Weapon" type="Node2D" parent="."]

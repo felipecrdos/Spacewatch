@@ -1,4 +1,5 @@
 extends Enemy
+class_name BEnemy
 
 var time : float
 var clockwise : bool

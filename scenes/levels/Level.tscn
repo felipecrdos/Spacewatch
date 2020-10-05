@@ -6,10 +6,13 @@
 [ext_resource path="res://assets/sprite/environment/bg_cloud_one.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprite/environment/bg_cloud_three.png" type="Texture" id=5]
 [ext_resource path="res://scripts/levels/Level.gd" type="Script" id=6]
-[ext_resource path="res://scenes/enemy/SpawnBlankey.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/enemy/SpawnHermie.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/enemy/SpawnScotty.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemy/SpawnAEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemy/SpawnBEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/boss/BossPath.gd" type="Script" id=14]
+
+
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/enemy/AEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/enemy/SpawnAEnemy.gd" type="Script" id=2]
+
+[node name="SpawnAEnemy" type="Position2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+enemy = ExtResource( 1 )

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 const vec3 white = vec3(1.0, 1.0, 1.0);
 uniform bool flashing = false;
@@ -16,5 +16,5 @@ void fragment(){
 custom_defines = ""
 
 [resource]
-shader = SubResource( 5 )
+shader = SubResource( 1 )
 shader_param/flashing = false

@@ -6,3 +6,4 @@ func _ready():
 	damage = 1
 	health = 200
 	max_health = health
+	

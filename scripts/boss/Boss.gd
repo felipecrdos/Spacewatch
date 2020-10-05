@@ -43,8 +43,18 @@ func on_boss_area_entered(area):
 		if health <= 0:
 			Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
 			destroy()
-
+		else:
+			set_flash_effect(true)
+			$Timer.start()
+			
+			
 func emit_smoke(value:bool):
 	is_damaged = true
 	for particle in $Smoke.get_children():
 		particle.set_emitting(true)
+		
+func set_flash_effect(value : bool):
+	$ASprite.material.set_shader_param("flashing", value)
+	
+func on_timer_timeout():
+	set_flash_effect(false)

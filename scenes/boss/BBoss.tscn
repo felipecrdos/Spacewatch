@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/boss/BBoss.gd" type="Script" id=2]
@@ -7,16 +7,35 @@
 [ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
 
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+const vec3 white = vec3(1.0, 1.0, 1.0);
+uniform bool flashing = false;
+
+void fragment(){
+	vec4 color = texture(TEXTURE, UV);
+	vec4 flash = vec4(white, color.a);
+	if (flashing)
+		COLOR = flash;
+	else
+		COLOR = color;
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = SubResource( 2 )
+shader_param/flashing = false
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 14 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 6 )
 region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -54,18 +73,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=16]
+[sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
 colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=17]
-gradient = SubResource( 16 )
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=12]
 _data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=19]
-curve = SubResource( 18 )
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
 
 [sub_resource type="ParticlesMaterial" id=14]
 flag_disable_z = true
@@ -73,25 +92,26 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 
 [sub_resource type="StreamTexture" id=15]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=16]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 
-[sub_resource type="StreamTexture" id=21]
+[sub_resource type="StreamTexture" id=17]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="BBoss" type="Area2D"]
+material = SubResource( 18 )
 z_index = 10
 collision_layer = 2
 collision_mask = 33
@@ -160,25 +180,20 @@ __meta__ = {
 
 [node name="Smoke" type="Node2D" parent="."]
 
-[node name="LSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 1 )]
-use_parent_material = true
+[node name="LSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( 10, -5 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
 process_material = SubResource( 14 )
 texture = SubResource( 15 )
 
-[node name="RSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 1 )]
-use_parent_material = true
+[node name="RSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( -10, 10 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
-process_material = SubResource( 20 )
-texture = SubResource( 21 )
+process_material = SubResource( 16 )
+texture = SubResource( 17 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
 [connection signal="timeout" from="Weapons/ECircularGun/StartShoot" to="Weapons/ECircularGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ECircularGun/StopShoot" to="Weapons/ECircularGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

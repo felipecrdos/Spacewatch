@@ -9,6 +9,7 @@ var speed : Vector2
 var score : int
 var damage : int
 var health : int
+var is_hit : bool
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
 onready var drop_powerup = preload("res://scenes/pickup/Powerup.tscn")
@@ -47,4 +48,12 @@ func on_enemy_area_entered(area):
 		if health <= 0:
 			Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
 			destroy()
+		else:
+			set_flash_effect(true)
+			$Timer.start()
+			
+func set_flash_effect(value : bool):
+	$ASprite.material.set_shader_param("flashing", value)
 
+func on_timer_timeout():
+	set_flash_effect(false)

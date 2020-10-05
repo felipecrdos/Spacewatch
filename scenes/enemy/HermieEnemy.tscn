@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/enemy/HermieEnemy.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=3]
@@ -6,7 +6,27 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+const vec3 white = vec3(1.0, 1.0, 1.0);
+uniform bool flashing = false;
+
+void fragment(){
+	vec4 color = texture(TEXTURE, UV);
+	vec4 flash = vec4(white, color.a);
+	if (flashing)
+		COLOR = flash;
+	else
+		COLOR = color;
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/flashing = false
+
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 40, 0, 8, 8 )
 
@@ -16,7 +36,7 @@ region = Rect2( 40, 8, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 6 ), SubResource( 3 ) ],
 "loop": true,
 "name": "flying",
 "speed": 5.0
@@ -35,6 +55,12 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
+material = SubResource( 5 )
 frames = SubResource( 4 )
 animation = "flying"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

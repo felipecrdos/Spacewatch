@@ -248,6 +248,7 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DLeft"]
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="DRight" type="Position2D" parent="Exhaust"]
@@ -260,6 +261,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DRight"]
 frames = SubResource( 9 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -272,6 +274,7 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/ULeft"]
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="URight" type="Position2D" parent="Exhaust"]
@@ -284,7 +287,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/URight"]
 frames = SubResource( 15 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -292,23 +294,13 @@ __meta__ = {
 
 [node name="Smoke" type="Node2D" parent="."]
 
-[node name="LSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
-use_parent_material = true
+[node name="LSmoke" parent="Smoke" instance=ExtResource( 7 )]
 position = Vector2( -12, 0 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
 process_material = SubResource( 20 )
 texture = SubResource( 21 )
 
-[node name="RSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
-use_parent_material = true
+[node name="RSmoke" parent="Smoke" instance=ExtResource( 7 )]
 position = Vector2( 12, 12 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
 process_material = SubResource( 22 )
 texture = SubResource( 23 )
 
@@ -316,8 +308,13 @@ texture = SubResource( 23 )
 position = Vector2( 8, -12 )
 process_material = SubResource( 24 )
 texture = SubResource( 25 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
 [connection signal="timeout" from="Weapons/ERadiusGun/StartShoot" to="Weapons/ERadiusGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ERadiusGun/StopShoot" to="Weapons/ERadiusGun" method="on_stop_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ECircularGun/StartShoot" to="Weapons/ECircularGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ECircularGun/StopShoot" to="Weapons/ECircularGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

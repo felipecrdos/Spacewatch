@@ -55,18 +55,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=16]
+[sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
 colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=17]
-gradient = SubResource( 16 )
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=12]
 _data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=19]
-curve = SubResource( 18 )
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
 
 [sub_resource type="ParticlesMaterial" id=14]
 flag_disable_z = true
@@ -74,22 +74,22 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 
 [sub_resource type="StreamTexture" id=15]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=16]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 
-[sub_resource type="StreamTexture" id=21]
+[sub_resource type="StreamTexture" id=17]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="CBoss" type="Area2D"]
@@ -166,6 +166,7 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -178,7 +179,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -186,27 +186,22 @@ __meta__ = {
 
 [node name="Smoke" type="Node2D" parent="."]
 
-[node name="LSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
-use_parent_material = true
+[node name="LSmoke" parent="Smoke" instance=ExtResource( 7 )]
 position = Vector2( 0, -14 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
 process_material = SubResource( 14 )
 texture = SubResource( 15 )
 
-[node name="RSmoke" type="Particles2D" parent="Smoke" instance=ExtResource( 7 )]
-use_parent_material = true
+[node name="RSmoke" parent="Smoke" instance=ExtResource( 7 )]
 position = Vector2( 0, 12 )
-emitting = false
-amount = 5
-randomness = 0.5
-local_coords = false
-process_material = SubResource( 20 )
-texture = SubResource( 21 )
+process_material = SubResource( 16 )
+texture = SubResource( 17 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
 [connection signal="timeout" from="Weapons/EMachineGun/StartShoot" to="Weapons/EMachineGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/EMachineGun/StopShoot" to="Weapons/EMachineGun" method="on_stop_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ECircularGun/StartShoot" to="Weapons/ECircularGun" method="on_start_shoot_timeout"]
 [connection signal="timeout" from="Weapons/ECircularGun/StopShoot" to="Weapons/ECircularGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

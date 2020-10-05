@@ -87,6 +87,7 @@ func set_limits():
 
 func update_health():
 	if player_data["health"] > 0:
+		
 		state = State.INVULNERABLE
 	elif player_data["health"] <= 0:
 		state = State.DYING
@@ -118,14 +119,18 @@ func dying_state(delta):
 	Global.change_scene("res://scenes/interface/GameOver.tscn")
 	queue_free()
 	
-func on_timer_timeout():
-	pass
-
 # Sinal disparado quando qualquer tipo de inimigo atinge o player
 func on_area_entered(area):
 	SoundManager.play_sfx("PlayerHurt")
 	get_tree().call_group("world", "update_health", -area.damage, self)
 	Global.findnode("MCamera").shake(5, 30)
 	area.destroy()
+	set_flash_effect(true)
+	$TShader.start()
+
 		
-		
+func set_flash_effect(value : bool):
+	$ASprite.material.set_shader_param("flashing", value)
+	
+func on_tshader_timeout():
+	set_flash_effect(false)

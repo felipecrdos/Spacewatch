@@ -1,10 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/enemy/Enemy.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+const vec3 white = vec3(1.0, 1.0, 1.0);
+uniform bool flashing = false;
+
+void fragment(){
+	vec4 color = texture(TEXTURE, UV);
+	vec4 flash = vec4(white, color.a);
+	if (flashing)
+		COLOR = flash;
+	else
+		COLOR = color;
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/flashing = false
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -21,5 +41,11 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+material = SubResource( 3 )
+frames = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

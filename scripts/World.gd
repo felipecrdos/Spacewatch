@@ -46,6 +46,7 @@ func _ready():
 	update_health(0)
 	update_score(0)
 	update_powerup(0)
+	update_super(0)
 	update_boss()
 	update_level()
 	add_level()
@@ -92,8 +93,7 @@ func update_super(value : int, body=null):
 	player_data["super"] += value
 	player_data["super"] = clamp(	player_data["super"], 
 									0, player_data["maxsuper"]-1)
-	powerup.text = str(player_data["super"])
-	weapon.texture = load(player_data["weapon"][player_data["super"]])
+	super.text = str(player_data["super"])
 #	if body:
 #		body.update_weapon()
 

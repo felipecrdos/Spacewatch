@@ -21,6 +21,8 @@ var game_data = {
 								"maxhealth":4, 
 								"powerup":0,
 								"maxpowerup":4, 
+								"super":0,
+								"maxsuper":4,
 								"cscore":0,
 								"hscore":0,
 								"weapon":["res://assets/sprite/weapon/mg_side.png",
@@ -135,10 +137,15 @@ func create_coin(packed : PackedScene, position : Vector2):
 	coin.set_deferred("position", position)
 
 func create_powerup(packed : PackedScene, position : Vector2):
-	var power_up = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", power_up);
-	power_up.set_deferred("position", position)
+	var powerup = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", powerup);
+	powerup.set_deferred("position", position)
 
+func create_super(packed : PackedScene, position : Vector2):
+	var super = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", super);
+	super.set_deferred("position", position)
+	
 func create_health(packed : PackedScene, position : Vector2):
 	var health = packed.instance()
 	Global.findnode("PickupContainer").call_deferred("add_child", health);

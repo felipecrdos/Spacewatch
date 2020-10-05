@@ -1,4 +1,4 @@
-# Cena cristal que representa o score do player.
+# Cena coin que representa o score do player.
 # Herda da cena Pickup.
 extends Pickup
 class_name Coin
@@ -21,20 +21,21 @@ func _physics_process(delta):
 	direction *= delta
 	position += direction
 
-# Sinal recebido quando um body colide com o cristal
+# Sinal recebido quando um body colide com a moeda
 func on_pickup_body_entered(body):
+	SoundManager.play_sfx("CoinPickup")
 	get_tree().call_group("world", "update_score", int(value))
 	destroy()
 
-# Função chamada para destruir o cristal ao ser coletada.
-# É criado um popup com o valor do cristal. Também é
-# criado particulas para efeito de coleta do cristal.
+# Função chamada para destruir a moeda ao ser coletada.
+# É criado um popup com o valor da moeda. Também é
+# criado particulas para efeito de coleta da moeda.
 func destroy():
 	Global.create_popup(popup, position, value, Color.goldenrod, Color.bisque)
 	Global.create_particle(particle, position, particle_texture)
 	queue_free()
 
-# Sinal recebido para que o cristal vá de encontro ao player
+# Sinal recebido para que a moeda vá de encontro ao player
 func on_timer_timeout():
 	if Global.player:
 		target = Global.player.position

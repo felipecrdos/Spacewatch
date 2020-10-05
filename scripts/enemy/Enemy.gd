@@ -14,6 +14,8 @@ onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
 onready var drop_powerup = preload("res://scenes/pickup/Powerup.tscn")
 onready var drop_health = preload("res://scenes/pickup/Health.tscn")
+onready var drop_super = preload("res://scenes/pickup/Super.tscn")
+
 # Inicialização
 func _ready():
 	velocity = Vector2.ZERO
@@ -33,6 +35,9 @@ func destroy():
 	
 	if(Global.choose(range(100)) <= 3):
 		Global.create_powerup(drop_health, position)
+	
+	if(Global.choose(range(100)) <= 10):
+		Global.create_super(drop_super, position)
 		
 	for i in score:
 		Global.create_coin(drop_coin, position)

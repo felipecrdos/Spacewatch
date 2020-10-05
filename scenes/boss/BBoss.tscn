@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/boss/BBoss.gd" type="Script" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
+[ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 const vec3 white = vec3(1.0, 1.0, 1.0);
 uniform bool flashing = false;
@@ -22,81 +23,69 @@ void fragment(){
 }"
 custom_defines = ""
 
-[sub_resource type="ShaderMaterial" id=18]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/flashing = false
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 14, 14 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ SubResource( 19 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 208, 16, 13 )
+region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 6 )
-region = Rect2( 48, 208, 16, 13 )
-
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 208, 16, 13 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 208, 16, 13 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 6 )
 region = Rect2( 48, 208, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 208, 16, 13 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 208, 16, 13 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=12]
 offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
 colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=14]
 _data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
-
-[sub_resource type="ParticlesMaterial" id=14]
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_random = 1.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
-
-[sub_resource type="StreamTexture" id=15]
-load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
 
 [sub_resource type="ParticlesMaterial" id=16]
 flag_disable_z = true
@@ -104,24 +93,37 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
 
 [sub_resource type="StreamTexture" id=17]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
+[sub_resource type="ParticlesMaterial" id=18]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
+
+[sub_resource type="StreamTexture" id=19]
+load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+
 [node name="BBoss" type="Area2D"]
-material = SubResource( 18 )
+material = SubResource( 2 )
 z_index = 10
 collision_layer = 2
 collision_mask = 33
 script = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+material = ExtResource( 7 )
+frames = SubResource( 5 )
 
 [node name="Weapons" type="Node2D" parent="."]
 
@@ -159,7 +161,7 @@ rotation = 0.907571
 scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 frame = 1
 playing = true
 
@@ -172,7 +174,7 @@ __meta__ = {
 }
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
-frames = SubResource( 9 )
+frames = SubResource( 11 )
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -182,13 +184,13 @@ __meta__ = {
 
 [node name="LSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( 10, -5 )
-process_material = SubResource( 14 )
-texture = SubResource( 15 )
+process_material = SubResource( 16 )
+texture = SubResource( 17 )
 
 [node name="RSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( -10, 10 )
-process_material = SubResource( 16 )
-texture = SubResource( 17 )
+process_material = SubResource( 18 )
+texture = SubResource( 19 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05

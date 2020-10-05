@@ -16,5 +16,6 @@ void fragment(){
 custom_defines = ""
 
 [resource]
+resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/flashing = false

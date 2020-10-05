@@ -17,6 +17,6 @@ func on_pickup_body_entered(body):
 	destroy()
 
 func destroy():
-	Global.create_popup(popup, position, value, Color.green, Color.bisque)
+	Global.create_popup(popup, position, value, Color.greenyellow, Color.bisque)
 	Global.create_particle(particle, position, particle_texture)
 	queue_free()

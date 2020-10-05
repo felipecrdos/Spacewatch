@@ -29,7 +29,6 @@ ammo = ExtResource( 3 )
 
 [node name="P45Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 firerate = 30.0
 ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )

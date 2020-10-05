@@ -15,5 +15,19 @@ func disable_player():
 	if $ActorContainer.has_node("Player"):
 		$ActorContainer/Player/Shape.set_deferred("disabled", true)
 
-func boss_path_move_down():
+func wakeup_boss(time : float):
+	$Timer.set_wait_time(time)
+	$Timer.start()
+	
+func on_timer_timeout():
+	stop_spawn_enemies()
+	active_boss_attack()
 	$BossPath/APlayer.play("down")
+	
+func stop_spawn_enemies():
+	for spawn in $SpawnContainer.get_children():
+		spawn.set_deferred("can_spawn", false)
+
+func active_boss_attack():
+	$BossPath/Follow.get_child(0).active_weapons()
+	

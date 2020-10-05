@@ -30,8 +30,8 @@ script = ExtResource( 2 )
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.14902, 0.682353, 1, 1 )
 
-[node name="BossPath" parent="." index="5"]
+[node name="BossPath" parent="." index="6"]
 curve = SubResource( 1 )
 script = SubResource( 2 )
 
-[node name="BlueRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
+[node name="ABoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]

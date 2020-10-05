@@ -1,8 +1,5 @@
 extends Node
 
-# enum Boss State
-enum {WAITING, FIGHTING, DIED}
-
 # Variáveis Globais.
 onready var transition = preload("res://scenes/interface/Transition.tscn")
 #onready var textures = [preload("res://assets/sprite/other/health_player.png")]
@@ -31,14 +28,10 @@ var game_data = {
 										  "res://assets/sprite/weapon/rocket_side.png"]
 							},
 					"Level":{	"difficulty":"Easy", 
-								"boss":{"name":["YellowBoss", 
-												"GreenBoss", 
-												"OrangeBoss", 
-												"RedBoss"],
-										"state":[WAITING,
-												 WAITING,
-												 WAITING,
-												 WAITING],
+								"boss":{"name":["YELLOWBOSS", 
+												"GREENBOSS", 
+												"ORANGEBOSS", 
+												"REDBOSS"],
 										"texture":["res://assets/sprite/boss/levelA_boss.png",
 													"res://assets/sprite/boss/levelB_boss.png",
 													"res://assets/sprite/boss/levelC_boss.png",
@@ -71,11 +64,6 @@ func load_default_data():
 	game_data["Player"]["health"] = default_game_data["Player"]["health"]
 	game_data["Player"]["cscore"] = default_game_data["Player"]["cscore"]
 	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
-	
-	# reset boss state
-	var n = game_data["Level"]["boss"]["state"].size()
-	for i in range(n):
-		game_data["Level"]["boss"]["state"][i] = WAITING
 #===
 func choose(values:Array):
 	if !values.empty():
@@ -91,16 +79,6 @@ func findnode(node:String):
 		if find:
 			break
 	return find
-#==
-func get_boss_state():
-	var boss_states = game_data["Level"]["boss"]["state"]
-	var level_index = game_data["Level"]["index"]
-	return boss_states[level_index]
-
-func set_boss_state(state : int):
-	var boss_states = game_data["Level"]["boss"]["state"]
-	var level_index = game_data["Level"]["index"]
-	boss_states[level_index] = state
 
 func add_level_index():
 	var index = game_data["Level"]["index"]

@@ -26,11 +26,11 @@ func _physics_process(delta):
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="BossPath" parent="." index="5"]
+[node name="BossPath" parent="." index="6"]
 curve = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="Follow" parent="BossPath" index="0"]
 position = Vector2( 88, 8 )
 
-[node name="OrangeRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
+[node name="BBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]

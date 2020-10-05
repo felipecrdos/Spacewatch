@@ -30,13 +30,14 @@ func _ready():
 func destroy():
 	Global.findnode("MCamera").shake(2, 5)
 	SoundManager.play_sfx("EnemyExplosion")
-	if(Global.choose(range(100)) <= 3):
+	
+	randomize()
+	var chance = randi() % 100 + 1 # 1 a 100
+	if(chance%25 == 0): # health chance drop 4%
+		Global.create_health(drop_health, position)
+	elif(chance%30 == 0): # powerup chance drop 3%
 		Global.create_powerup(drop_powerup, position)
-	
-	if(Global.choose(range(100)) <= 3):
-		Global.create_powerup(drop_health, position)
-	
-	if(Global.choose(range(100)) <= 10):
+	elif(chance%50 == 0): # super chance drop 2%
 		Global.create_super(drop_super, position)
 		
 	for i in score:

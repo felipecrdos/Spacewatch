@@ -24,7 +24,6 @@ func destroy():
 	for i in score:
 		Global.create_coin(drop_coin, global_position)
 	Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
-	Global.set_boss_state(Global.DIED)
 	if Global.add_level_index():
 		get_tree().call_group("world", "transition_level", 4.0)
 	else:
@@ -61,3 +60,7 @@ func set_flash_effect(value : bool):
 	
 func on_timer_timeout():
 	set_flash_effect(false)
+
+func active_weapons():
+	for weapon in $Weapons.get_children():
+		weapon.set_deferred("active", true)

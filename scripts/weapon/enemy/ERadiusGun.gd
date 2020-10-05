@@ -2,13 +2,14 @@ extends Weapon
 class_name ERadiusGun
 
 var can_shooting = false
+var active = false
 
 func _ready():
 	get_barrels()
 	$StartShoot.start()
 
 func _physics_process(delta):
-	if can_shooting:
+	if active && can_shooting:
 		shoot()
 
 func rotation_barrels():

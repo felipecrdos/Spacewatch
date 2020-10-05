@@ -11,9 +11,6 @@
 [ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/boss/BossPath.gd" type="Script" id=14]
 
-
-
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( -16.379, 12.9142, 16.379, -12.9142, 92.7372, 34.8451, -12.2039, 15.7545, 12.2039, -15.7545, 93, 7.02041, 0, 0, 0, 0, 217.018, 7.22725, 19.2355, -12.5083, -19.2355, 12.5083, 217.018, 35.736, 80.32, -26.1434, -80.32, 26.1434, 92.7372, 34.8451 )
@@ -33,7 +30,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -88, -80 ), Vector2( -88, 10 ) ]
+"values": [ Vector2( -88, -100 ), Vector2( -88, 10 ) ]
 }
 
 [node name="Level" type="Node2D"]
@@ -76,20 +73,22 @@ delay = Vector2( 1, 1 )
 [node name="Player" parent="ActorContainer" instance=ExtResource( 3 )]
 position = Vector2( 156.843, 161.515 )
 
-[node name="SpawnScotty" parent="ActorContainer" instance=ExtResource( 11 )]
-position = Vector2( 80, -50 )
+[node name="SpawnContainer" type="Node2D" parent="."]
 
-[node name="SpawnBlankey" parent="ActorContainer" instance=ExtResource( 9 )]
+[node name="SpawnAEnemy" parent="SpawnContainer" instance=ExtResource( 9 )]
 
-[node name="SpawnHermie" parent="ActorContainer" instance=ExtResource( 10 )]
+[node name="SpawnBEnemy" parent="SpawnContainer" instance=ExtResource( 10 )]
 position = Vector2( 80, -70 )
+
+[node name="SpawnCEnemy" parent="SpawnContainer" instance=ExtResource( 11 )]
+position = Vector2( 80, -50 )
 
 [node name="PickupContainer" type="Node2D" parent="."]
 
 [node name="EffectContainer" type="Node2D" parent="."]
 
 [node name="BossPath" type="Path2D" parent="."]
-position = Vector2( -88, -80 )
+position = Vector2( -88, -100 )
 curve = SubResource( 1 )
 script = ExtResource( 14 )
 
@@ -99,3 +98,8 @@ rotate = false
 
 [node name="APlayer" type="AnimationPlayer" parent="BossPath"]
 anims/down = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

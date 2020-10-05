@@ -3,9 +3,11 @@ extends Position2D
 
 # Variáveis
 export (PackedScene) var enemy
-var screen_width
-var screen_height
-var offset		: Vector2
+
+var can_spawn		: bool
+var screen_width	: float
+var screen_height	: float
+var offset			: Vector2
 
 # Inicializar
 func _ready():
@@ -23,5 +25,6 @@ func spawn_enemy():
 	Global.findnode("ActorContainer").call_deferred("add_child", new)
 
 func on_timer_timeout():
-	if Global.get_boss_state() == Global.WAITING:
+	#if Global.get_boss_state() == Global.WAITING:
+	if can_spawn:
 		spawn_enemy()

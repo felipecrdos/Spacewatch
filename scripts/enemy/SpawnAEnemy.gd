@@ -6,6 +6,7 @@ export (PackedScene) var enemy
 var screen_width
 var screen_height
 
+var can_spawn	: bool
 var velocity 	: Vector2
 var speed 		: Vector2
 var direction 	: Vector2
@@ -16,6 +17,7 @@ func _ready():
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
 	
+	can_spawn = true
 	velocity = Vector2.ZERO
 	direction = Vector2.RIGHT
 	speed = Vector2(100, 100)
@@ -37,9 +39,8 @@ func set_bounds():
 	elif position.x >= screen_width:
 		direction.x = -1
 		on_bound = true
-	if on_bound:
-		if Global.get_boss_state() == Global.WAITING:
-			spawn_enemy()
+	if can_spawn && on_bound:
+		spawn_enemy()
 
 # A Função spawn_enemy é chamada quando a scene
 # spawner tocar os limites da tela

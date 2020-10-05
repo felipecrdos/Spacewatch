@@ -4,7 +4,6 @@
 [ext_resource path="res://scripts/levels/LevelC.gd" type="Script" id=2]
 [ext_resource path="res://scenes/boss/CBoss.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 96, 0, 0, 0, 0, 0, 96, 48, 0, 0, 0, 0, 232, 48, 0, 0, 0, 0, 232, 0, 0, 0, 0, 0, 192, 0, 0, 0, 0, 0, 192, 72, 0, 0, 0, 0, 136, 72, 0, 0, 0, 0, 136, 0, 0, 0, 0, 0, 96, 0 )
@@ -30,11 +29,11 @@ script = ExtResource( 2 )
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.741176, 0.501961, 1, 1 )
 
-[node name="BossPath" parent="." index="5"]
+[node name="BossPath" parent="." index="6"]
 curve = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="Follow" parent="BossPath" index="0"]
 position = Vector2( 96, 0 )
 
-[node name="PurpleRBBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
+[node name="CBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]

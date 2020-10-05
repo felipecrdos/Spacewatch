@@ -66,14 +66,6 @@ func update_health(value : int, body=null):
 
 func update_score(value : int):
 	player_data["cscore"] += value
-	var aux = [50, 150, 250, 400]
-	# Change level index test
-	if player_data["cscore"] != 0:
-		if player_data["cscore"] == aux[level_data["index"]]:
-			if Global.get_boss_state() == Global.WAITING:
-				Global.set_boss_state(Global.FIGHTING)
-				level.boss_path_move_down()
-				
 	if player_data["cscore"] > player_data["hscore"]:
 		player_data["hscore"] = player_data["cscore"]
 		
@@ -115,7 +107,6 @@ func transition_level(time : float = 0.0):
 	var index = level_data["index"]
 	SoundManager.fade_out_music(level_data["name"][index-1])
 	yield(get_tree().create_timer(time), "timeout")
-	level.disable_player()
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")
 	remove_level()

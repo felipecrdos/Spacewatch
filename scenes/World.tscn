@@ -348,7 +348,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBHighScore/HBoxContainer/IScore"]
 frames = SubResource( 17 )
-frame = 5
+frame = 1
 playing = true
 centered = false
 
@@ -398,7 +398,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBCurrentScore/HBoxContainer/IScore"]
 frames = SubResource( 26 )
-frame = 1
+frame = 5
 playing = true
 centered = false
 
@@ -510,14 +510,16 @@ centered = false
 [node name="MVBSuper" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer"]
 margin_top = 61.0
 margin_right = 78.0
-margin_bottom = 74.0
+margin_bottom = 76.0
 custom_constants/margin_right = 2
+custom_constants/margin_top = 2
 custom_constants/margin_left = 5
 
 [node name="Super" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBSuper"]
 margin_left = 5.0
+margin_top = 2.0
 margin_right = 76.0
-margin_bottom = 13.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 alignment = 1
 

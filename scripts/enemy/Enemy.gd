@@ -41,7 +41,6 @@ func destroy():
 		
 	for i in score:
 		Global.create_coin(drop_coin, position)
-	Global.create_explosion(explosion, position, "fire", Vector2(2, 2))
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
@@ -51,7 +50,7 @@ func on_enemy_area_entered(area):
 		area.destroy()
 	
 		if health <= 0:
-			Global.create_explosion(explosion, position, "puff", Vector2(2, 2))
+			Global.create_explosion(explosion, position, "fire", Vector2(2, 2))
 			destroy()
 		else:
 			set_flash_effect(true)

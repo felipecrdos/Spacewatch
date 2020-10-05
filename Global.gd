@@ -5,7 +5,7 @@ enum {WAITING, FIGHTING, DIED}
 
 # Variáveis Globais.
 onready var transition = preload("res://scenes/interface/Transition.tscn")
-onready var textures = [preload("res://assets/sprite/other/health_player.png")]
+#onready var textures = [preload("res://assets/sprite/other/health_player.png")]
 var player
 
 func _ready():
@@ -151,9 +151,9 @@ func create_health(packed : PackedScene, position : Vector2):
 	Global.findnode("PickupContainer").call_deferred("add_child", health);
 	health.set_deferred("position", position)
 	
-func create_explosion(packed : PackedScene, position : Vector2, anim : String, scale : Vector2):
+func create_explosion(packed : PackedScene, position : Vector2, anim : String, scale : Vector2, speed : float = 20):
 	var explosion = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", explosion)
 	explosion.set_deferred("position", position)
 	explosion.set_deferred("scale", scale)
-	explosion.call_deferred("play", anim)
+	explosion.call_deferred("play", anim, speed)

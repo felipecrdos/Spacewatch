@@ -41,7 +41,10 @@ func on_boss_area_entered(area):
 			emit_smoke(true)
 			
 		if health <= 0:
-			Global.create_explosion(explosion, global_position, "puff", Vector2(2, 2))
+			Global.create_explosion(explosion, global_position, "fire", Vector2(3, 3), 5)
+			Global.create_explosion(explosion, global_position+Vector2(0, 30), "fire", Vector2(2, 2), 8)
+			Global.create_explosion(explosion, global_position+Vector2(30, 0), "fire", Vector2(1, 1), 10)
+			Global.create_explosion(explosion, global_position+Vector2(-30, 0), "fire", Vector2(1, 1), 10)
 			destroy()
 		else:
 			set_flash_effect(true)

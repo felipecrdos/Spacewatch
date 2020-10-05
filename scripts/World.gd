@@ -9,6 +9,7 @@ var curr_score
 var high_score
 var weapon
 var powerup
+var super
 
 var boss_name 
 var boss_texture
@@ -28,12 +29,12 @@ func _ready():
 	mviewport = $HContainer/MidleScreen/Viewport
 	rviewport = $HContainer/RightScreen/Viewport
 	
-	healths = $HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/HContainer
-	curr_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/CurrentScore/Label
-	high_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Score/HighScore/Label
-	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/HContainer/Icon
-	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/Powerup/Label
-	
+	healths = $HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/MIHealth/HBHealth
+	curr_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBCurrentScore/HBoxContainer/VScore
+	high_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBHighScore/HBoxContainer/VScore
+	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBPowerup/Powerup/MHBPowerup/HContainer/IGun/Sprite
+	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBPowerup/Powerup/MHBPowerup/HContainer/Label
+	super = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBSuper/Super/Label
 	boss_name = $HContainer/RightScreen/VContainer/TopVContainer/Label 
 	boss_texture = $HContainer/RightScreen/VContainer/TopVContainer/HContainer/Icon
 	level_name = $HContainer/RightScreen/VContainer/MidleVContainer/LevelName
@@ -82,9 +83,19 @@ func update_powerup(value : int, body=null):
 	player_data["powerup"] += value
 	player_data["powerup"] = clamp(	player_data["powerup"], 
 									0, player_data["maxpowerup"]-1)
+	powerup.text = str(player_data["powerup"])
 	weapon.texture = load(player_data["weapon"][player_data["powerup"]])
 	if body:
 		body.update_weapon()
+
+func update_super(value : int, body=null):
+	player_data["super"] += value
+	player_data["super"] = clamp(	player_data["super"], 
+									0, player_data["maxsuper"]-1)
+	powerup.text = str(player_data["super"])
+	weapon.texture = load(player_data["weapon"][player_data["super"]])
+#	if body:
+#		body.update_weapon()
 
 func update_boss():
 	var index = level_data["index"]

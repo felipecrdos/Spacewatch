@@ -2,10 +2,10 @@
 
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Player.gd" type="Script" id=2]
-[ext_resource path="res://scenes/weapon/player/MachineGun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/weapon/player/MatterGun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/weapon/player/LaserGun.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/weapon/player/RocketGun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/weapon/player/AGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/weapon/player/CGun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/weapon/player/BGun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/weapon/player/DGun.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -99,6 +99,7 @@ shape = SubResource( 2 )
 material = SubResource( 4 )
 frames = SubResource( 11 )
 animation = "left"
+frame = 1
 speed_scale = 3.0
 playing = true
 
@@ -108,16 +109,16 @@ one_shot = true
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="MachineGun" parent="Weapon" instance=ExtResource( 3 )]
+[node name="AGun" parent="Weapon" instance=ExtResource( 3 )]
 visible = false
 
-[node name="MatterGun" parent="Weapon" instance=ExtResource( 4 )]
+[node name="BGun" parent="Weapon" instance=ExtResource( 5 )]
 visible = false
 
-[node name="LaserGun" parent="Weapon" instance=ExtResource( 5 )]
+[node name="CGun" parent="Weapon" instance=ExtResource( 4 )]
 visible = false
 
-[node name="RocketGun" parent="Weapon" instance=ExtResource( 6 )]
+[node name="DGun" parent="Weapon" instance=ExtResource( 6 )]
 visible = false
 [connection signal="area_entered" from="Body" to="." method="on_area_entered"]
 [connection signal="timeout" from="TShader" to="." method="on_tshader_timeout"]

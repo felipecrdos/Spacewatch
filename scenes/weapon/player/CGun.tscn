@@ -1,35 +1,30 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scripts/weapon/RocketGun.gd" type="Script" id=1]
+[ext_resource path="res://scripts/weapon/CGun.gd" type="Script" id=1]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=2]
 
-[node name="RocketGun" type="Node2D"]
+[node name="CGun" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="OLeftBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5, -10 )
-rotation = 3.14159
-firerate = 20.0
-
 [node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5, -10 )
+position = Vector2( -10, -10 )
 rotation = -2.00713
+bullet_animation = "green_bullet"
 
 [node name="MLeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -5, -10 )
 rotation = -1.5708
+bullet_animation = "green_bullet"
 
 [node name="MRightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5, -10 )
 rotation = -1.5708
+bullet_animation = "green_bullet"
 
 [node name="RightBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5, -10 )
+position = Vector2( 10, -10 )
 rotation = -1.13446
-
-[node name="ORightBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5, -10 )
-firerate = 20.0
+bullet_animation = "green_bullet"

@@ -4,10 +4,11 @@
 [ext_resource path="res://scripts/boss/CBoss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/weapon/enemy/EMachineGun.gd" type="Script" id=5]
-[ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=6]
+[ext_resource path="res://scripts/weapon/enemy/EAGun.gd" type="Script" id=5]
+[ext_resource path="res://scripts/weapon/enemy/EBGun.gd" type="Script" id=6]
 [ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=8]
+
 
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -38,7 +39,7 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="AtlasTexture" id=7]
@@ -54,7 +55,7 @@ animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="Gradient" id=10]
@@ -95,6 +96,7 @@ color_ramp = SubResource( 11 )
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="CBoss" type="Area2D"]
+scale = Vector2( 2, 2 )
 z_index = 10
 collision_layer = 2
 collision_mask = 33

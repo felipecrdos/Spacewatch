@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/boss/BBoss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=5]
+[ext_resource path="res://scripts/weapon/enemy/EBGun.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
 
@@ -56,7 +56,7 @@ animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="AtlasTexture" id=9]
@@ -72,7 +72,7 @@ animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="Gradient" id=12]
@@ -114,6 +114,7 @@ load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="BBoss" type="Area2D"]
 material = SubResource( 2 )
+scale = Vector2( 2, 2 )
 z_index = 10
 collision_layer = 2
 collision_mask = 33
@@ -163,7 +164,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -176,6 +176,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 11 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

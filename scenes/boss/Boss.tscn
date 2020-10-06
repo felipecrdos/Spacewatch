@@ -4,9 +4,10 @@
 [ext_resource path="res://scripts/boss/Boss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/weapon/enemy/EMachineGun.gd" type="Script" id=5]
+[ext_resource path="res://scripts/weapon/enemy/EAGun.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

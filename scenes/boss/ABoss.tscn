@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/boss/ABoss.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/weapon/enemy/EMachineGun.gd" type="Script" id=4]
+[ext_resource path="res://scripts/weapon/enemy/EAGun.gd" type="Script" id=4]
 [ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
@@ -37,7 +37,7 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="AtlasTexture" id=7]
@@ -53,7 +53,7 @@ animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 15.0
 } ]
 
 [sub_resource type="Gradient" id=10]
@@ -82,6 +82,7 @@ color_ramp = SubResource( 11 )
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="ABoss" type="Area2D"]
+scale = Vector2( 2, 2 )
 z_index = 10
 collision_layer = 2
 collision_mask = 33
@@ -135,7 +136,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -148,7 +148,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

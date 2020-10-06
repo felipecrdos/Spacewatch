@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/weapon/enemy/ERadiusGun.gd" type="Script" id=2]
+[ext_resource path="res://scripts/weapon/enemy/ECGun.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=3]
 
-
-[node name="ERadiusGun" type="Node2D"]
+[node name="ECGun" type="Node2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

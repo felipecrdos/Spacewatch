@@ -4,7 +4,7 @@ class_name Powerup
 export (Texture) var particle_texture
 func _ready():
 	direction = Vector2.DOWN
-	speed = Vector2(100, 100)
+	speed = Vector2(30, 30)
 	value = "POWERUP"
 
 func _physics_process(delta):

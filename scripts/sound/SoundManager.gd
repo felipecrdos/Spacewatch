@@ -11,7 +11,7 @@ func _ready():
 func set_bus_volume(bus_name:String, volume:float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)
 
-func fade_out_music(audio:String, volume:float = -80, duration:float = 2):
+func fade_out_music(audio:String, duration:float = 2, volume:float = -80):
 	stop_all_music(audio)
 	var stream = $Music.get_node(audio)
 	tween_music.stop(stream)

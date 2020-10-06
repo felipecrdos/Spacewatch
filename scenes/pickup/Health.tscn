@@ -37,4 +37,9 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 playing = true
+
+[node name="Blink" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
 [connection signal="body_entered" from="." to="." method="on_pickup_body_entered"]
+[connection signal="timeout" from="Blink" to="." method="on_blink_timeout"]

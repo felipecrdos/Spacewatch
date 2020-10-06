@@ -4,7 +4,7 @@ class_name Super
 export (Texture) var particle_texture
 func _ready():
 	direction = Vector2.DOWN
-	speed = Vector2(100, 100)
+	speed = Vector2(30, 30)
 	value = "SUPER"
 
 func _physics_process(delta):

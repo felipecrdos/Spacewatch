@@ -64,6 +64,7 @@ func load_default_data():
 	game_data["Player"]["health"] = default_game_data["Player"]["health"]
 	game_data["Player"]["cscore"] = default_game_data["Player"]["cscore"]
 	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
+	game_data["Player"]["super"] = default_game_data["Player"]["super"]
 #===
 func choose(values:Array):
 	if !values.empty():

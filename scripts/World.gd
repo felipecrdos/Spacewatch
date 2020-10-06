@@ -105,7 +105,7 @@ func load_level():
 	
 func transition_level(time : float = 0.0):
 	var index = level_data["index"]
-	SoundManager.fade_out_music(level_data["name"][index-1])
+	SoundManager.fade_out_music(level_data["name"][index-1], 4)
 	yield(get_tree().create_timer(time), "timeout")
 	Global.transition.start(0, 1, 1, 0);
 	yield(Global.transition.tween, "tween_all_completed")

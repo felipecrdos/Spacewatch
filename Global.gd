@@ -2,7 +2,6 @@ extends Node
 
 # Variáveis Globais.
 onready var transition = preload("res://scenes/interface/Transition.tscn")
-#onready var textures = [preload("res://assets/sprite/other/health_player.png")]
 var player
 
 func _ready():
@@ -89,8 +88,8 @@ func add_level_index():
 		return true
 	return false
 #==
-func change_scene(scene : String):
-	transition.start(0, 1, 1, 0)
+func change_scene(scene : String, delay:float=0):
+	transition.start(0, 1, 1, delay)
 	yield(transition.tween, "tween_all_completed")
 	get_tree().change_scene(scene)
 	transition.start(1, 0, 1, 0)

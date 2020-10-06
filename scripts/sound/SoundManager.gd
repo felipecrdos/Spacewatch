@@ -11,16 +11,35 @@ func _ready():
 func set_bus_volume(bus_name:String, volume:float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)
 
-func fade_out_music(audio:String, duration:float = 2, volume:float = -80):
+func fade_out_music(audio:String, duration:float=4, volume:float=-80):
 	stop_all_music(audio)
 	var stream = $Music.get_node(audio)
 	tween_music.stop(stream)
 	tween_music.interpolate_property(stream, ":volume_db", stream.get_volume_db(), volume, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
 	tween_music.start()
 
-func fade_in_music(audio:String, volume:float = 0, duration:float = 2):
+func fade_out_level_music(duration:float=4, volume:float=-80):
+	var index = Global.game_data["Level"]["index"]
+	var audio = Global.game_data["Level"]["name"][index]
+	var stream = $Music.get_node(audio)
+	stop_all_music(audio)
+	tween_music.stop(stream)
+	tween_music.interpolate_property(stream, ":volume_db", stream.get_volume_db(), volume, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	tween_music.start()
+	
+func fade_in_music(audio:String, duration:float=2, volume:float=0):
 	stop_all_music(audio)
 	var stream = $Music.get_node(audio)
+	stream.play()
+	tween_music.stop(stream)
+	tween_music.interpolate_property(stream, ":volume_db", stream.get_volume_db(), volume, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	tween_music.start()
+
+func fade_in_level_music(duration:float=2, volume:float=0):
+	var index = Global.game_data["Level"]["index"]
+	var audio = Global.game_data["Level"]["name"][index]
+	var stream = $Music.get_node(audio)
+	stop_all_music(audio)
 	stream.play()
 	tween_music.stop(stream)
 	tween_music.interpolate_property(stream, ":volume_db", stream.get_volume_db(), volume, duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)

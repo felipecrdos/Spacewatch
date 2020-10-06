@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=3]
+
 
 [node name="ECircularGun" type="Node2D"]
 script = ExtResource( 3 )

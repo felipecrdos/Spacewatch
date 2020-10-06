@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/ammo/EBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=3]
 [ext_resource path="res://scripts/weapon/enemy/ECircularGun.gd" type="Script" id=4]
 [ext_resource path="res://scripts/boss/DBoss.gd" type="Script" id=5]
@@ -250,7 +250,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DLeft"]
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="DRight" type="Position2D" parent="Exhaust"]
@@ -263,7 +262,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DRight"]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -276,7 +274,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/ULeft"]
 frames = SubResource( 12 )
-frame = 1
 playing = true
 
 [node name="URight" type="Position2D" parent="Exhaust"]
@@ -289,6 +286,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/URight"]
 frames = SubResource( 15 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

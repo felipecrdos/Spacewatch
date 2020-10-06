@@ -97,17 +97,21 @@ func update_boss():
 func update_level():
 	var index = level_data["index"]
 	level_name.text = level_data["name"][index]
+
+func boss_was_killed():
+	SoundManager.fade_out_level_music(4)
+	if Global.add_level_index():
+		transition_level()
+	else:
+		Global.change_scene("res://scenes/interface/Victory.tscn", 4)
 	
 func load_level():
 	var index = level_data["index"]
 	var path = level_data["path"]
 	level = load(path[index]).instance()
 	
-func transition_level(time : float = 0.0):
-	var index = level_data["index"]
-	SoundManager.fade_out_music(level_data["name"][index-1], 4)
-	yield(get_tree().create_timer(time), "timeout")
-	Global.transition.start(0, 1, 1, 0);
+func transition_level():
+	Global.transition.start(0, 1, 1, 4);
 	yield(Global.transition.tween, "tween_all_completed")
 	remove_level()
 	add_level()

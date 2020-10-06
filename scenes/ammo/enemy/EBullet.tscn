@@ -1,7 +1,8 @@
 [gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
-[ext_resource path="res://scripts/ammo/EBullet.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ammo/enemy/EBullet.gd" type="Script" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 2 )
@@ -20,15 +21,15 @@ region = Rect2( 32, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 40, 8, 8 )
+region = Rect2( 8, 16, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 48, 8, 8 )
+region = Rect2( 8, 24, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 56, 8, 8 )
+region = Rect2( 8, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -44,39 +45,39 @@ region = Rect2( 48, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 8, 16, 8, 8 )
+region = Rect2( 16, 16, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 8, 24, 8, 8 )
+region = Rect2( 16, 24, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 8, 32, 8, 8 )
+region = Rect2( 16, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 16, 8, 8 )
+region = Rect2( 24, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 24, 8, 8 )
+region = Rect2( 24, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 32, 8, 8 )
+region = Rect2( 24, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 32, 8, 8 )
+region = Rect2( 40, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 40, 8, 8 )
+region = Rect2( 40, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 48, 8, 8 )
+region = Rect2( 40, 56, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
@@ -87,7 +88,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
-"name": "purple_bullet",
+"name": "blue_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
@@ -97,17 +98,17 @@ animations = [ {
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
-"name": "blue_bullet",
+"name": "yellow_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": false,
-"name": "yellow_bullet",
+"name": "green_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": false,
-"name": "green_bullet",
+"name": "purple_bullet",
 "speed": 5.0
 } ]
 

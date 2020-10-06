@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/boss/BBoss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/bosspathB.tres" type="Curve2D" id=4]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Path2D
 
 var speed : float
@@ -24,7 +24,7 @@ script = ExtResource( 2 )
 
 [node name="BossPath" parent="." index="6"]
 curve = ExtResource( 4 )
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="Follow" parent="BossPath" index="0"]
 position = Vector2( 16, 64 )

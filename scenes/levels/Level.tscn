@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/boss/BossPath.gd" type="Script" id=14]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 8.49487, 23.5969, -8.49487, -23.5969, 10.4032, 14.7755, -12.7423, -19.8214, 12.7423, 19.8214, 80.2498, 3.92094, -16.5178, 22.653, 16.5178, -22.653, 188.795, 11.9439, -4.71937, -7.55099, 4.71937, 7.55099, 220.887, 32.2372, 2.83162, -15.102, -2.83162, 15.102, 225.135, 66.6886, 28.3162, 26.4285, -28.3162, -26.4285, 137.354, 79.9028, 16.5178, -23.5969, -16.5178, 23.5969, 48.1581, 70.936, -28.7882, 22.181, 28.7882, -22.181, 14.6506, 52.5305, 0, 0, 0, 0, 10.4032, 14.7755 )
 }
@@ -89,7 +89,7 @@ delay = Vector2( 1, 1 )
 
 [node name="BossPath" type="Path2D" parent="."]
 position = Vector2( 0, -140 )
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 script = ExtResource( 14 )
 
 [node name="Follow" type="PathFollow2D" parent="BossPath"]
@@ -99,7 +99,8 @@ rotate = false
 [node name="APlayer" type="AnimationPlayer" parent="BossPath"]
 anims/down = SubResource( 2 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+[node name="Bosstime" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
-[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]
+autostart = true
+[connection signal="timeout" from="Bosstime" to="." method="on_boss_timer_timeout"]

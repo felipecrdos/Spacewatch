@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Ammo",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://scripts/player/Bullet.gd"
+"path": "res://scripts/ammo/player/Bullet.gd"
 }, {
 "base": "Boss",
 "class": "CBoss",
@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "Ammo",
 "class": "EBullet",
 "language": "GDScript",
-"path": "res://scripts/ammo/EBullet.gd"
+"path": "res://scripts/ammo/enemy/EBullet.gd"
 }, {
 "base": "Weapon",
 "class": "ECircularGun",
@@ -212,10 +212,6 @@ default_bus_layout="res://resources/bus.tres"
 
 Global="*res://Global.gd"
 SoundManager="*res://scenes/sound/SoundManager.tscn"
-
-[debug]
-
-settings/stdout/print_fps=true
 
 [display]
 

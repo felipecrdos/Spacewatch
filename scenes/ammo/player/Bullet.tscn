@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
-[ext_resource path="res://scripts/player/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ammo/player/Bullet.gd" type="Script" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 2 )
@@ -12,7 +13,7 @@ region = Rect2( 0, 72, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 80, 8, 8 )
+region = Rect2( 0, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
@@ -20,15 +21,15 @@ region = Rect2( 0, 64, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 56, 8, 8 )
+region = Rect2( 0, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 48, 8, 8 )
+region = Rect2( 0, 88, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 88, 8, 8 )
+region = Rect2( 0, 80, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -38,8 +39,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
-"loop": false,
-"name": "purple_bullet",
+"loop": true,
+"name": "blue_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
@@ -48,18 +49,18 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "blue_bullet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
 "loop": false,
 "name": "yellow_bullet",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "green_bullet",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": false,
+"name": "purple_bullet",
 "speed": 5.0
 } ]
 

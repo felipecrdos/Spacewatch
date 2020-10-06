@@ -9,13 +9,13 @@
 [ext_resource path="res://assets/sound/music/Crash Landing.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/sound/sfx/player_hurt.ogg" type="AudioStream" id=8]
 [ext_resource path="res://assets/sound/sfx/select_button.ogg" type="AudioStream" id=9]
-[ext_resource path="res://assets/sound/music/Checking Manifest.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sound/music/DOS-88 - Automatav2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/sound/music/DOS-88 - City Stomper.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/sound/sfx/powerup_pickup.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/sound/sfx/health_pickup.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/sfx/player_shoot.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/sfx/bullet_hit_2.ogg" type="AudioStream" id=15]
-[ext_resource path="res://assets/sound/music/loading.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sound/music/Checking Manifest.ogg" type="AudioStream" id=16]
 [ext_resource path="res://assets/sound/music/Smooth Sailing.ogg" type="AudioStream" id=17]
 [ext_resource path="res://assets/sound/sfx/coin_pickup.ogg" type="AudioStream" id=18]
 [ext_resource path="res://assets/sound/sfx/super_pickup.ogg" type="AudioStream" id=19]
@@ -58,6 +58,7 @@ stream = ExtResource( 16 )
 
 [node name="Victory" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 17 )
+bus = "MusicBus"
 
 [node name="Sfx" type="Node2D" parent="."]
 

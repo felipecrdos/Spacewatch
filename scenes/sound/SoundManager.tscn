@@ -98,9 +98,11 @@ bus = "SfxBus"
 
 [node name="BulletHit" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 15 )
+bus = "SfxBus"
 
 [node name="SuperPickup" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 19 )
+bus = "SfxBus"
 
 [node name="CoinPickup" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 18 )

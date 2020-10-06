@@ -11,73 +11,73 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 12 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 96, 64, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": false,
 "name": "flying",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 195, 16, 13 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 195, 16, 13 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 195, 16, 13 )
-
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
 region = Rect2( 32, 195, 16, 13 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 48, 195, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
 colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=12]
 _data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=14]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 
-[sub_resource type="StreamTexture" id=17]
+[sub_resource type="StreamTexture" id=15]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="ABoss" type="Area2D"]
@@ -91,7 +91,7 @@ shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 7 )
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "flying"
 
 [node name="Weapons" type="Node2D" parent="."]
@@ -133,7 +133,7 @@ rotation = 0.907571
 scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 frame = 1
 playing = true
 
@@ -146,7 +146,7 @@ __meta__ = {
 }
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
-frames = SubResource( 11 )
+frames = SubResource( 9 )
 frame = 1
 playing = true
 __meta__ = {
@@ -157,8 +157,8 @@ __meta__ = {
 
 [node name="LSmoke" parent="Smoke" instance=ExtResource( 5 )]
 position = Vector2( -10, -5 )
-process_material = SubResource( 16 )
-texture = SubResource( 17 )
+process_material = SubResource( 14 )
+texture = SubResource( 15 )
 
 [node name="RSmoke" parent="Smoke" instance=ExtResource( 5 )]
 position = Vector2( 10, 10 )

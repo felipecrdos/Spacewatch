@@ -99,6 +99,7 @@ shape = SubResource( 2 )
 material = SubResource( 4 )
 frames = SubResource( 11 )
 animation = "left"
+frame = 1
 speed_scale = 3.0
 playing = true
 

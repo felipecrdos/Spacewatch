@@ -36,6 +36,8 @@ func _ready():
 	direction= Vector2.ZERO
 	speed	 = Vector2(100, 100)
 	screen_size = get_viewport_rect().size
+	position.x = screen_size.x/2
+	position.y = screen_size.y/2
 	
 	Global.player = self
 	player_data = Global.game_data["Player"]

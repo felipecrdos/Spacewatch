@@ -29,14 +29,14 @@ func _ready():
 	mviewport = $HContainer/MidleScreen/Viewport
 	rviewport = $HContainer/RightScreen/Viewport
 	
-	healths = $HContainer/LeftScreen/Viewport/VContainer/MidleVContainer/MIHealth/HBHealth
-	curr_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBCurrentScore/HBoxContainer/VScore
-	high_score = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBScore/Score/MHBHighScore/HBoxContainer/VScore
-	weapon = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBPowerup/Powerup/MHBPowerup/HContainer/IGun/Sprite
-	powerup = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBPowerup/Powerup/MHBPowerup/HContainer/Label
-	super = $HContainer/LeftScreen/Viewport/VContainer/BottVContainer/MVBSuper/Super/Label
-	boss_name = $HContainer/RightScreen/VContainer/TopVContainer/Label 
-	boss_texture = $HContainer/RightScreen/VContainer/TopVContainer/HContainer/Icon
+	healths = $HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth
+	curr_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore/LScore
+	high_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore/LScore
+	weapon = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IGun/Sprite
+	powerup = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/LPowerup
+	super = $HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper/LSuper
+	boss_name = $HContainer/RightScreen/VContainer/VBBoss/TBoss
+	boss_texture = $HContainer/RightScreen/VContainer/VBBoss/IBoss
 	level_name = $HContainer/RightScreen/VContainer/MidleVContainer/LevelName
 	
 	game_data = Global.game_data

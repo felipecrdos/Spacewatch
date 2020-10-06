@@ -16,11 +16,13 @@ var offset		: Vector2
 func _ready():
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
+	position.x = screen_width/2
+	position.y = -screen_height/2
 	
 	can_spawn = true
 	velocity = Vector2.ZERO
 	direction = Vector2.RIGHT
-	speed = Vector2(100, 100)
+	speed = Vector2(50, 50)
 	offset = Vector2(20, 20)
 
 # Game Loop (movimentar)
@@ -45,7 +47,9 @@ func set_bounds():
 # A Função spawn_enemy é chamada quando a scene
 # spawner tocar os limites da tela
 func spawn_enemy():
+	offset.x = Global.choose([20, 30])
 	for i in range(4):
+		offset.y = Global.choose([-20, 0, 20])
 		var px = position.x + (i * (direction.x * offset.x))
 		var py = position.y + (i * (direction.y + offset.y * -1))
 		var new = enemy.instance()

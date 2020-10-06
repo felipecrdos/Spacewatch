@@ -37,7 +37,7 @@ func destroy():
 		Global.create_health(drop_health, position)
 	elif(chance%30 == 0): # powerup chance drop 3%
 		Global.create_powerup(drop_powerup, position)
-	elif(chance%50 == 0): # super chance drop 2%
+	elif(chance%32 == 0): # super chance drop 2%
 		Global.create_super(drop_super, position)
 		
 	for i in score:

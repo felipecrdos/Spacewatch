@@ -13,7 +13,10 @@ var offset			: Vector2
 func _ready():
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
-	offset = Vector2(10, 0)
+	position.x = screen_width/2
+	position.y = -screen_height/2
+	
+	offset = Vector2(40, 0)
 	can_spawn = true
 
 # A Função spawn_enemy é chamada quando 

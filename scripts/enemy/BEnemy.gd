@@ -11,11 +11,13 @@ func _ready():
 	$ASprite.play("flying")
 	
 	randomize()
-	var rx = rand_range(10, 50)
-	var ry = rand_range(10, 50)
+	var rx = rand_range(10, 70)
+	var ry = rand_range(10, 70)
+	var vx = rand_range(10, 40)
+	var vy = rand_range(20, 35)
 	
 	radius = Vector2(rx, ry)
-	speed = Vector2(100, 30)
+	speed = Vector2(vx, vy)
 	angle = Vector2(0, 90)
 	sposition = position
 	score = 1

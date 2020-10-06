@@ -35,14 +35,20 @@ tracks/0/keys = {
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="SkyColor" type="ColorRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 320.0
-margin_bottom = 180.0
+margin_right = 480.0
+margin_bottom = 270.0
 color = Color( 0.156863, 0.627451, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,17 +77,14 @@ delay = Vector2( 1, 1 )
 [node name="ActorContainer" type="Node2D" parent="."]
 
 [node name="Player" parent="ActorContainer" instance=ExtResource( 3 )]
-position = Vector2( 156.843, 161.515 )
 
 [node name="SpawnContainer" type="Node2D" parent="."]
 
 [node name="SpawnAEnemy" parent="SpawnContainer" instance=ExtResource( 9 )]
 
 [node name="SpawnBEnemy" parent="SpawnContainer" instance=ExtResource( 10 )]
-position = Vector2( 80, -70 )
 
 [node name="SpawnCEnemy" parent="SpawnContainer" instance=ExtResource( 11 )]
-position = Vector2( 80, -50 )
 
 [node name="PickupContainer" type="Node2D" parent="."]
 

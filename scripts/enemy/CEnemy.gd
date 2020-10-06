@@ -13,8 +13,15 @@ func _ready():
 	time = 2
 	health = 20
 	score = 2
-	radius = Vector2(30, 40)
-	speed = Vector2(100, 40)
+	
+	randomize()
+	var rx = rand_range(10, 20)
+	var ry = rand_range(20, 40)
+	var sx = rand_range(20, 50)
+	var sy = rand_range(10, 30)
+	
+	radius = Vector2(rx, ry)
+	speed = Vector2(sx, sy)
 	sposition = position
 	clockwise = Global.choose([true, false])
 	

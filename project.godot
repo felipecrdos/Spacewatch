@@ -115,6 +115,11 @@ _global_script_classes=[ {
 "path": "res://scripts/pickup/Health.gd"
 }, {
 "base": "Node2D",
+"class": "Hit",
+"language": "GDScript",
+"path": "res://scripts/effect/Hit.gd"
+}, {
+"base": "Node2D",
 "class": "Level",
 "language": "GDScript",
 "path": "res://scripts/levels/Level.gd"
@@ -191,6 +196,7 @@ _global_script_class_icons={
 "ECGun": "",
 "Enemy": "",
 "Health": "",
+"Hit": "",
 "Level": "",
 "LevelA": "",
 "LevelB": "",

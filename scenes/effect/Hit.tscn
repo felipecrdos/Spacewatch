@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
+[ext_resource path="res://scripts/effect/Hit.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 336, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 352, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 368, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="Hit" type="Node2D"]
+z_index = 20
+script = ExtResource( 2 )
+
+[node name="ASprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+[connection signal="animation_finished" from="ASprite" to="." method="on_animation_finished"]

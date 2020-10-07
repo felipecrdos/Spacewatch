@@ -115,6 +115,11 @@ func create_popup(packed : PackedScene, position : Vector2, text : String, color
 	popup.set_deferred("color", color)
 	popup.set_deferred("outline_color", outline_color)
 
+func create_hit(packed : PackedScene, position : Vector2):
+	var hit = packed.instance()
+	Global.findnode("EffectContainer").call_deferred("add_child", hit)
+	hit.set_deferred("position", position)
+
 func create_pickup(packed : PackedScene, position : Vector2):
 	var pickup = packed.instance()
 	Global.findnode("PickupContainer").call_deferred("add_child", pickup)

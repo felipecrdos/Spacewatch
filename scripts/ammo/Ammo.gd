@@ -12,12 +12,14 @@ var angle : float setget set_angle
 var damage : float setget set_damage
 var screen_width : float
 var screen_height : float
+var hiteffect : PackedScene
 
 # Inicialização
 func _ready():
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
-
+	hiteffect = load("res://scenes/effect/Hit.tscn")
+	
 # Encapsulamento
 func set_direction(value:Vector2):
 	direction = value
@@ -50,6 +52,7 @@ func set_bounds():
 
 func destroy():
 	SoundManager.play_sfx("BulletHit")
+	Global.create_hit(hiteffect, position)
 	queue_free()
 	
 # Timer chamado a cada 0.1 para chamar a função set_bounds

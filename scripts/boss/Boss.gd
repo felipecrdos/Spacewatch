@@ -22,7 +22,7 @@ func _ready():
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
 	for i in score:
-		Global.create_coin(drop_coin, global_position)
+		Global.create_pickup(drop_coin, global_position)
 	
 	Global.create_explosion(explosion, global_position, "fire", Vector2(3, 3), 5)
 	Global.create_explosion(explosion, global_position+Vector2(0, 30), "fire", Vector2(2, 2), 8)

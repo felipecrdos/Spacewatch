@@ -1,7 +1,7 @@
 extends Node
 
 # Variáveis Globais.
-onready var transition = preload("res://scenes/interface/Transition.tscn")
+onready var transition 	= preload("res://scenes/interface/Transition.tscn")
 var player
 
 func _ready():
@@ -14,13 +14,17 @@ var game_path = "user://game_data.json"
 var game_data = {	
 					"Player":{	"name":"Player", 
 								"health":4,
-								"maxhealth":4, 
+								"maxhealth":4,
+								"shield":0,
+								"maxshield":4,
+								"shieldup":0, 
 								"powerup":0,
 								"maxpowerup":4, 
 								"super":0,
 								"maxsuper":4,
 								"cscore":0,
 								"hscore":0,
+								"shieldinfo":{"name":"PlayerShield", "strength":0},
 								"weapon":["res://assets/sprite/weapon/mg_side.png",
 										  "res://assets/sprite/weapon/matter_side.png",
 										  "res://assets/sprite/weapon/laser_side.png",
@@ -60,11 +64,13 @@ func load_data():
 	file.close()
 
 func load_default_data():
-	game_data["Player"]["health"] = default_game_data["Player"]["health"]
-	game_data["Player"]["cscore"] = default_game_data["Player"]["cscore"]
-	game_data["Player"]["powerup"] = default_game_data["Player"]["powerup"]
-	game_data["Player"]["super"] = default_game_data["Player"]["super"]
-#===
+	game_data["Player"]["health"] 		= default_game_data["Player"]["health"]
+	game_data["Player"]["shield"] 		= default_game_data["Player"]["shield"]
+	game_data["Player"]["cscore"] 		= default_game_data["Player"]["cscore"]
+	game_data["Player"]["super"] 		= default_game_data["Player"]["super"]
+	game_data["Player"]["powerup"] 		= default_game_data["Player"]["powerup"]
+	game_data["Player"]["shieldup"] 	= default_game_data["Player"]["shieldup"]
+
 func choose(values:Array):
 	if !values.empty():
 		randomize()
@@ -109,26 +115,11 @@ func create_popup(packed : PackedScene, position : Vector2, text : String, color
 	popup.set_deferred("color", color)
 	popup.set_deferred("outline_color", outline_color)
 
-func create_coin(packed : PackedScene, position : Vector2):
-	var coin = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", coin)
-	coin.set_deferred("position", position)
+func create_pickup(packed : PackedScene, position : Vector2):
+	var pickup = packed.instance()
+	Global.findnode("PickupContainer").call_deferred("add_child", pickup)
+	pickup.set_deferred("position", position)
 
-func create_powerup(packed : PackedScene, position : Vector2):
-	var powerup = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", powerup);
-	powerup.set_deferred("position", position)
-
-func create_super(packed : PackedScene, position : Vector2):
-	var super = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", super);
-	super.set_deferred("position", position)
-	
-func create_health(packed : PackedScene, position : Vector2):
-	var health = packed.instance()
-	Global.findnode("PickupContainer").call_deferred("add_child", health);
-	health.set_deferred("position", position)
-	
 func create_explosion(packed : PackedScene, position : Vector2, anim : String, scale : Vector2, speed : float = 20):
 	var explosion = packed.instance()
 	Global.findnode("EffectContainer").call_deferred("add_child", explosion)

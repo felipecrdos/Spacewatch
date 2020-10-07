@@ -17,8 +17,8 @@ var screen_size : Vector2
 var player_data	: Dictionary
 var level_data	: Dictionary
 
-onready var explosion = preload("res://scenes/effect/Explosion.tscn");
-
+onready var explosion 	= preload("res://scenes/effect/Explosion.tscn");
+onready var shield		= preload("res://scenes/player/PlayerShield.tscn")
 func _ready():
 	funcs_names = [	"idle_state", "flying_state", 
 					"invulnerable_state", "dying_state"]
@@ -30,6 +30,7 @@ func _ready():
 					
 	for n in funcs_names:
 		funcs_refs.append(funcref(self, n))
+
 	
 	state = State.FLYING
 	velocity = Vector2.ZERO
@@ -43,6 +44,9 @@ func _ready():
 	player_data = Global.game_data["Player"]
 	level_data = Global.game_data["Level"]
 	
+	if player_data["shieldup"]:
+		remain_shield()
+		
 	weapons = $Weapon.get_children()
 	update_weapon()
 
@@ -70,6 +74,9 @@ func input():
 		direction.y = -1
 	if Input.is_action_pressed("ui_accept"):
 		weapons[player_data["powerup"]].shoot()
+	if Input.is_action_just_pressed("ui_shield"):
+		create_shield()
+		
 	if Input.is_action_just_pressed("ui_super"):
 		if player_data["super"] > 0:
 			get_tree().call_group("world", "update_super", -1)
@@ -92,10 +99,26 @@ func set_limits():
 
 func update_health():
 	if player_data["health"] > 0:
-		
 		state = State.INVULNERABLE
 	elif player_data["health"] <= 0:
 		state = State.DYING
+
+func update_shield():
+	pass
+
+func create_shield():
+	if !has_active_shield() && has_shield():
+		add_child(shield.instance())
+		get_tree().call_group("world", "update_shield", -1)
+
+func remain_shield():
+	add_child(shield.instance())
+	
+func has_active_shield():
+	return has_node("PlayerShield")
+
+func has_shield():
+	return player_data["shield"] > 0
 	
 func update_weapon():
 	for weapon in weapons:

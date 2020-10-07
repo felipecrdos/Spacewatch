@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="AtlasTexture" id=2]

@@ -10,11 +10,15 @@ var score : int
 var damage : int
 var health : int
 var is_hit : bool
+
+enum {COIN, HEALTH, SHIELD, POWERUP, SUPER}
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
-onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
-onready var drop_powerup = preload("res://scenes/pickup/Powerup.tscn")
-onready var drop_health = preload("res://scenes/pickup/Health.tscn")
-onready var drop_super = preload("res://scenes/pickup/Super.tscn")
+onready var coin = preload("res://scenes/pickup/Coin.tscn")
+onready var pickups = [	preload("res://scenes/pickup/Coin.tscn"),
+						preload("res://scenes/pickup/Health.tscn"),
+						preload("res://scenes/pickup/Shield.tscn"),
+						preload("res://scenes/pickup/Powerup.tscn"),
+						preload("res://scenes/pickup/Super.tscn")]
 
 # Inicialização
 func _ready():
@@ -33,15 +37,19 @@ func destroy():
 	
 	randomize()
 	var chance = randi() % 100 + 1 # 1 a 100
-	if(chance%25 == 0): # health chance drop 4%
-		Global.create_health(drop_health, position)
-	elif(chance%30 == 0): # powerup chance drop 3%
-		Global.create_powerup(drop_powerup, position)
-	elif(chance%32 == 0): # super chance drop 2%
-		Global.create_super(drop_super, position)
+	if(chance%5 == 0): # 20% chance de dropar algum pickup
+		# Ao dropar o pickup
+			# 33.33% chance HEALTH
+			# 33.33% chance SHIELD
+			# 22.22% chance POWERUP
+			# 11.11% chance SUPER
+		var chosen = Global.choose([HEALTH, SHIELD, POWERUP, SUPER, 
+									HEALTH, SHIELD, POWERUP, 
+									HEALTH, SHIELD])
+		Global.create_pickup(pickups[chosen], position)
 		
 	for i in score:
-		Global.create_coin(drop_coin, position)
+		Global.create_pickup(pickups[COIN], position)
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.

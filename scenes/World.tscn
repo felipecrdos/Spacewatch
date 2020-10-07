@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/sprite/interface/resume_selected_button.png" type="Texture" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
@@ -27,127 +27,91 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
+region = Rect2( 0, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ SubResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 26 )
+region = Rect2( 16, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
+region = Rect2( 32, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 26 )
+region = Rect2( 48, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
+region = Rect2( 64, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [ SubResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 26 )
+region = Rect2( 80, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 128, 16, 16 )
+region = Rect2( 96, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 26 )
+region = Rect2( 112, 96, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 26 )
-region = Rect2( 32, 96, 16, 16 )
+region = Rect2( 16, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 26 )
-region = Rect2( 48, 96, 16, 16 )
+region = Rect2( 32, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 26 )
-region = Rect2( 64, 96, 16, 16 )
+region = Rect2( 48, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 26 )
-region = Rect2( 80, 96, 16, 16 )
+region = Rect2( 64, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 96, 16, 16 )
+region = Rect2( 80, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 26 )
+region = Rect2( 96, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 26 )
 region = Rect2( 112, 96, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 64, 128, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 26 )
-region = Rect2( 32, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 26 )
-region = Rect2( 48, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 26 )
-region = Rect2( 64, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 26 )
-region = Rect2( 80, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 26 )
-region = Rect2( 96, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 26 )
-region = Rect2( 112, 96, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -187,16 +151,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="VBPlayer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
+[node name="PlayerContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
 margin_left = 41.0
-margin_top = 16.0
+margin_top = 23.0
 margin_right = 77.0
-margin_bottom = 33.0
+margin_bottom = 40.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 alignment = 1
 
-[node name="TPlayer" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/VBPlayer"]
+[node name="TPlayer" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer"]
 margin_right = 36.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
@@ -206,98 +170,160 @@ text = "PLAYER"
 align = 1
 valign = 1
 
-[node name="IPlayer" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/VBPlayer"]
+[node name="HBPlayer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer"]
 margin_top = 17.0
 margin_right = 36.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
-size_flags_vertical = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="IPlayer" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer"]
+margin_right = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/VBPlayer/IPlayer"]
+[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/IPlayer"]
 frames = SubResource( 2 )
 centered = false
-offset = Vector2( 0, 5 )
+
+[node name="IGun" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer"]
+margin_left = 36.0
+margin_right = 36.0
+size_flags_vertical = 3
+
+[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/IGun"]
+texture = ExtResource( 22 )
+centered = false
 
 [node name="HealthContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 70.0
+margin_top = 76.0
 margin_right = 118.0
-margin_bottom = 87.0
+margin_bottom = 123.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
-[node name="THealth" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer"]
+[node name="MHealth" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer"]
+margin_right = 118.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="VBHealth" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth"]
+margin_right = 118.0
+margin_bottom = 30.0
+
+[node name="THealth" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth"]
 margin_right = 118.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
 custom_fonts/font = ExtResource( 12 )
 text = "LIVES / SHIELD"
 align = 1
 valign = 1
 
-[node name="MHealth" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer"]
+[node name="HBHealth" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth"]
 margin_top = 17.0
 margin_right = 118.0
-margin_bottom = 17.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_left = 10
-
-[node name="HBHealth" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth"]
-margin_left = 10.0
-margin_right = 118.0
+margin_bottom = 30.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="LHealthA" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth"]
-margin_right = 24.0
-size_flags_horizontal = 3
+[node name="IHealth" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth"]
+margin_left = 11.0
+margin_right = 11.0
+margin_bottom = 13.0
+size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth/LHealthA"]
-frames = SubResource( 4 )
+[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth/IHealth"]
+texture = ExtResource( 26 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
 
-[node name="LHealthB" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth"]
-margin_left = 28.0
-margin_right = 52.0
+[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth"]
+margin_left = 26.0
+margin_right = 48.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
-stretch_mode = 4
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 12 )
+text = "x"
+align = 1
+valign = 1
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth/LHealthB"]
-frames = SubResource( 6 )
-centered = false
-
-[node name="LHealthC" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth"]
-margin_left = 56.0
-margin_right = 80.0
+[node name="LHealth" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth"]
+margin_left = 52.0
+margin_right = 118.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="MShield" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer"]
+margin_top = 34.0
+margin_right = 118.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBShield" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield"]
+margin_right = 118.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+alignment = 1
+
+[node name="IShield" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield"]
+margin_left = 11.0
+margin_right = 11.0
+margin_bottom = 13.0
+size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth/LHealthC"]
-frames = SubResource( 8 )
+[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield/IShield"]
+texture = ExtResource( 26 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 112, 128, 16, 16 )
 
-[node name="LHealthD" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth"]
-margin_left = 84.0
-margin_right = 108.0
+[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield"]
+margin_left = 26.0
+margin_right = 48.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
-stretch_mode = 4
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 12 )
+text = "x"
+align = 1
+valign = 1
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth/LHealthD"]
-frames = SubResource( 10 )
-centered = false
-flip_h = true
+[node name="LShield" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield"]
+margin_left = 52.0
+margin_right = 118.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
 
 [node name="ScoreContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 113.0
+margin_top = 148.0
 margin_right = 118.0
-margin_bottom = 152.0
+margin_bottom = 187.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
@@ -318,26 +344,21 @@ alignment = 1
 [node name="TScore" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
 margin_right = 118.0
 margin_bottom = 13.0
+size_flags_vertical = 6
 custom_fonts/font = ExtResource( 12 )
 text = "HIGHSCORE / SCORE"
 align = 1
 valign = 1
 
-[node name="MHighScore" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
+[node name="HBHighScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
 margin_top = 13.0
 margin_right = 118.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBHighScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore"]
-margin_right = 118.0
-margin_bottom = 13.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 6
 alignment = 1
 
-[node name="IScore" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore"]
+[node name="IScore" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore"]
 margin_left = 11.0
 margin_right = 11.0
 margin_bottom = 13.0
@@ -345,13 +366,13 @@ size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore/IScore"]
-frames = SubResource( 19 )
-frame = 2
+[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
+frames = SubResource( 11 )
+frame = 5
 playing = true
 centered = false
 
-[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore"]
+[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore"]
 margin_left = 26.0
 margin_right = 48.0
 margin_bottom = 13.0
@@ -367,7 +388,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LScore" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore"]
+[node name="LScore" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore"]
 margin_left = 52.0
 margin_right = 118.0
 margin_bottom = 13.0
@@ -380,21 +401,15 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="MCurrentScore" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
+[node name="HBCurrentScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
 margin_top = 26.0
 margin_right = 118.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBCurrentScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore"]
-margin_right = 118.0
-margin_bottom = 13.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 6
 alignment = 1
 
-[node name="IScore" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore"]
+[node name="IScore" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore"]
 margin_left = 11.0
 margin_right = 11.0
 margin_bottom = 13.0
@@ -402,13 +417,13 @@ size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore/IScore"]
-frames = SubResource( 28 )
-frame = 6
+[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
+frames = SubResource( 20 )
+frame = 1
 playing = true
 centered = false
 
-[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore"]
+[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore"]
 margin_left = 26.0
 margin_right = 48.0
 margin_bottom = 13.0
@@ -422,7 +437,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LScore" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore"]
+[node name="LScore" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore"]
 margin_left = 52.0
 margin_right = 118.0
 margin_bottom = 13.0
@@ -435,9 +450,9 @@ align = 1
 valign = 1
 
 [node name="PowerContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 172.0
+margin_top = 213.0
 margin_right = 118.0
-margin_bottom = 202.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
@@ -473,114 +488,90 @@ size_flags_vertical = 6
 alignment = 1
 
 [node name="IPowerup" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
-margin_left = 14.0
-margin_right = 14.0
+margin_left = 11.0
+margin_right = 11.0
 margin_bottom = 13.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IPowerup"]
-texture = ExtResource( 26 )
+[node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IPowerup"]
+frames = SubResource( 22 )
 centered = false
-region_enabled = true
-region_rect = Rect2( 64, 128, 16, 16 )
 
 [node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
-margin_left = 33.0
-margin_right = 50.0
+margin_left = 26.0
+margin_right = 48.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
 custom_fonts/font = ExtResource( 12 )
 text = "x"
+align = 1
 valign = 1
 
 [node name="LPowerup" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
-margin_left = 54.0
-margin_right = 83.0
+margin_left = 52.0
+margin_right = 118.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
 custom_fonts/font = ExtResource( 12 )
 text = "0"
+align = 1
 valign = 1
 
-[node name="IGun" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
-margin_left = 87.0
-margin_top = 6.0
+[node name="MSuper" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer"]
+margin_top = 34.0
 margin_right = 118.0
-margin_bottom = 6.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-stretch_mode = 4
-
-[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IGun"]
-texture = ExtResource( 22 )
-centered = false
-
-[node name="SuperContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 216.0
-margin_right = 118.0
-margin_bottom = 229.0
-size_flags_horizontal = 3
-size_flags_vertical = 2
-
-[node name="MSuper" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer"]
-margin_right = 118.0
-margin_bottom = 13.0
+margin_bottom = 47.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBSuper" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper"]
+[node name="HBSuper" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper"]
 margin_right = 118.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 alignment = 1
 
-[node name="ISuper" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper"]
-margin_left = 14.0
-margin_right = 14.0
+[node name="ISuper" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper"]
+margin_left = 11.0
+margin_right = 11.0
 margin_bottom = 13.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
 stretch_mode = 4
 
-[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper/ISuper"]
+[node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper/ISuper"]
 texture = ExtResource( 26 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 112, 112, 16, 16 )
 
-[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper"]
-margin_left = 33.0
-margin_right = 50.0
+[node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper"]
+margin_left = 26.0
+margin_right = 48.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
 custom_fonts/font = ExtResource( 12 )
 text = "x"
+align = 1
 valign = 1
 
-[node name="LSuper" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper"]
-margin_left = 54.0
-margin_right = 83.0
-margin_bottom = 13.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 12 )
-text = "0"
-valign = 1
-
-[node name="IGun" type="TextureRect" parent="HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper"]
-margin_left = 87.0
+[node name="LSuper" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper"]
+margin_left = 52.0
 margin_right = 118.0
 margin_bottom = 13.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_fonts/font = ExtResource( 12 )
+text = "0"
+align = 1
+valign = 1
 
 [node name="LCamera" parent="HContainer/LeftScreen/Viewport" instance=ExtResource( 2 )]
 
@@ -617,9 +608,9 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="VBBoss" type="VBoxContainer" parent="HContainer/RightScreen/VContainer"]
-margin_top = 23.0
+margin_top = 20.0
 margin_right = 118.0
-margin_bottom = 64.0
+margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 alignment = 1
@@ -637,7 +628,7 @@ valign = 1
 [node name="IBoss" type="TextureRect" parent="HContainer/RightScreen/VContainer/VBBoss"]
 margin_top = 17.0
 margin_right = 118.0
-margin_bottom = 41.0
+margin_bottom = 47.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )

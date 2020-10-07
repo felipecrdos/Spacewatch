@@ -35,3 +35,6 @@ curve = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="ABoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
+
+[node name="Bosstime" parent="." index="7"]
+wait_time = 30.0

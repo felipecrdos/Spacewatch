@@ -4,7 +4,8 @@ var lviewport
 var mviewport
 var rviewport
 
-var healths
+var health
+var shield
 var curr_score
 var high_score
 var weapon
@@ -29,12 +30,13 @@ func _ready():
 	mviewport = $HContainer/MidleScreen/Viewport
 	rviewport = $HContainer/RightScreen/Viewport
 	
-	healths = $HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/HBHealth
-	curr_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MCurrentScore/HBCurrentScore/LScore
-	high_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/MHighScore/HBHighScore/LScore
-	weapon = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IGun/Sprite
+	health = $HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth/LHealth
+	shield = $HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield/LShield
+	curr_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/LScore
+	high_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/LScore
+	weapon = $HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/IGun/Sprite
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/LPowerup
-	super = $HContainer/LeftScreen/Viewport/VContainer/SuperContainer/MSuper/HBSuper/LSuper
+	super = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper/LSuper
 	boss_name = $HContainer/RightScreen/VContainer/VBBoss/TBoss
 	boss_texture = $HContainer/RightScreen/VContainer/VBBoss/IBoss
 	level_name = $HContainer/RightScreen/VContainer/MidleVContainer/LevelName
@@ -44,6 +46,7 @@ func _ready():
 	level_data = game_data["Level"]
 	
 	update_health(0)
+	update_shield(0)
 	update_score(0)
 	update_powerup(0)
 	update_super(0)
@@ -55,14 +58,23 @@ func update_health(value : int, body=null):
 	player_data["health"] += value
 	player_data["health"] = clamp(	player_data["health"], 
 									0, player_data["maxhealth"])
-	for t in healths.get_children():
-		t.visible = false
-		
-	for h in player_data["health"]:
-		var t = healths.get_child(h)
-		t.visible = true
+#	for t in healths.get_children():
+#		t.visible = false
+#
+#	for h in player_data["health"]:
+#		var t = healths.get_child(h)
+#		t.visible = true
+	health.text = str(player_data["health"])
 	if body:
 		body.update_health()
+
+func update_shield(value : int, body=null):
+	player_data["shield"] += value
+	player_data["shield"] = clamp(	player_data["shield"], 
+									0, player_data["maxshield"])
+	shield.text = str(player_data["shield"])
+	if body:
+		body.update_shield()
 
 func update_score(value : int):
 	player_data["cscore"] += value

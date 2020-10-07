@@ -20,15 +20,15 @@ region = Rect2( 32, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 40, 8, 8 )
+region = Rect2( 24, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 48, 8, 8 )
+region = Rect2( 24, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 56, 8, 8 )
+region = Rect2( 24, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -44,15 +44,15 @@ region = Rect2( 16, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 40, 8, 8 )
+region = Rect2( 48, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 48, 8, 8 )
+region = Rect2( 48, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 56, 8, 8 )
+region = Rect2( 48, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
@@ -68,15 +68,15 @@ region = Rect2( 8, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 32, 8, 8 )
+region = Rect2( 40, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 40, 8, 8 )
+region = Rect2( 40, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 48, 8, 8 )
+region = Rect2( 40, 56, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
@@ -87,7 +87,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
-"name": "pink_bullet",
+"name": "green_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
@@ -97,7 +97,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
-"name": "purple_bullet",
+"name": "pink_bullet",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
@@ -107,7 +107,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": false,
-"name": "green_bullet",
+"name": "purple_bullet",
 "speed": 5.0
 } ]
 

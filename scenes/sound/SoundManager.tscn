@@ -53,6 +53,7 @@ bus = "MusicBus"
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 16 )
+bus = "MusicBus"
 
 [node name="Tween" type="Tween" parent="Music"]
 

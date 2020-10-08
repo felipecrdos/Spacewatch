@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/enemy/DEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/enemy/EnemyPath.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 191.909, -153.75, 68.5, -73.5, -68.5, 73.5, 171.443, 0.402908, -22, -45.5, 22, 45.5, 217.475, 161.248, 23.5, 67, -23.5, -67, 96.5443, 169.423, 0.5, -71.5, -0.5, 71.5, -78.9557, 212.234, 0, 0, 0, 0, 70.0443, 322.099 )
+}
+
+[node name="EnemyPath" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+follow_speed = 100.0
+number_follows = 4
+enemy_offset = 50.0
+enemy = ExtResource( 1 )
+restart_time = 10.0
+
+[node name="Restart" type="Timer" parent="."]
+
+[node name="Finished" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+[connection signal="timeout" from="Restart" to="." method="on_restart_timeout"]
+[connection signal="timeout" from="Finished" to="." method="on_finished_timeout"]

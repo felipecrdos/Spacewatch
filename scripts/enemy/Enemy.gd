@@ -10,6 +10,8 @@ var score : int
 var damage : int
 var health : int
 var is_hit : bool
+var screen_width : float
+var screen_height : float
 
 enum {COIN, HEALTH, SHIELD, POWERUP, SUPER}
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
@@ -28,6 +30,9 @@ func _ready():
 	score = 0
 	damage = 1
 	health = 20
+	
+	screen_width = get_viewport_rect().size.x
+	screen_height = get_viewport_rect().size.y
 
 # Função chamada quando um inimigo é elimidado.
 # Também cria os cristais de acordo com o inimigo.
@@ -63,10 +68,17 @@ func on_enemy_area_entered(area):
 			destroy()
 		else:
 			set_flash_effect(true)
-			$Timer.start()
+			$Flash.start()
 			
 func set_flash_effect(value : bool):
 	$ASprite.material.set_shader_param("flashing", value)
 
-func on_timer_timeout():
+func on_flash_timeout():
 	set_flash_effect(false)
+	
+func set_limit():
+	if global_position.y > screen_height:
+		queue_free()
+
+func on_outscreen_timeout():
+	set_limit()

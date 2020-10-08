@@ -21,7 +21,4 @@ func _ready():
 func _physics_process(delta):
 	follow.offset += speed * delta
 	
-	if level_data["boss"]["state"][index] == Global.FIGHTING:
-		position.y += 20 * delta
-	
 	

@@ -27,9 +27,9 @@ func _ready():
 
 func _physics_process(delta):
 	update_angle(delta);
-	position.x = (cos(angle.x) * radius.x) + sposition.x;
-	position.y = (sin(angle.y) * radius.y) + sposition.y;
-	sposition.y += direction.y * speed.y * delta;
+	position.x = (cos(angle.x) * radius.x) + sposition.x
+	position.y = (sin(angle.y) * radius.y) + sposition.y
+	sposition.y += direction.y * speed.y * delta
 	
 func update_angle(delta):
 	if clockwise:

@@ -60,8 +60,16 @@ material = SubResource( 3 )
 frames = SubResource( 6 )
 animation = "flying"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Flash" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
+
+[node name="Outscreen" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+__meta__ = {
+"_editor_description_": ""
+}
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]
+[connection signal="timeout" from="Flash" to="." method="on_flash_timeout"]
+[connection signal="timeout" from="Outscreen" to="." method="on_outscreen_timeout"]

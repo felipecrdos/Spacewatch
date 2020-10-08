@@ -4,11 +4,13 @@ class_name EnemyPath
 export (float) var follow_speed setget set_follow_speed
 export (int) var number_follows setget set_number_follows
 export (float) var enemy_offset setget set_enemy_offset
-export (bool) var follow_loop setget set_follow_loop
 export (PackedScene) var enemy setget set_packedscene_enemy
 export (float) var restart_time setget set_restart_time
+export (float) var start_delay setget set_start_delay
+export (bool) var follow_loop setget set_follow_loop
 
 var follows : Array
+var ready = false
 
 func _ready():
 	create_follow()
@@ -17,13 +19,13 @@ func _ready():
 	create_enemies()
 	set_offset_between_enemies()
 	
-	$Restart.set_wait_time(restart_time)
-	$Restart.start()
-	$Restart.set_paused(true)
+	$Delay.set_wait_time(start_delay)
+	$Delay.start()
 
 func _physics_process(delta):
-	for follow in follows:
-		follow.offset += follow_speed * delta
+	if ready:
+		for follow in follows:
+			follow.offset += follow_speed * delta
 
 func set_restart_time(value:float):
 	restart_time = value
@@ -36,6 +38,9 @@ func restart_follows():
 	reset_follow_offset()
 	set_offset_between_enemies()
 
+func set_start_delay(value:float):
+	start_delay = value
+	
 func recreate_enemies():
 	for follow in follows:
 		if !follow.get_children().size():
@@ -63,7 +68,7 @@ func reset_follow_offset():
 	
 func set_follows_loop():
 	for follow in follows:
-		follow.set_loop(follow_loop)
+		follow.set_loop(false)
 
 func create_enemies():
 	for follow in follows:
@@ -76,6 +81,9 @@ func set_follows_offset():
 #===
 func set_follow_loop(value:bool):
 	follow_loop = value
+
+func get_follow_loop():
+	return follow_loop
 	
 func set_follow_speed(value:float):
 	follow_speed = value
@@ -89,12 +97,20 @@ func set_enemy_offset(value:float):
 func set_packedscene_enemy(value:PackedScene):
 	enemy = value
 
-func on_restart_timeout():
-	restart_follows()
-	recreate_enemies()
-	$Restart.set_paused(true)
+func set_ready(value:bool):
+	ready = value
 
 func on_finished_timeout():
 	if followers_finished():
-		$Restart.set_paused(false)
-	
+		set_ready(false)
+		$Finished.stop()
+		
+		if get_follow_loop():
+			restart_follows()
+			recreate_enemies()
+			$Delay.start()
+			$Finished.start()
+
+func on_delay_timeout():
+	if !ready:
+		set_ready(true)

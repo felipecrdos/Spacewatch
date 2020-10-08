@@ -24,12 +24,10 @@ func _physics_process(delta):
 script = ExtResource( 2 )
 
 [node name="EnemyPath" parent="SpawnContainer" index="3" instance=ExtResource( 5 )]
-restart_time = 5.0
 
 [node name="EnemyPath2" parent="SpawnContainer" index="4" instance=ExtResource( 5 )]
 position = Vector2( 236, 0 )
 scale = Vector2( -1, 1 )
-restart_time = 5.0
 
 [node name="BossPath" parent="." index="6"]
 curve = ExtResource( 4 )

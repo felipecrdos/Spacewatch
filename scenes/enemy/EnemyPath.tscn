@@ -18,12 +18,14 @@ follow_speed = 100.0
 number_follows = 4
 enemy_offset = 50.0
 enemy = ExtResource( 1 )
-restart_time = 10.0
-
-[node name="Restart" type="Timer" parent="."]
+restart_time = 5.0
+start_delay = 3.0
+follow_loop = true
 
 [node name="Finished" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
-[connection signal="timeout" from="Restart" to="." method="on_restart_timeout"]
+
+[node name="Delay" type="Timer" parent="."]
 [connection signal="timeout" from="Finished" to="." method="on_finished_timeout"]
+[connection signal="timeout" from="Delay" to="." method="on_delay_timeout"]

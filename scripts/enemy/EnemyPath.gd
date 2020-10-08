@@ -5,9 +5,9 @@ export (float) var follow_speed setget set_follow_speed
 export (int) var number_follows setget set_number_follows
 export (float) var enemy_offset setget set_enemy_offset
 export (PackedScene) var enemy setget set_packedscene_enemy
-export (float) var restart_time setget set_restart_time
 export (float) var start_delay setget set_start_delay
 export (bool) var follow_loop setget set_follow_loop
+export (bool) var follow_rotate setget set_follow_rotate
 
 var follows : Array
 var ready = false
@@ -16,6 +16,7 @@ func _ready():
 	create_follow()
 	set_array_follows()
 	set_follows_loop()
+	set_follows_rotate()
 	create_enemies()
 	set_offset_between_enemies()
 	
@@ -26,9 +27,6 @@ func _physics_process(delta):
 	if ready:
 		for follow in follows:
 			follow.offset += follow_speed * delta
-
-func set_restart_time(value:float):
-	restart_time = value
 	
 func create_follow():
 	for i in range(number_follows):
@@ -65,11 +63,18 @@ func set_array_follows():
 func reset_follow_offset():
 	for follow in follows:
 		follow.set_offset(0)
-	
+
 func set_follows_loop():
 	for follow in follows:
 		follow.set_loop(false)
 
+func set_follow_rotate(value:bool):
+	follow_rotate = value
+
+func set_follows_rotate():
+	for follow in follows:
+		follow.set_rotate(follow_rotate)
+	
 func create_enemies():
 	for follow in follows:
 		follow.add_child(enemy.instance())

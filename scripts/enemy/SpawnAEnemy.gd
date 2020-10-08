@@ -55,3 +55,9 @@ func spawn_enemy():
 		var new = enemy.instance()
 		new.set_deferred("position", Vector2(px, py))
 		Global.findnode("ActorContainer").call_deferred("add_child", new)
+
+func set_can_spawn(value:bool):
+	can_spawn = value
+
+func get_can_spawn():
+	return can_spawn

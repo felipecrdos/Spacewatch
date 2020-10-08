@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/levels/LevelB.gd" type="Script" id=2]
 [ext_resource path="res://scenes/boss/BBoss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/bosspathB.tres" type="Curve2D" id=4]
-[ext_resource path="res://scenes/enemy/EnemyPath.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemy/SpawnDEnemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Path2D
@@ -23,11 +23,7 @@ func _physics_process(delta):
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="EnemyPath" parent="SpawnContainer" index="3" instance=ExtResource( 5 )]
-
-[node name="EnemyPath2" parent="SpawnContainer" index="4" instance=ExtResource( 5 )]
-position = Vector2( 236, 0 )
-scale = Vector2( -1, 1 )
+[node name="SpawnDEnemy" parent="SpawnContainer" index="3" instance=ExtResource( 5 )]
 
 [node name="BossPath" parent="." index="6"]
 curve = ExtResource( 4 )

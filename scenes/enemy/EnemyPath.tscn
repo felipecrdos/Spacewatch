@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 191.909, -153.75, 68.5, -73.5, -68.5, 73.5, 171.443, 0.402908, -22, -45.5, 22, 45.5, 217.475, 161.248, 23.5, 67, -23.5, -67, 96.5443, 169.423, 0.5, -71.5, -0.5, 71.5, -78.9557, 212.234, 0, 0, 0, 0, 70.0443, 322.099 )
+"points": PoolVector2Array( 0, 0, 0, 0, 191.428, -289.568, 68.5, -73.5, -68.5, 73.5, 146.931, 60.873, 0.5, -71.5, -0.5, 71.5, 36.7468, 211.317, 0, 0, 0, 0, -77.6752, 336.333 )
 }
 
 [node name="EnemyPath" type="Path2D"]
@@ -18,9 +18,9 @@ follow_speed = 100.0
 number_follows = 4
 enemy_offset = 50.0
 enemy = ExtResource( 1 )
-restart_time = 5.0
 start_delay = 3.0
 follow_loop = true
+follow_rotate = true
 
 [node name="Finished" type="Timer" parent="."]
 wait_time = 2.0

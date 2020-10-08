@@ -33,3 +33,10 @@ func spawn_enemy():
 func on_timer_timeout():
 	if can_spawn:
 		spawn_enemy()
+	
+func set_can_spawn(value:bool):
+	can_spawn = value
+
+func get_can_spawn():
+	return can_spawn
+

@@ -129,58 +129,58 @@ __meta__ = {
 
 [node name="N90Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = -1.5708
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="N45Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = -0.785398
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="Z0Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="P45Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = 0.785398
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="P90Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = 1.5708
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="P135Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = 2.35619
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="P180Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = 3.14159
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="P225Barrel" parent="Weapons/ECGun" instance=ExtResource( 1 )]
 rotation = 3.92699
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 2 )
-bullet_animation = "green_bullet"
+firerate = 30.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_red"
 
 [node name="StartShoot" type="Timer" parent="Weapons/ECGun"]
 one_shot = true
@@ -196,10 +196,10 @@ __meta__ = {
 }
 
 [node name="Barrel" parent="Weapons/EBGun" instance=ExtResource( 1 )]
-firerate = 15.0
-ammo_speed = Vector2( 30, 30 )
 ammo = ExtResource( 2 )
-bullet_animation = "red_bullet"
+firerate = 15.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_green"
 
 [node name="StartShoot" type="Timer" parent="Weapons/EBGun"]
 wait_time = 6.0
@@ -219,6 +219,7 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DLeft"]
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="DRight" type="Position2D" parent="Exhaust"]
@@ -231,6 +232,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/DRight"]
 frames = SubResource( 9 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

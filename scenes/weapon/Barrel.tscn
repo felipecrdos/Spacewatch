@@ -1,18 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/weapon/Barrel.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprite/weapon/mg_side.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ammo/player/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/flashanimation.tres" type="SpriteFrames" id=4]
 
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 128, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Barrel" type="Position2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-firerate = 5.0
+flash_on = true
 ammo = ExtResource( 3 )
+firerate = 5.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ASprite" type="AnimatedSprite" parent="."]
 visible = false
-texture = ExtResource( 2 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="Flash" type="AnimatedSprite" parent="."]
+frames = ExtResource( 4 )
+animation = "rectA_blue"
+[connection signal="animation_finished" from="Flash" to="." method="on_flash_animation_finished"]

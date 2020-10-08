@@ -37,31 +37,31 @@ frames = SubResource( 3 )
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="EMachineGun" type="Node2D" parent="Weapons"]
+[node name="EAGun" type="Node2D" parent="Weapons"]
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="LeftBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
+[node name="LeftBarrel" parent="Weapons/EAGun" instance=ExtResource( 3 )]
 position = Vector2( -10, 0 )
 rotation = 1.5708
-firerate = 40.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 4 )
+firerate = 40.0
+speed_ammo = Vector2( 80, 80 )
 
-[node name="RightBarrel" parent="Weapons/EMachineGun" instance=ExtResource( 3 )]
+[node name="RightBarrel" parent="Weapons/EAGun" instance=ExtResource( 3 )]
 position = Vector2( 10, 0 )
 rotation = 1.5708
-firerate = 40.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 4 )
+firerate = 40.0
+speed_ammo = Vector2( 80, 80 )
 
-[node name="StartShoot" type="Timer" parent="Weapons/EMachineGun"]
+[node name="StartShoot" type="Timer" parent="Weapons/EAGun"]
 wait_time = 2.0
 one_shot = true
 
-[node name="StopShoot" type="Timer" parent="Weapons/EMachineGun"]
+[node name="StopShoot" type="Timer" parent="Weapons/EAGun"]
 wait_time = 2.0
 one_shot = true
 
@@ -75,6 +75,6 @@ one_shot = true
 wait_time = 0.05
 one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
-[connection signal="timeout" from="Weapons/EMachineGun/StartShoot" to="Weapons/EMachineGun" method="on_start_shoot_timeout"]
-[connection signal="timeout" from="Weapons/EMachineGun/StopShoot" to="Weapons/EMachineGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Weapons/EAGun/StartShoot" to="Weapons/EAGun" method="on_start_shoot_timeout"]
+[connection signal="timeout" from="Weapons/EAGun/StopShoot" to="Weapons/EAGun" method="on_stop_shoot_timeout"]
 [connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

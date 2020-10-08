@@ -9,22 +9,22 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5, -10 )
-rotation = -2.00713
-bullet_animation = "green_bullet"
-
 [node name="MLeftBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5, -10 )
+position = Vector2( -10, -20 )
 rotation = -1.5708
-bullet_animation = "green_bullet"
+ammo_animation = "roundA_green"
 
 [node name="MRightBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5, -10 )
+position = Vector2( 10, -20 )
 rotation = -1.5708
-bullet_animation = "green_bullet"
+ammo_animation = "roundA_green"
+
+[node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
+position = Vector2( -10, -20 )
+rotation = -2.00713
+ammo_animation = "roundA_green"
 
 [node name="RightBarrel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5, -10 )
+position = Vector2( 10, -20 )
 rotation = -1.13446
-bullet_animation = "green_bullet"
+ammo_animation = "roundA_green"

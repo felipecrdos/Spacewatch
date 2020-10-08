@@ -2,6 +2,7 @@ extends Node2D
 class_name Weapon
 
 var barrels : Array
+export (bool) var flash = true
 
 func _ready():
 	get_barrels()

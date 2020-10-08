@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/effect/SmokeParticle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/boss/BBoss.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scripts/weapon/enemy/EBGun.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=6]
 [ext_resource path="res://resources/flasheffect.tres" type="Material" id=7]
-
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -38,6 +37,18 @@ region = Rect2( 96, 32, 32, 32 )
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -129,28 +140,25 @@ frames = SubResource( 5 )
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="ECircularGun" type="Node2D" parent="Weapons"]
+[node name="EBGun" type="Node2D" parent="Weapons"]
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Barrel" parent="Weapons/ECircularGun" instance=ExtResource( 3 )]
+[node name="Barrel" parent="Weapons/EBGun" instance=ExtResource( 3 )]
 position = Vector2( 0, -5 )
-firerate = 15.0
-ammo_speed = Vector2( 50, 50 )
 ammo = ExtResource( 4 )
+firerate = 15.0
+speed_ammo = Vector2( 80, 80 )
+barrel_sprite = SubResource( 21 )
+ammo_animation = "roundA_yellow"
 
-[node name="Sprite2" type="Sprite" parent="Weapons/ECircularGun/Barrel"]
-texture = ExtResource( 6 )
-region_enabled = true
-region_rect = Rect2( 83, 51, 12, 10 )
-
-[node name="StartShoot" type="Timer" parent="Weapons/ECircularGun"]
+[node name="StartShoot" type="Timer" parent="Weapons/EBGun"]
 wait_time = 2.0
 one_shot = true
 
-[node name="StopShoot" type="Timer" parent="Weapons/ECircularGun"]
+[node name="StopShoot" type="Timer" parent="Weapons/EBGun"]
 wait_time = 4.0
 one_shot = true
 
@@ -164,6 +172,7 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -176,7 +185,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 11 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -198,6 +206,6 @@ texture = SubResource( 19 )
 wait_time = 0.05
 one_shot = true
 [connection signal="area_entered" from="." to="." method="on_boss_area_entered"]
-[connection signal="timeout" from="Weapons/ECircularGun/StartShoot" to="Weapons/ECircularGun" method="on_start_shoot_timeout"]
-[connection signal="timeout" from="Weapons/ECircularGun/StopShoot" to="Weapons/ECircularGun" method="on_stop_shoot_timeout"]
+[connection signal="timeout" from="Weapons/EBGun/StartShoot" to="Weapons/EBGun" method="on_start_shoot_timeout"]
+[connection signal="timeout" from="Weapons/EBGun/StopShoot" to="Weapons/EBGun" method="on_stop_shoot_timeout"]
 [connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]

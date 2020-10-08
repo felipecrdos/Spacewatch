@@ -12,50 +12,50 @@ __meta__ = {
 
 [node name="N90Barrel" parent="." instance=ExtResource( 1 )]
 rotation = -1.5708
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="N45Barrel" parent="." instance=ExtResource( 1 )]
 rotation = -0.785398
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="Z0Barrel" parent="." instance=ExtResource( 1 )]
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="P45Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 0.785398
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="P90Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 1.5708
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="P135Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 2.35619
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="P180Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 3.14159
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="P225Barrel" parent="." instance=ExtResource( 1 )]
 rotation = 3.92699
-firerate = 30.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 3 )
+firerate = 30.0
+ammo_animation = "roundA_yellow"
 
 [node name="StartShoot" type="Timer" parent="."]
 one_shot = true

@@ -57,11 +57,6 @@ region = Rect2( 64, 224, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ null ],
-"loop": true,
-"name": "hurt",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "left",
@@ -75,6 +70,11 @@ animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ null ],
+"loop": true,
+"name": "hurt",
 "speed": 5.0
 } ]
 
@@ -110,7 +110,6 @@ one_shot = true
 [node name="Weapon" type="Node2D" parent="."]
 
 [node name="AGun" parent="Weapon" instance=ExtResource( 3 )]
-visible = false
 
 [node name="BGun" parent="Weapon" instance=ExtResource( 5 )]
 visible = false

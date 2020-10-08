@@ -13,16 +13,16 @@ __meta__ = {
 [node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -10, 0 )
 rotation = 1.5708
-firerate = 40.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 1 )
+firerate = 40.0
+ammo_animation = "roundA_yellow"
 
 [node name="RightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, 0 )
 rotation = 1.5708
-firerate = 40.0
-ammo_speed = Vector2( 60, 60 )
 ammo = ExtResource( 1 )
+firerate = 40.0
+ammo_animation = "roundA_yellow"
 
 [node name="StartShoot" type="Timer" parent="."]
 wait_time = 2.0

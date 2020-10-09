@@ -42,74 +42,62 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 6 )
 region = Rect2( 80, 48, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 208, 16, 13 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 6 )
-region = Rect2( 48, 208, 16, 13 )
-
-[sub_resource type="SpriteFrames" id=8]
-animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 15.0
-} ]
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 6 )
-region = Rect2( 32, 208, 16, 13 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 6 )
 region = Rect2( 48, 208, 16, 13 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 15.0
 } ]
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 208, 16, 13 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 208, 16, 13 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Gradient" id=14]
 offsets = PoolRealArray( 0.0296296, 0.451852, 0.585185, 1 )
 colors = PoolColorArray( 1, 1, 0.976471, 1, 1, 1, 0.985334, 1, 1, 1, 0.988235, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=16]
 _data = [ Vector2( 0.00632912, 0.0352273 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=16]
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_random = 1.0
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
-
-[sub_resource type="StreamTexture" id=17]
-load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
 
 [sub_resource type="ParticlesMaterial" id=18]
 flag_disable_z = true
@@ -117,10 +105,22 @@ gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
 
 [sub_resource type="StreamTexture" id=19]
+load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
+
+[sub_resource type="ParticlesMaterial" id=20]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
+
+[sub_resource type="StreamTexture" id=21]
 load_path = "res://.import/smoke.png-8ee0d23d523866bcac1460ea0a9b408e.stex"
 
 [node name="BBoss" type="Area2D"]
@@ -151,7 +151,7 @@ position = Vector2( 0, -5 )
 ammo = ExtResource( 4 )
 firerate = 15.0
 speed_ammo = Vector2( 80, 80 )
-barrel_sprite = SubResource( 21 )
+barrel_sprite = SubResource( 7 )
 ammo_animation = "roundA_yellow"
 
 [node name="StartShoot" type="Timer" parent="Weapons/EBGun"]
@@ -171,7 +171,7 @@ rotation = 0.907571
 scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
-frames = SubResource( 8 )
+frames = SubResource( 10 )
 frame = 1
 playing = true
 
@@ -184,7 +184,7 @@ __meta__ = {
 }
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
-frames = SubResource( 11 )
+frames = SubResource( 13 )
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -194,13 +194,13 @@ __meta__ = {
 
 [node name="LSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( 10, -5 )
-process_material = SubResource( 16 )
-texture = SubResource( 17 )
+process_material = SubResource( 18 )
+texture = SubResource( 19 )
 
 [node name="RSmoke" parent="Smoke" instance=ExtResource( 1 )]
 position = Vector2( -10, 10 )
-process_material = SubResource( 18 )
-texture = SubResource( 19 )
+process_material = SubResource( 20 )
+texture = SubResource( 21 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05

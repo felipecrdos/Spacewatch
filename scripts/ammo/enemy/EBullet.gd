@@ -2,7 +2,7 @@ extends Ammo
 class_name EBullet
 
 func _ready():
-	damage = 1
+	damage = 5
 #	speed = Vector2(30, 30)
 
 func _physics_process(delta):

@@ -19,6 +19,7 @@ var level_data	: Dictionary
 
 onready var explosion 	= preload("res://scenes/effect/Explosion.tscn");
 onready var shield		= preload("res://scenes/player/PlayerShield.tscn")
+onready var super 		= preload("res://scenes/ammo/player/Super.tscn")
 func _ready():
 	funcs_names = [	"idle_state", "flying_state", 
 					"invulnerable_state", "dying_state"]
@@ -79,7 +80,8 @@ func input():
 		
 	if Input.is_action_just_pressed("ui_super"):
 		if player_data["super"] > 0:
-			get_tree().call_group("world", "update_super", -1)
+			print("create super")
+			create_super()
 	
 	if Input.is_key_pressed(KEY_1):
 		SoundManager.play_sfx("SelectButton")
@@ -113,6 +115,16 @@ func create_shield():
 
 func remain_shield():
 	add_child(shield.instance())
+
+func create_super():
+	var new = super.instance()
+	#new.set_deferred("speed", speed_ammo)
+	#new.set_deferred("direction", Vector2(cos(rotation),sin(rotation)))
+	#new.set_animation(ammo_animation)
+	Global.findnode("AmmoContainer").call_deferred("add_child", new)
+	new.set_deferred("global_position", global_position)
+	get_tree().call_group("world", "update_super", -1)
+	
 	
 func has_active_shield():
 	return has_node("PlayerShield")
@@ -153,10 +165,11 @@ func on_area_entered(area):
 	SoundManager.play_sfx("PlayerHurt")
 	get_tree().call_group("world", "update_health", -area.damage, self)
 	Global.findnode("MCamera").shake(5, 30)
-	area.destroy()
 	set_flash_effect(true)
 	$TShader.start()
-
+	
+	if area is Enemy:
+		area.destroy()
 		
 func set_flash_effect(value : bool):
 	$ASprite.material.set_shader_param("flashing", value)

@@ -28,7 +28,7 @@ func _ready():
 	direction = Vector2.DOWN
 	speed = Vector2(100, 100)
 	score = 0
-	damage = 1
+	damage = 5
 	health = 20
 	
 	screen_width = get_viewport_rect().size.x
@@ -59,16 +59,19 @@ func destroy():
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
-	if area is Ammo:
+	if area is Ammo || area is SuperAttack:
 		health -= area.damage
-		area.destroy()
-	
 		if health <= 0:
 			Global.create_explosion(explosion, global_position, "fire", Vector2(2, 2))
 			destroy()
 		else:
 			set_flash_effect(true)
 			$Flash.start()
+		
+		if area is Ammo:
+			area.destroy()
+
+		
 			
 func set_flash_effect(value : bool):
 	$ASprite.material.set_shader_param("flashing", value)

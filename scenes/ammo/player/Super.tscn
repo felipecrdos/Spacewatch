@@ -1,79 +1,139 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/ammo/player/Super.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 5, 5 )
+[sub_resource type="CircleShape2D" id=8]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 72, 8, 8 )
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+const vec3 white = vec3(1.0, 1.0, 1.0);
+uniform bool flashing = false;
+uniform float whitening = 0.0;
+
+void fragment(){
+	vec4 color = texture(TEXTURE, UV);
+	vec4 flash = vec4(white, color.a);
+	if (flashing)
+		COLOR = flash;
+	else
+		//COLOR = color;
+	    COLOR = vec4(mix(color.rgb, white, whitening), color.a);
+
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=11]
+resource_local_to_scene = true
+shader = SubResource( 10 )
+shader_param/flashing = false
+shader_param/whitening = 0.0
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 48, 8, 8 )
+region = Rect2( 96, 192, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 64, 8, 8 )
+region = Rect2( 112, 192, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 88, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 56, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 80, 8, 8 )
-
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
-"name": "red_bullet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ) ],
-"loop": false,
-"name": "yellow_bullet",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 4 ) ],
-"loop": false,
-"name": "pink_bullet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "green_bullet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
-"loop": true,
-"name": "blue_bullet",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ) ],
-"loop": false,
-"name": "purple_bullet",
+"name": "default",
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=7]
+resource_name = "default"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("ASprite:frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 6 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 40.7786, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1, 1.8 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 40.7786, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1, 1.8 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("ASprite:material:shader_param/whitening")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1, 1.8 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ASprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 2.06, 2.12, 2.18, 2.24, 2.3, 2.36, 2.42, 2.48, 2.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Shape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+
 [node name="Super" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 8 )
+disabled = true
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 9 )
-animation = "purple_bullet"
+material = SubResource( 11 )
+frames = SubResource( 6 )
+playing = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
-[connection signal="timeout" from="Timer" to="." method="on_timer_timeout"]
+
+[node name="APlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 7 )
+[connection signal="animation_finished" from="APlayer" to="." method="on_super_animation_finished"]

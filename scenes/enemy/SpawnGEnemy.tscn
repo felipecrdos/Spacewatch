@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/enemy/SpawnEnemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/enemy/CEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemy/BEnemy.tscn" type="PackedScene" id=3]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 237.17, -77.6605, 0, 0, 0, 0, 87.0942, 73.3594, 0, 0, 0, 0, 180.538, 95.0685, 0, 0, 0, 0, 83.3187, 141.318, 0, 0, 0, 0, 175.818, 149.813, 0, 0, 0, 0, 205.079, 292.184, 0, 0, 0, 0, 206.966, 360.628 )
+"points": PoolVector2Array( 0, 0, 0, 0, 256, -224, 0, 0, 0, 0, 256, 32, 0, 0, 0, 0, 32, 32, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, 192, 64, 0, 0, 0, 0, 192, 96, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 32, 128, 0, 0, 0, 0, 160, 128, 0, 0, 0, 0, 160, 160, 0, 0, 0, 0, 32, 160, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 128, 192, 0, 0, 0, 0, 128, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 256, 0, 0, 0, 0, 128, 256, 0, 0, 0, 0, 128, 352 )
 }
 
 [sub_resource type="GDScript" id=2]
@@ -140,7 +140,25 @@ func on_delay_timeout():
 
 [node name="SpawnGEnemy" instance=ExtResource( 1 )]
 
+[node name="EnemyRigth" parent="." index="0"]
+curve = SubResource( 3 )
+follow_speed = 80.0
+number_follows = 4
+enemy_offset = 50.0
+enemy = ExtResource( 3 )
+restart_time = 12.0
+start_delay = 4.0
+follow_loop = true
+follow_rotate = true
+
 [node name="EnemyLeft" parent="." index="1"]
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 script = SubResource( 2 )
-enemy = ExtResource( 2 )
+follow_speed = 80.0
+number_follows = 4
+enemy_offset = 50.0
+enemy = ExtResource( 3 )
+restart_time = 12.0
+start_delay = 4.0
+follow_loop = true
+follow_rotate = true

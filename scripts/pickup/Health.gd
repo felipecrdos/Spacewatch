@@ -13,7 +13,7 @@ func _physics_process(delta):
 
 func on_pickup_body_entered(body):
 	SoundManager.play_sfx("HealthPickup")
-	get_tree().call_group("world", "update_health", 1, body)
+	get_tree().call_group("world", "update_health", 5, body)
 	destroy()
 
 func destroy():

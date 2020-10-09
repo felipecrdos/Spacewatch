@@ -13,12 +13,10 @@ onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 func _ready():
 	score = 10
 	damage = 1
-	health = 20
+	health = 500
 	max_health = health
 	is_damaged = false
 
-# Função chamada quando um inimigo é elimidado.
-# Também cria os cristais de acordo com o inimigo.
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
 	for i in score:
@@ -30,17 +28,15 @@ func destroy():
 	Global.create_explosion(explosion, global_position+Vector2(-30, 0), "fire", Vector2(1, 1), 10)
 	
 	get_tree().call_group("world", "boss_was_killed")
-#	if Global.add_level_index():
-#		get_tree().call_group("world", "transition_level", 4.0)
-#	else:
-#		Global.change_scene("res://scenes/interface/Victory.tscn")
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_boss_area_entered(area):
-	if area is Ammo and health > 0:
-		health -= area.damage
-		area.destroy()
+	if area is Ammo || area is SuperAttack:
+		if health > 0:
+			health -= area.damage
+		if area is Ammo:
+			area.destroy()
 		
 		if !is_damaged && health <= max_health/2:
 			emit_smoke(true)

@@ -2,7 +2,7 @@ extends Ammo
 class_name Bullet
 
 func _ready():
-	damage = 2
+	damage = 5
 	speed = Vector2(400, 400)
 	SoundManager.play_sfx("PlayerShoot")
 	

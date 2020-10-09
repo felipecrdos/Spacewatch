@@ -46,7 +46,7 @@ animations = [ {
 [node name="AEnemy" type="Area2D"]
 material = ExtResource( 1 )
 collision_layer = 2
-collision_mask = 33
+collision_mask = 32
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -59,6 +59,7 @@ shape = SubResource( 1 )
 material = SubResource( 3 )
 frames = SubResource( 6 )
 animation = "flying"
+frame = 1
 playing = true
 
 [node name="Flash" type="Timer" parent="."]

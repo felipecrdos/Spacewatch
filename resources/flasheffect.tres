@@ -4,6 +4,7 @@
 code = "shader_type canvas_item;
 const vec3 white = vec3(1.0, 1.0, 1.0);
 uniform bool flashing = false;
+uniform float whitening = 0.0;
 
 void fragment(){
 	vec4 color = texture(TEXTURE, UV);
@@ -11,7 +12,9 @@ void fragment(){
 	if (flashing)
 		COLOR = flash;
 	else
-		COLOR = color;
+		//COLOR = color;
+	    COLOR = vec4(mix(color.rgb, white, whitening), color.a);
+
 }"
 custom_defines = ""
 
@@ -19,3 +22,4 @@ custom_defines = ""
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/flashing = false
+shader_param/whitening = 0.0

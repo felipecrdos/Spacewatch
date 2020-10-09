@@ -3,7 +3,7 @@ extends Area2D
 var strength
 
 func _ready():
-	strength = 2
+	strength = 5
 
 func destroy():
 	queue_free()

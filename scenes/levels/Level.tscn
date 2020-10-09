@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -140 ), Vector2( 0, 30 ) ]
+"values": [ Vector2( 0, -250 ), Vector2( 0, 30 ) ]
 }
 
 [node name="Level" type="Node2D"]
@@ -97,7 +97,7 @@ delay = Vector2( 1, 1 )
 [node name="EffectContainer" type="Node2D" parent="."]
 
 [node name="BossPath" type="Path2D" parent="."]
-position = Vector2( 0, -140 )
+position = Vector2( 0, -180 )
 curve = SubResource( 1 )
 script = ExtResource( 14 )
 

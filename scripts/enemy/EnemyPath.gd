@@ -76,7 +76,12 @@ func create_enemies():
 func set_follows_offset():
 	for follow in follows:
 		follow.set_offset(enemy_offset)
-	
+
+func destroy_all_enemies():
+	for follow in follows:
+		for child in follow.get_children():
+			if child is Enemy:
+				child.destroy()
 #===
 
 func set_restart_time(value:float):

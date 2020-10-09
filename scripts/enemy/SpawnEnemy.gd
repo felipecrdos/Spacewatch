@@ -14,6 +14,7 @@ func set_enemy_path_loop(value:bool):
 	for child in get_children():
 		if child is Path2D:
 			child.set_follow_loop(value)
+			#child.destroy_all_enemies()
 	
 func set_can_spawn(value:bool):
 	can_spawn = value

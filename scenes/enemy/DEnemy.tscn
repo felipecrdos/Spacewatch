@@ -44,7 +44,7 @@ animations = [ {
 
 [node name="DEnemy" type="Area2D"]
 collision_layer = 2
-collision_mask = 33
+collision_mask = 32
 script = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -54,10 +54,11 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Flash" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.05
 one_shot = true
 
 [node name="Outscreen" type="Timer" parent="."]

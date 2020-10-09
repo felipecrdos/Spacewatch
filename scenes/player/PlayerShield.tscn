@@ -6,13 +6,13 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 352, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 3 ), null ],
+"frames": [ SubResource( 2 ), null ],
 "loop": true,
 "name": "default",
 "speed": 30.0
@@ -27,7 +27,8 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 3 )
+frame = 1
 playing = true
 [connection signal="area_entered" from="." to="." method="on_area_entered"]
 [connection signal="tree_exiting" from="." to="." method="on_tree_exiting"]

@@ -13,8 +13,8 @@ func _ready():
 var game_path = "user://game_data.json"
 var game_data = {	
 					"Player":{	"name":"Player", 
-								"health":4,
-								"maxhealth":4,
+								"health":25,
+								"maxhealth":25,
 								"shield":0,
 								"maxshield":4,
 								"shieldup":0, 

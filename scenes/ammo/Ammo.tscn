@@ -14,7 +14,6 @@ shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
-animation = "rectA_blue"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

@@ -51,10 +51,10 @@ func destroy():
 		var chosen = Global.choose([HEALTH, SHIELD, POWERUP, SUPER, 
 									HEALTH, SHIELD, POWERUP, 
 									HEALTH, SHIELD])
-		Global.create_pickup(pickups[chosen], position)
+		Global.create_pickup(pickups[chosen], global_position)
 		
 	for i in score:
-		Global.create_pickup(pickups[COIN], position)
+		Global.create_pickup(pickups[COIN], global_position)
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
@@ -64,7 +64,7 @@ func on_enemy_area_entered(area):
 		area.destroy()
 	
 		if health <= 0:
-			Global.create_explosion(explosion, position, "fire", Vector2(2, 2))
+			Global.create_explosion(explosion, global_position, "fire", Vector2(2, 2))
 			destroy()
 		else:
 			set_flash_effect(true)

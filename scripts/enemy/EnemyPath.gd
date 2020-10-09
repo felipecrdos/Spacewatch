@@ -5,6 +5,7 @@ export (float) var follow_speed setget set_follow_speed
 export (int) var number_follows setget set_number_follows
 export (float) var enemy_offset setget set_enemy_offset
 export (PackedScene) var enemy setget set_packedscene_enemy
+export (float) var restart_time setget set_restart_time
 export (float) var start_delay setget set_start_delay
 export (bool) var follow_loop setget set_follow_loop
 export (bool) var follow_rotate setget set_follow_rotate
@@ -35,9 +36,6 @@ func create_follow():
 func restart_follows():
 	reset_follow_offset()
 	set_offset_between_enemies()
-
-func set_start_delay(value:float):
-	start_delay = value
 	
 func recreate_enemies():
 	for follow in follows:
@@ -84,6 +82,13 @@ func set_follows_offset():
 		follow.set_offset(enemy_offset)
 	
 #===
+
+func set_restart_time(value:float):
+	restart_time = value
+
+func set_start_delay(value:float):
+	start_delay = value
+	
 func set_follow_loop(value:bool):
 	follow_loop = value
 
@@ -113,6 +118,7 @@ func on_finished_timeout():
 		if get_follow_loop():
 			restart_follows()
 			recreate_enemies()
+			$Delay.set_wait_time(restart_time)
 			$Delay.start()
 			$Finished.start()
 

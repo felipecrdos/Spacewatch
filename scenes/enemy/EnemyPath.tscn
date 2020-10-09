@@ -18,7 +18,8 @@ follow_speed = 100.0
 number_follows = 4
 enemy_offset = 50.0
 enemy = ExtResource( 1 )
-start_delay = 3.0
+restart_time = 3.0
+start_delay = 1.0
 follow_loop = true
 follow_rotate = true
 

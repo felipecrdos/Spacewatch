@@ -124,6 +124,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/EnemyPath.gd"
 }, {
+"base": "Enemy",
+"class": "FEnemy",
+"language": "GDScript",
+"path": "res://scripts/enemy/FEnemy.gd"
+}, {
 "base": "Pickup",
 "class": "Health",
 "language": "GDScript",
@@ -213,6 +218,7 @@ _global_script_class_icons={
 "EEnemy": "",
 "Enemy": "",
 "EnemyPath": "",
+"FEnemy": "",
 "Health": "",
 "Hit": "",
 "Level": "",

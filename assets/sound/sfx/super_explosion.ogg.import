@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super_explosion.ogg-0ed8b853cc5d65d637106746c021c48c.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sfx/super_explosion.ogg"
+dest_files=[ "res://.import/super_explosion.ogg-0ed8b853cc5d65d637106746c021c48c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

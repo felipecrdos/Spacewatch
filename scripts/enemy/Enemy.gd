@@ -39,6 +39,7 @@ func _ready():
 func destroy():
 	Global.findnode("MCamera").shake(2, 5)
 	SoundManager.play_sfx("EnemyExplosion")
+	Global.create_explosion(explosion, global_position, "fire", Vector2(2, 2))
 	
 	randomize()
 	var chance = randi() % 100 + 1 # 1 a 100
@@ -60,17 +61,15 @@ func destroy():
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
 	if area is Ammo || area is SuperAttack:
-		health -= area.damage
-		if health <= 0:
-			Global.create_explosion(explosion, global_position, "fire", Vector2(2, 2))
-			destroy()
-		else:
-			set_flash_effect(true)
-			$Flash.start()
-		
+		var dmg = area.damage
 		if area is Ammo:
 			area.destroy()
-
+		if health > 0:
+			health -= dmg
+			set_flash_effect(true)
+			$Flash.start()
+		else:
+			destroy()
 		
 			
 func set_flash_effect(value : bool):

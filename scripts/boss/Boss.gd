@@ -33,19 +33,21 @@ func destroy():
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_boss_area_entered(area):
 	if area is Ammo || area is SuperAttack:
-		if health > 0:
-			health -= area.damage
+		var damage = area.damage
 		if area is Ammo:
 			area.destroy()
 		
+		if health > 0:
+			health -= damage
+		else:
+			destroy()
+			
+		
 		if !is_damaged && health <= max_health/2:
 			emit_smoke(true)
-			
-		if health <= 0:
-			destroy()
-		else:
-			set_flash_effect(true)
-			$Timer.start()
+
+		set_flash_effect(true)
+		$Timer.start()
 			
 			
 func emit_smoke(value:bool):

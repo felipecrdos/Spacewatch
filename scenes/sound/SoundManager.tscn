@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/sound/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/sfx/enemy_explosion.ogg" type="AudioStream" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/sound/music/Smooth Sailing.ogg" type="AudioStream" id=17]
 [ext_resource path="res://assets/sound/sfx/coin_pickup.ogg" type="AudioStream" id=18]
 [ext_resource path="res://assets/sound/sfx/super_pickup.ogg" type="AudioStream" id=19]
+[ext_resource path="res://assets/sound/sfx/super_explosion.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sound/sfx/super_loading.ogg" type="AudioStream" id=21]
 
 [node name="SoundManager" type="Node2D"]
 pause_mode = 2
@@ -108,4 +110,12 @@ bus = "SfxBus"
 
 [node name="CoinPickup" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 18 )
+bus = "SfxBus"
+
+[node name="super_explosion" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 20 )
+bus = "SfxBus"
+
+[node name="super_loading" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 21 )
 bus = "SfxBus"

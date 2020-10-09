@@ -22,9 +22,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 14.0
+text = "VITORY"
+align = 1
+
 [node name="Menu" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 190.0
+margin_top = 18.0
 margin_right = 290.0
+margin_bottom = 38.0
 size_flags_horizontal = 6
 texture_normal = ExtResource( 4 )
 texture_focused = ExtResource( 3 )
@@ -32,9 +40,9 @@ scene = "res://scenes/interface/Menu.tscn"
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 190.0
-margin_top = 24.0
+margin_top = 42.0
 margin_right = 290.0
-margin_bottom = 44.0
+margin_bottom = 62.0
 size_flags_horizontal = 6
 texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 5 )

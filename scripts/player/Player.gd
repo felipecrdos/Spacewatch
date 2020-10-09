@@ -80,7 +80,6 @@ func input():
 		
 	if Input.is_action_just_pressed("ui_super"):
 		if player_data["super"] > 0:
-			print("create super")
 			create_super()
 	
 	if Input.is_key_pressed(KEY_1):

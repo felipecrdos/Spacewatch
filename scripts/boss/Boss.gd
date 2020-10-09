@@ -6,6 +6,8 @@ var damage : int
 var health : int
 var max_health : int
 var is_damaged : bool
+var is_alive   : bool
+
 onready var drop_coin = preload("res://scenes/pickup/Coin.tscn")
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
@@ -16,6 +18,7 @@ func _ready():
 	health = 500
 	max_health = health
 	is_damaged = false
+	is_alive = true
 
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
@@ -33,16 +36,11 @@ func destroy():
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_boss_area_entered(area):
 	if area is Ammo || area is SuperAttack:
-		var damage = area.damage
-		if area is Ammo:
-			area.destroy()
-		
-		if health > 0:
-			health -= damage
-		else:
+		health -= area.damage
+		if is_alive && health <= 0:
+			is_alive = false
 			destroy()
-			
-		
+
 		if !is_damaged && health <= max_health/2:
 			emit_smoke(true)
 

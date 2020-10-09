@@ -10,6 +10,7 @@ var score : int
 var damage : int
 var health : int
 var is_hit : bool
+var is_alive : bool
 var screen_width : float
 var screen_height : float
 
@@ -30,6 +31,7 @@ func _ready():
 	score = 0
 	damage = 5
 	health = 20
+	is_alive = true
 	
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
@@ -61,15 +63,13 @@ func destroy():
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
 	if area is Ammo || area is SuperAttack:
-		var dmg = area.damage
-		if area is Ammo:
-			area.destroy()
-		if health > 0:
-			health -= dmg
-			set_flash_effect(true)
-			$Flash.start()
-		else:
+		health -= area.damage
+		if is_alive && health <= 0:
+			is_alive = false
 			destroy()
+			
+		set_flash_effect(true)
+		$Flash.start()
 		
 			
 func set_flash_effect(value : bool):

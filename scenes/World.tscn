@@ -107,7 +107,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 26 )
-region = Rect2( 64, 128, 16, 16 )
+region = Rect2( 64, 112, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
@@ -368,7 +368,6 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
 frames = SubResource( 11 )
-frame = 7
 playing = true
 centered = false
 
@@ -419,7 +418,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
 frames = SubResource( 20 )
-frame = 3
+frame = 4
 playing = true
 centered = false
 

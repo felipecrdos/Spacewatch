@@ -12,3 +12,6 @@ func _physics_process(delta):
 
 func set_animation(name:String):
 	$ASprite.play(name)
+
+func on_bullet_area_entered(area):
+	destroy()

@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/boss/CBoss.gd"
 }, {
+"base": "Enemy",
+"class": "CEnemy",
+"language": "GDScript",
+"path": "res://scripts/enemy/CEnemy.gd"
+}, {
 "base": "Weapon",
 "class": "CGun",
 "language": "GDScript",
@@ -184,6 +189,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/pickup/Shield.gd"
 }, {
+"base": "Position2D",
+"class": "SpawnEnemy",
+"language": "GDScript",
+"path": "res://scripts/enemy/SpawnEnemy.gd"
+}, {
 "base": "Pickup",
 "class": "Super",
 "language": "GDScript",
@@ -206,6 +216,7 @@ _global_script_class_icons={
 "Boss": "",
 "Bullet": "",
 "CBoss": "",
+"CEnemy": "",
 "CGun": "",
 "Coin": "",
 "DBoss": "",
@@ -230,6 +241,7 @@ _global_script_class_icons={
 "Player": "",
 "Powerup": "",
 "Shield": "",
+"SpawnEnemy": "",
 "Super": "",
 "Weapon": ""
 }

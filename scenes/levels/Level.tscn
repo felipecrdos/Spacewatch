@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/levels/BGScroll.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprite/environment/bg_cloud_two.png" type="Texture" id=2]
@@ -6,9 +6,12 @@
 [ext_resource path="res://assets/sprite/environment/bg_cloud_one.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprite/environment/bg_cloud_three.png" type="Texture" id=5]
 [ext_resource path="res://scripts/levels/Level.gd" type="Script" id=6]
-[ext_resource path="res://scenes/enemy/SpawnAEnemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/enemy/SpawnBEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemy/SpawnBEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemy/SpawnAEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemy/SpawnEEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemy/SpawnFEnemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemy/SpawnDEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/boss/BossPath.gd" type="Script" id=14]
 
 [sub_resource type="Curve2D" id=1]
@@ -77,11 +80,17 @@ delay = Vector2( 1, 1 )
 
 [node name="SpawnContainer" type="Node2D" parent="."]
 
-[node name="SpawnAEnemy" parent="SpawnContainer" instance=ExtResource( 9 )]
+[node name="SpawnAEnemy" parent="SpawnContainer" instance=ExtResource( 8 )]
 
-[node name="SpawnBEnemy" parent="SpawnContainer" instance=ExtResource( 10 )]
+[node name="SpawnBEnemy" parent="SpawnContainer" instance=ExtResource( 7 )]
 
 [node name="SpawnCEnemy" parent="SpawnContainer" instance=ExtResource( 11 )]
+
+[node name="SpawnDEnemy" parent="SpawnContainer" instance=ExtResource( 12 )]
+
+[node name="SpawnEEnemy" parent="SpawnContainer" instance=ExtResource( 9 )]
+
+[node name="SpawnFEnemy" parent="SpawnContainer" instance=ExtResource( 10 )]
 
 [node name="PickupContainer" type="Node2D" parent="."]
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/enemy/EnemyPath.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/enemy/SpawnEnemy.gd" type="Script" id=3]
+
+[node name="SpawnEnemy" type="Position2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EnemyRigth" parent="." instance=ExtResource( 2 )]
+
+[node name="EnemyLeft" parent="." instance=ExtResource( 2 )]
+position = Vector2( 236, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 236.0
+margin_bottom = 270.0
+border_color = Color( 0.980392, 0.0235294, 0.964706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

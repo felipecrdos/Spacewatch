@@ -2,4 +2,6 @@ extends Enemy
 class_name FEnemy
 
 func _ready():
-	pass
+	health = 30
+	score = 4
+	

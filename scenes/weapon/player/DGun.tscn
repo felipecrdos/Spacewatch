@@ -12,30 +12,30 @@ __meta__ = {
 [node name="MLeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -10, -20 )
 rotation = -1.5708
-ammo_animation = "rectA_red"
+ammo_animation = "rectA_purple"
 
 [node name="MRightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, -20 )
 rotation = -1.5708
-ammo_animation = "rectA_red"
+ammo_animation = "rectA_purple"
 
 [node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -10, -20 )
 rotation = -2.00713
-ammo_animation = "rectA_red"
+ammo_animation = "roundA_red"
 
 [node name="RightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, -20 )
 rotation = -1.13446
-ammo_animation = "rectA_red"
+ammo_animation = "roundA_red"
 
 [node name="HLeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -20, -10 )
 rotation = 3.14159
 firerate = 20.0
-ammo_animation = "rectA_red"
+ammo_animation = "rectA_purple"
 
 [node name="HRightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 20, -10 )
 firerate = 20.0
-ammo_animation = "rectA_red"
+ammo_animation = "rectA_purple"

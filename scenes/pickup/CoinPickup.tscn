@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
-[ext_resource path="res://scripts/pickup/Coin.gd" type="Script" id=2]
+[ext_resource path="res://scripts/pickup/CoinPickup.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=2]
 [ext_resource path="res://scenes/effect/Popup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/effect/PickupParticles.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprite/effect/coin_particle.png" type="Texture" id=5]
@@ -10,35 +10,35 @@
 extents = Vector2( 5, 5 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 16, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 48, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 80, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 96, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 2 )
 region = Rect2( 112, 96, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
@@ -49,9 +49,9 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="Coin" type="Area2D"]
+[node name="CoinPickup" type="Area2D"]
 collision_layer = 4
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -64,7 +64,7 @@ shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
-frame = 2
+frame = 6
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

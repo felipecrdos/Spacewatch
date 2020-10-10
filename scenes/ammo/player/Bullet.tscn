@@ -40,74 +40,74 @@ region = Rect2( 48, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 64, 8, 8 )
+region = Rect2( 16, 16, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 16, 8, 8 )
+region = Rect2( 16, 24, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 24, 8, 8 )
+region = Rect2( 16, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 32, 8, 8 )
+region = Rect2( 24, 32, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 48, 8, 8 )
+region = Rect2( 24, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 56, 8, 8 )
+region = Rect2( 24, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 88, 8, 8 )
+region = Rect2( 40, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 40, 8, 8 )
+region = Rect2( 40, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 48, 8, 8 )
+region = Rect2( 40, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 40, 56, 8, 8 )
+region = Rect2( 0, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 32, 8, 8 )
+region = Rect2( 0, 64, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 40, 8, 8 )
+region = Rect2( 0, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 48, 8, 8 )
+region = Rect2( 32, 40, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 40, 8, 8 )
+region = Rect2( 32, 48, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 48, 8, 8 )
+region = Rect2( 32, 56, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 56, 8, 8 )
+region = Rect2( 0, 88, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": false,
 "name": "roundA_blue",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": false,
@@ -122,47 +122,47 @@ animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
 "name": "roundA_pink",
-"speed": 15.0
+"speed": 30.0
 }, {
-"frames": [ SubResource( 10 ) ],
-"loop": false,
-"name": "rectA_pink",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "roundA_yellow",
-"speed": 15.0
+"speed": 30.0
 }, {
-"frames": [ SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
-"name": "rectA_yellow",
-"speed": 5.0
+"name": "roundA_green",
+"speed": 30.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "roundA_purple",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 19 ) ],
 "loop": false,
 "name": "rectA_blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 20 ) ],
+"loop": false,
+"name": "rectA_pink",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ) ],
+"loop": false,
+"name": "rectA_yellow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": false,
+"name": "roundA_red",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 25 ) ],
 "loop": false,
 "name": "rectA_green",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
-"loop": false,
-"name": "roundA_purple",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
-"loop": false,
-"name": "roundA_green",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
-"loop": false,
-"name": "roundA_red",
-"speed": 15.0
 } ]
 
 [node name="Bullet" type="Area2D"]

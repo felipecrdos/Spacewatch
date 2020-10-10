@@ -1,7 +1,7 @@
 # Cena coin que representa o score do player.
 # Herda da cena Pickup.
 extends Pickup
-class_name Coin
+class_name CoinPickup
 
 # Variáveis
 var target : Vector2

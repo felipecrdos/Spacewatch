@@ -12,19 +12,19 @@ __meta__ = {
 [node name="MLeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -10, -20 )
 rotation = -1.5708
-ammo_animation = "roundA_green"
+ammo_animation = "rectA_green"
 
 [node name="MRightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, -20 )
 rotation = -1.5708
-ammo_animation = "roundA_green"
+ammo_animation = "rectA_green"
 
 [node name="LeftBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( -10, -20 )
 rotation = -2.00713
-ammo_animation = "roundA_green"
+ammo_animation = "rectA_green"
 
 [node name="RightBarrel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, -20 )
 rotation = -1.13446
-ammo_animation = "roundA_green"
+ammo_animation = "rectA_green"

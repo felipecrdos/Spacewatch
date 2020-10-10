@@ -1,5 +1,5 @@
 extends Pickup
-class_name Super
+class_name SuperPickup
 
 export (Texture) var particle_texture
 func _ready():

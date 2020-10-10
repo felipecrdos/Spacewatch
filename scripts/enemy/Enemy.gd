@@ -16,12 +16,11 @@ var screen_height : float
 
 enum {COIN, HEALTH, SHIELD, POWERUP, SUPER}
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
-onready var coin = preload("res://scenes/pickup/Coin.tscn")
-onready var pickups = [	preload("res://scenes/pickup/Coin.tscn"),
-						preload("res://scenes/pickup/Health.tscn"),
-						preload("res://scenes/pickup/Shield.tscn"),
-						preload("res://scenes/pickup/Powerup.tscn"),
-						preload("res://scenes/pickup/Super.tscn")]
+onready var pickups = [	preload("res://scenes/pickup/CoinPickup.tscn"),
+						preload("res://scenes/pickup/HealthPickup.tscn"),
+						preload("res://scenes/pickup/ShieldPickup.tscn"),
+						preload("res://scenes/pickup/PowerupPickup.tscn"),
+						preload("res://scenes/pickup/SuperPickup.tscn")]
 
 # Inicialização
 func _ready():

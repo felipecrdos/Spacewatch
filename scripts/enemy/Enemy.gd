@@ -24,6 +24,7 @@ onready var pickups = [	preload("res://scenes/pickup/CoinPickup.tscn"),
 
 # Inicialização
 func _ready():
+	add_to_group("enemy")
 	velocity = Vector2.ZERO
 	direction = Vector2.DOWN
 	speed = Vector2(100, 100)

@@ -33,5 +33,5 @@ playing = true
 
 [node name="Flash" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
-animation = "rectA_blue"
+animation = "rocketA_red"
 [connection signal="animation_finished" from="Flash" to="." method="on_flash_animation_finished"]

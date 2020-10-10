@@ -1,10 +1,247 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/ammo/Ammo.gd" type="Script" id=1]
-[ext_resource path="res://resources/ammoanimation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 3 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 8, 16, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 8, 24, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 8, 32, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 88, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 40, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 56, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 24, 32, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 24, 40, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 24, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 72, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 40, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 56, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 80, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 40, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 56, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 48, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 56, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 16, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 24, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 32, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 72, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 72, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 88, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 88, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 104, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 104, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 96, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 96, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 64, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 64, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 80, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 80, 16, 8 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 39 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": false,
+"name": "roundA_blue",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": false,
+"name": "rectA_green",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": false,
+"name": "roundA_pink",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "roundA_green",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": false,
+"name": "rectA_red",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "roundA_red",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": false,
+"name": "rectA_pink",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": false,
+"name": "rectA_purple",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": false,
+"name": "roundA_purple",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": false,
+"name": "rectA_yellow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ) ],
+"loop": false,
+"name": "rectA_blue",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": false,
+"name": "roundA_yellow",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "rocketA_blue",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "rocketA_red",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "rocketA_green",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "rocketA_purple",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "rocketA_yellow",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 37 ), SubResource( 38 ) ],
+"loop": true,
+"name": "rocketA_pink",
+"speed": 30.0
+} ]
 
 [node name="Ammo" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,7 +250,8 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-frames = ExtResource( 2 )
+frames = SubResource( 26 )
+animation = "rocketA_red"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

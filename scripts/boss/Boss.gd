@@ -13,6 +13,7 @@ onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
 # Inicialização
 func _ready():
+	add_to_group("enemy")
 	score = 10
 	damage = 1
 	health = 500

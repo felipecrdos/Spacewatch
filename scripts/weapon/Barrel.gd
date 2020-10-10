@@ -10,7 +10,9 @@ export (SpriteFrames) var barrel_sprite setget set_barrel_sprite
 export (String, "rectA_blue", "rectA_green", "rectA_yellow", 
 				"rectA_purple", "rectA_pink", "rectA_red",
 				"roundA_blue", "roundA_green", "roundA_yellow", 
-				"roundA_purple", "roundA_pink", "roundA_red"
+				"roundA_purple", "roundA_pink", "roundA_red",
+				"rocketA_blue", "rocketA_green", "rocketA_yellow", 
+				"rocketA_purple", "rocketA_pink", "rocketA_red"
 				) var ammo_animation = "rectA_blue"
 
 func _ready():

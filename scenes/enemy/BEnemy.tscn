@@ -38,7 +38,7 @@ region = Rect2( 80, 32, 16, 16 )
 animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
-"name": "flying",
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -56,7 +56,6 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
-animation = "flying"
 playing = true
 
 [node name="Flash" type="Timer" parent="."]

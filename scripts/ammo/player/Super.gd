@@ -28,6 +28,9 @@ func play_super_spawn():
 	
 func play_super_explosion():
 	SoundManager.play_sfx("super_explosion")
+
+func camera_shake():
+	Global.findnode("MCamera").shake(25, 50)
 	
 func on_super_area_entered(area):
 	SoundManager.play_sfx("BulletHit")

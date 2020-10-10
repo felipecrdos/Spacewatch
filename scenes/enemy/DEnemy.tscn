@@ -54,7 +54,6 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Flash" type="Timer" parent="."]

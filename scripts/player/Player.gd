@@ -36,7 +36,7 @@ func _ready():
 	state = State.FLYING
 	velocity = Vector2.ZERO
 	direction= Vector2.ZERO
-	speed	 = Vector2(100, 100)
+	speed	 = Vector2(150, 150)
 	screen_size = get_viewport_rect().size
 	position.x = screen_size.x/2
 	position.y = screen_size.y/2

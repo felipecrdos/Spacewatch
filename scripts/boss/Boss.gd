@@ -7,7 +7,7 @@ var health : int
 var max_health : int
 var is_damaged : bool
 var is_alive   : bool
-
+var texture_size : Vector2
 onready var coin = preload("res://scenes/pickup/CoinPickup.tscn")
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
@@ -20,6 +20,8 @@ func _ready():
 	max_health = health
 	is_damaged = false
 	is_alive = true
+	
+	texture_size = $ASprite.get_sprite_frames().get_frame("default", 0).get_size()
 
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
@@ -36,17 +38,18 @@ func destroy():
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_boss_area_entered(area):
-	if area is Ammo || area is SuperAttack:
-		health -= area.damage
-		if is_alive && health <= 0:
-			is_alive = false
-			destroy()
-
-		if !is_damaged && health <= max_health/2:
-			emit_smoke(true)
-
-		set_flash_effect(true)
-		$Timer.start()
+	if Global.is_on_screen(global_position, texture_size):
+		if area is Ammo || area is SuperAttack:
+			health -= area.damage
+			if is_alive && health <= 0:
+				is_alive = false
+				destroy()
+	
+			if !is_damaged && health <= max_health/2:
+				emit_smoke(true)
+	
+			set_flash_effect(true)
+			$Timer.start()
 			
 			
 func emit_smoke(value:bool):

@@ -41,7 +41,8 @@ func restart_follows():
 func recreate_enemies():
 	for follow in follows:
 		if !follow.get_children().size():
-			follow.add_child(enemy.instance())
+			if enemy:
+				follow.add_child(enemy.instance())
 
 func followers_finished():
 	for follow in follows:
@@ -71,7 +72,8 @@ func set_follows_rotate():
 
 func create_enemies():
 	for follow in follows:
-		follow.add_child(enemy.instance())
+		if enemy:
+			follow.add_child(enemy.instance())
 
 func set_follows_offset():
 	for follow in follows:

@@ -2,7 +2,7 @@ extends Node
 
 # Variáveis Globais.
 onready var transition 	= preload("res://scenes/interface/Transition.tscn")
-var player
+var player : Player
 
 func _ready():
 	transition = transition.instance();
@@ -131,3 +131,24 @@ func create_explosion(packed : PackedScene, position : Vector2, anim : String, s
 	explosion.set_deferred("position", position)
 	explosion.set_deferred("scale", scale)
 	explosion.call_deferred("play", anim, speed)
+
+
+func is_on_screen(position:Vector2, texture_size:Vector2, screen_size:Vector2=Vector2(236, 270)):
+	var screen_width = screen_size.x
+	var screen_height = screen_size.y
+	var is_inside = true
+	
+	var texture_width = texture_size.x
+	var texture_height = texture_size.y
+
+	if position.x - texture_width/2 > screen_width:
+		is_inside = false
+	if position.x + texture_width/2 < 0:
+		is_inside = false
+
+	if position.y - texture_height/2 > screen_height:
+		is_inside = false
+	if position.y + texture_height/2 < 0:
+		is_inside = false
+		
+	return is_inside

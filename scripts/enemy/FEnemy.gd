@@ -6,3 +6,4 @@ func _ready():
 	damage = 10
 	score = 4
 	
+	

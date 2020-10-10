@@ -172,7 +172,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -185,6 +184,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 13 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

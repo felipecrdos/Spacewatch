@@ -17,10 +17,9 @@ func _ready():
 
 # Movimentação
 func _physics_process(delta):
-	direction = target - position
-	direction *= delta
-	position += direction
-
+	direction = position.direction_to(target)
+	position += direction * speed
+	
 # Sinal recebido quando um body colide com a moeda
 func on_pickup_body_entered(body):
 	SoundManager.play_sfx("CoinPickup")

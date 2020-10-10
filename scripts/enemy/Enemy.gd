@@ -5,6 +5,7 @@ class_name Enemy
 # Variáveis
 var velocity : Vector2
 var direction : Vector2
+var texture_size : Vector2
 var speed : Vector2
 var score : int
 var damage : int
@@ -35,6 +36,7 @@ func _ready():
 	
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
+	texture_size = $ASprite.get_sprite_frames().get_frame($ASprite.animation, 0).get_size()
 
 # Função chamada quando um inimigo é elimidado.
 # Também cria os cristais de acordo com o inimigo.
@@ -62,14 +64,15 @@ func destroy():
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.
 func on_enemy_area_entered(area):
-	if area is Ammo || area is SuperAttack:
-		health -= area.damage
-		if is_alive && health <= 0:
-			is_alive = false
-			destroy()
-			
-		set_flash_effect(true)
-		$Flash.start()
+	if Global.is_on_screen(global_position, texture_size):
+		if area is Ammo || area is SuperAttack:
+			health -= area.damage
+			if is_alive && health <= 0:
+				is_alive = false
+				destroy()
+				
+			set_flash_effect(true)
+			$Flash.start()
 		
 			
 func set_flash_effect(value : bool):

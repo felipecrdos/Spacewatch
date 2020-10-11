@@ -1,13 +1,16 @@
 # Cena que representa a tela de pause.
 # A tecla 'P' pausa o game.
-extends Node2D
+extends Control
 
 var resume
 var menu
+var pause
 
 func _ready():
 	resume = $VContainer/Resume
 	menu = $VContainer/Menu
+	pause = $VContainer/TPause
+	
 	set_buttons_disabled(true)
 	
 func _input(event):
@@ -34,3 +37,6 @@ func on_menu_send_scene(scene):
 func set_buttons_disabled(value:bool):
 	resume.set_deferred("disabled",value)
 	menu.set_deferred("disabled",value)
+
+func on_blink_timeout():
+	pause.modulate.a = 1 if !pause.modulate.a else 0

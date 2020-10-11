@@ -60,7 +60,7 @@ size_flags_vertical = 1
 texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 9 )
 stretch_mode = 3
-scene = "res://scenes/interface/Settings.tscn"
+scene = "res://scenes/interface/AudioVolume.tscn"
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 190.0

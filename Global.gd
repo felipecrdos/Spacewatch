@@ -62,7 +62,28 @@ func load_data():
 	file.open(game_path, File.READ)
 	game_data = parse_json(file.get_as_text())
 	file.close()
+	print("Load Game!!")
 
+var option_path = "res://option_data.json"
+var option_data = {
+					"volume" : {"Master":0, "MusicBus":0, "SfxBus":0}
+	}
+func save_option():
+	var file = File.new()
+	file.open(option_path, File.WRITE)
+	file.store_line(to_json(option_data))
+	file.close()
+	print("Save Option!!")
+	
+func load_option():
+	var file = File.new()
+	if !file.file_exists(option_path):
+		return
+	file.open(option_path, File.READ)
+	option_data = parse_json(file.get_as_text())
+	file.close()
+	print("Load Option!!")
+	
 func load_default_data():
 	game_data["Player"]["health"] 		= default_game_data["Player"]["health"]
 	game_data["Player"]["shield"] 		= default_game_data["Player"]["shield"]

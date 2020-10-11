@@ -4,8 +4,8 @@ var start
 var menu
  
 func _ready():
-	start = $VBSettings/HBButtons/Start
-	menu = $VBSettings/HBButtons/Menu
+	start = $VBAudio/HBButtons/Start
+	menu = $VBAudio/HBButtons/Menu
 	
 	SoundManager.fade_in_music("Menu")
 	set_buttons_disabled(false)
@@ -28,5 +28,7 @@ func set_buttons_disabled(value:bool):
 
 
 func on_setting_tree_entered():
-	pass # Replace with function body.
+	Global.load_option()
 
+func on_settings_tree_exited():
+	Global.save_option()

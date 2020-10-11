@@ -9,6 +9,7 @@ var volume
 var max_volume
 var min_volume
 var offset
+var volume_data
 
 export (String) var text_lable = "default" setget set_text_label
 export (String) var text_plus_btn = "button +" setget set_text_plus_btn
@@ -28,7 +29,10 @@ func _ready():
 	lable.text = text_lable
 	plus_btn.text = text_plus_btn
 	minus_btn.text = text_minus_btn
-
+	volume_data = Global.option_data["volume"]
+	
+	restore_bars()
+	
 func set_text_label(text:String):
 	text_lable = text
 func set_text_plus_btn(text:String):
@@ -43,22 +47,28 @@ func on_plus_button_down():
 		bars[volume/offset].modulate.a = 1
 		volume += offset
 		SoundManager.set_bus_volume(bus_name, volume)
-		
 		SoundManager.play_sfx("ChooseButton")
+		volume_data[bus_name] = volume
 		
 func on_minus_button_down():
 	if volume > min_volume:
 		volume -= offset
 		SoundManager.set_bus_volume(bus_name, volume)
 		bars[volume/offset].modulate.a = 0
-		
 		SoundManager.play_sfx("ChooseButton")
+		volume_data[bus_name] = volume
+		
+func restore_bars():
+	#volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))
+	volume = volume_data[bus_name]
+	for i in range(-1, volume/offset-1, -1):
+		bars[i].modulate.a = 0
 		
 func on_btnplus_mouse_entered():
 	plus_btn.grab_focus()
 	
 func on_btnminus_mouse_entered():
-	$HControl/BtnMinus.grab_focus()
+	minus_btn.grab_focus()
 
 func on_btnplus_focus_entered():
 	SoundManager.play_sfx("ChooseButton")

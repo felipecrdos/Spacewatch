@@ -31,7 +31,7 @@ func _ready():
 	minus_btn.text = text_minus_btn
 	volume_data = Global.option_data["volume"]
 	
-	restore_bars()
+	restore_volume()
 	
 func set_text_label(text:String):
 	text_lable = text
@@ -58,8 +58,7 @@ func on_minus_button_down():
 		SoundManager.play_sfx("ChooseButton")
 		volume_data[bus_name] = volume
 		
-func restore_bars():
-	#volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))
+func restore_volume():
 	volume = volume_data[bus_name]
 	for i in range(-1, volume/offset-1, -1):
 		bars[i].modulate.a = 0

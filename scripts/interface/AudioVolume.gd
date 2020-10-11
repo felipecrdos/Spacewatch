@@ -27,8 +27,5 @@ func set_buttons_disabled(value:bool):
 	menu.set_deferred("disabled",value)
 
 
-func on_setting_tree_entered():
-	Global.load_option()
-
-func on_settings_tree_exited():
+func on_audiovolume_tree_exited():
 	Global.save_option()

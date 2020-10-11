@@ -7,8 +7,15 @@ func _ready():
 	AudioServer.set_bus_layout(bus_layout)
 	tween_music = $Music.get_node("Tween")
 	
+	Global.load_option()
+	restore_all_bus_volume()
+	
 func set_bus_volume(bus_name:String, volume:float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), volume)
+
+func restore_all_bus_volume():
+	for key in Global.option_data["volume"]:
+		set_bus_volume(key, Global.option_data["volume"][key])
 
 func fade_out_music(audio:String, duration:float=4, volume:float=-80):
 	stop_all_music(audio)

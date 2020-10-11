@@ -64,7 +64,7 @@ func load_data():
 	file.close()
 	print("Load Game!!")
 
-var option_path = "res://option_data.json"
+var option_path = "user://option_data.json"
 var option_data = {
 					"volume" : {"Master":0, "MusicBus":0, "SfxBus":0}
 	}

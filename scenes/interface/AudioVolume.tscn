@@ -102,7 +102,6 @@ texture_normal = SubResource( 3 )
 texture_focused = SubResource( 4 )
 stretch_mode = 3
 scene = "res://scenes/interface/Menu.tscn"
-[connection signal="tree_entered" from="." to="." method="on_setting_tree_entered"]
-[connection signal="tree_exited" from="." to="." method="on_settings_tree_exited"]
+[connection signal="tree_exited" from="." to="." method="on_audiovolume_tree_exited"]
 [connection signal="send_scene" from="VBAudio/HBButtons/Start" to="." method="on_start_send_scene"]
 [connection signal="send_scene" from="VBAudio/HBButtons/Menu" to="." method="on_menu_send_scene"]

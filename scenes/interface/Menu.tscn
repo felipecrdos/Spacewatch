@@ -72,7 +72,6 @@ texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 5 )
 stretch_mode = 3
 scene = "res://scenes/World.tscn"
-[connection signal="tree_entered" from="." to="." method="on_menu_tree_entered"]
 [connection signal="send_scene" from="VBoxContainer/Start" to="." method="on_start_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/Option" to="." method="on_option_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/Quit" to="." method="on_quit_send_scene"]

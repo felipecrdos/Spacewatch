@@ -1,0 +1,286 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://resources/fontx16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/sprite/interface/min_default_selected_button.png" type="Texture" id=2]
+[ext_resource path="res://scripts/interface/VolumeControl.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprite/interface/min_default_normal_button.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 20 )
+
+[node name="VolumeControl" type="HBoxContainer"]
+margin_right = 480.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+bus_name = "SfxBus"
+
+[node name="Lable" type="Label" parent="."]
+margin_right = 196.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Default Label"
+align = 1
+valign = 1
+
+[node name="HControl" type="HBoxContainer" parent="."]
+margin_left = 200.0
+margin_right = 278.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="BtnMinus" type="Button" parent="HControl"]
+margin_right = 37.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = ExtResource( 1 )
+text = "-"
+
+[node name="BtnPlus" type="Button" parent="HControl"]
+margin_left = 41.0
+margin_right = 78.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+text = "+"
+
+[node name="MBars" type="MarginContainer" parent="."]
+margin_left = 282.0
+margin_right = 480.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 4
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 4
+
+[node name="HBars" type="HBoxContainer" parent="MBars"]
+margin_left = 20.0
+margin_top = 4.0
+margin_right = 178.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Bar1" type="ColorRect" parent="MBars/HBars"]
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Bar2" type="ColorRect" parent="MBars/HBars"]
+margin_left = 4.0
+margin_right = 5.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Bar3" type="ColorRect" parent="MBars/HBars"]
+margin_left = 9.0
+margin_right = 10.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="Bar4" type="ColorRect" parent="MBars/HBars"]
+margin_left = 14.0
+margin_right = 15.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Bar5" type="ColorRect" parent="MBars/HBars"]
+margin_left = 19.0
+margin_right = 21.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="Bar6" type="ColorRect" parent="MBars/HBars"]
+margin_left = 25.0
+margin_right = 27.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="Bar7" type="ColorRect" parent="MBars/HBars"]
+margin_left = 31.0
+margin_right = 34.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="Bar8" type="ColorRect" parent="MBars/HBars"]
+margin_left = 38.0
+margin_right = 41.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="Bar9" type="ColorRect" parent="MBars/HBars"]
+margin_left = 45.0
+margin_right = 48.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bar10" type="ColorRect" parent="MBars/HBars"]
+margin_left = 52.0
+margin_right = 56.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="Bar11" type="ColorRect" parent="MBars/HBars"]
+margin_left = 60.0
+margin_right = 64.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+
+[node name="Bar12" type="ColorRect" parent="MBars/HBars"]
+margin_left = 68.0
+margin_right = 73.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.3
+
+[node name="Bar13" type="ColorRect" parent="MBars/HBars"]
+margin_left = 77.0
+margin_right = 82.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+
+[node name="Bar14" type="ColorRect" parent="MBars/HBars"]
+margin_left = 86.0
+margin_right = 91.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Bar15" type="ColorRect" parent="MBars/HBars"]
+margin_left = 95.0
+margin_right = 101.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.6
+
+[node name="Bar16" type="ColorRect" parent="MBars/HBars"]
+margin_left = 105.0
+margin_right = 111.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.7
+
+[node name="Bar17" type="ColorRect" parent="MBars/HBars"]
+margin_left = 115.0
+margin_right = 122.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.8
+
+[node name="Bar18" type="ColorRect" parent="MBars/HBars"]
+margin_left = 126.0
+margin_right = 133.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.9
+
+[node name="Bar19" type="ColorRect" parent="MBars/HBars"]
+margin_left = 137.0
+margin_right = 144.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Bar20" type="ColorRect" parent="MBars/HBars"]
+margin_left = 148.0
+margin_right = 158.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+[connection signal="button_down" from="HControl/BtnMinus" to="." method="on_minus_button_down"]
+[connection signal="focus_entered" from="HControl/BtnMinus" to="." method="on_btnminus_focus_entered"]
+[connection signal="mouse_entered" from="HControl/BtnMinus" to="." method="on_btnminus_mouse_entered"]
+[connection signal="button_down" from="HControl/BtnPlus" to="." method="on_plus_button_down"]
+[connection signal="focus_entered" from="HControl/BtnPlus" to="." method="on_btnplus_focus_entered"]
+[connection signal="mouse_entered" from="HControl/BtnPlus" to="." method="on_btnplus_mouse_entered"]

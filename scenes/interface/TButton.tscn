@@ -12,4 +12,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="focus_entered" from="." to="." method="on_button_focus_entered"]
+[connection signal="mouse_entered" from="." to="." method="on_tbutton_mouse_entered"]
 [connection signal="pressed" from="." to="." method="on_texture_button_pressed"]

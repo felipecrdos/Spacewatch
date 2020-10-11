@@ -61,6 +61,7 @@ bus = "MusicBus"
 
 [node name="Victory" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 17 )
+volume_db = -80.0
 bus = "MusicBus"
 
 [node name="Sfx" type="Node2D" parent="."]

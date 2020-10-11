@@ -1,0 +1,139 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/interface/TButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/interface/Settings.gd" type="Script" id=2]
+[ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/interface/VolumeControl.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/start_normal_button.png-84d84341489fb3e1fb3ab5594c18d512.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/start_selected_button.png-fe56c36eeecfb03be44bf06cd583adaa.stex"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends TextureButton
+
+export (String, FILE) var scene
+signal send_scene(scene)
+
+func on_texture_button_pressed():
+	SoundManager.play_sfx(\"SelectButton\")
+	emit_signal(\"send_scene\", scene)
+
+func on_button_focus_entered():
+	print(\"focus entered\")
+	SoundManager.play_sfx(\"ChooseButton\")
+"
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/menu_normal_button.png-f23dfadf0248d99ffc15953e57885c94.stex"
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/menu_selected_button.png-bd4c57390d2cd6415d18803560368bcf.stex"
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends TextureButton
+
+export (String, FILE) var scene
+signal send_scene(scene)
+
+func on_texture_button_pressed():
+	SoundManager.play_sfx(\"SelectButton\")
+	emit_signal(\"send_scene\", scene)
+
+func on_button_focus_entered():
+	print(\"focus entered\")
+	SoundManager.play_sfx(\"ChooseButton\")
+"
+
+[node name="Settings" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBSettings" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 480.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBSettings"]
+margin_right = 480.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 7 )
+text = "settings"
+align = 1
+valign = 1
+
+[node name="VBVolume" type="VBoxContainer" parent="VBSettings"]
+margin_top = 91.0
+margin_right = 480.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MasterControl" parent="VBSettings/VBVolume" instance=ExtResource( 10 )]
+text_lable = "Master Volume"
+text_plus_btn = "+"
+text_minus_btn = "-"
+bus_name = "Master"
+
+[node name="MusicControl" parent="VBSettings/VBVolume" instance=ExtResource( 10 )]
+margin_top = 30.0
+margin_bottom = 56.0
+text_lable = "Music Volume"
+text_plus_btn = "+"
+text_minus_btn = "-"
+bus_name = "MusicBus"
+
+[node name="SoundControl" parent="VBSettings/VBVolume" instance=ExtResource( 10 )]
+margin_top = 60.0
+margin_bottom = 87.0
+text_lable = "Sound Volume"
+text_plus_btn = "+"
+text_minus_btn = "-"
+
+[node name="HBButtons" type="HBoxContainer" parent="VBSettings"]
+margin_left = 138.0
+margin_top = 182.0
+margin_right = 342.0
+margin_bottom = 270.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Start" parent="VBSettings/HBButtons" instance=ExtResource( 1 )]
+margin_top = 34.0
+margin_bottom = 54.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = SubResource( 1 )
+texture_focused = SubResource( 2 )
+stretch_mode = 3
+script = SubResource( 3 )
+scene = "res://scenes/World.tscn"
+
+[node name="Menu" parent="VBSettings/HBButtons" instance=ExtResource( 1 )]
+margin_left = 104.0
+margin_top = 34.0
+margin_right = 204.0
+margin_bottom = 54.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = SubResource( 4 )
+texture_focused = SubResource( 5 )
+stretch_mode = 3
+script = SubResource( 6 )
+scene = "res://scenes/interface/Menu.tscn"
+[connection signal="tree_entered" from="." to="." method="on_setting_tree_entered"]
+[connection signal="send_scene" from="VBSettings/HBButtons/Start" to="." method="on_start_send_scene"]
+[connection signal="send_scene" from="VBSettings/HBButtons/Menu" to="." method="on_menu_send_scene"]

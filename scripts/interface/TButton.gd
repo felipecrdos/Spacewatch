@@ -9,3 +9,6 @@ func on_texture_button_pressed():
 
 func on_button_focus_entered():
 	SoundManager.play_sfx("ChooseButton")
+
+func on_tbutton_mouse_entered():
+	grab_focus()

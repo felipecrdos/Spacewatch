@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/interface/TButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/interface/Menu.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/sprite/interface/quit_selected_button.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprite/interface/quit_normal_button.png" type="Texture" id=6]
 [ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/sprite/interface/option_normal_button.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/interface/option_selected_button.png" type="Texture" id=9]
 
 [node name="Menu" type="Control"]
 script = ExtResource( 2 )
@@ -28,7 +30,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 480.0
-margin_bottom = 121.0
+margin_bottom = 109.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
@@ -38,9 +40,9 @@ valign = 1
 
 [node name="Start" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 190.0
-margin_top = 125.0
+margin_top = 113.0
 margin_right = 290.0
-margin_bottom = 145.0
+margin_bottom = 133.0
 size_flags_horizontal = 6
 size_flags_vertical = 1
 texture_normal = ExtResource( 3 )
@@ -48,9 +50,21 @@ texture_focused = ExtResource( 4 )
 stretch_mode = 3
 scene = "res://scenes/World.tscn"
 
+[node name="Option" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_left = 190.0
+margin_top = 137.0
+margin_right = 290.0
+margin_bottom = 157.0
+size_flags_horizontal = 6
+size_flags_vertical = 1
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+stretch_mode = 3
+scene = "res://scenes/interface/Settings.tscn"
+
 [node name="Quit" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 190.0
-margin_top = 149.0
+margin_top = 161.0
 margin_right = 290.0
 margin_bottom = 270.0
 size_flags_horizontal = 6
@@ -60,4 +74,5 @@ stretch_mode = 3
 scene = "res://scenes/World.tscn"
 [connection signal="tree_entered" from="." to="." method="on_menu_tree_entered"]
 [connection signal="send_scene" from="VBoxContainer/Start" to="." method="on_start_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/Option" to="." method="on_option_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/Quit" to="." method="on_quit_send_scene"]

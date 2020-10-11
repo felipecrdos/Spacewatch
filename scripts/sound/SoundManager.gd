@@ -5,7 +5,6 @@ var tween_music
 
 func _ready():
 	AudioServer.set_bus_layout(bus_layout)
-	#set_bus_volume("SfxBus", -20)
 	tween_music = $Music.get_node("Tween")
 	
 func set_bus_volume(bus_name:String, volume:float):

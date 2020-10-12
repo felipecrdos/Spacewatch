@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/super.png-c6811bceb169310ea5747426d9714818.stex"
+path="res://.import/RetroWhite.png-179537c0f0f425dd19c7dfee3cc67c70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/other/super.png"
-dest_files=[ "res://.import/super.png-c6811bceb169310ea5747426d9714818.stex" ]
+source_file="res://assets/sprite/interface/RetroWhite.png"
+dest_files=[ "res://.import/RetroWhite.png-179537c0f0f425dd19c7dfee3cc67c70.stex" ]
 
 [params]
 

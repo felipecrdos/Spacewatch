@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/enemy/DEnemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 8 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -54,6 +54,7 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Flash" type="Timer" parent="."]

@@ -43,7 +43,7 @@ func _ready():
 func destroy():
 	Global.findnode("MCamera").shake(2, 5)
 	SoundManager.play_sfx("EnemyExplosion")
-	Global.create_explosion(explosion, global_position, "fire", Vector2(2, 2))
+	Global.create_explosion(explosion, global_position, "fire", Vector2(1, 1))
 	
 	randomize()
 	var chance = randi() % 100 + 1 # 1 a 100

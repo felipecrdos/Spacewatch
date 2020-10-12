@@ -37,9 +37,9 @@ func _ready():
 	weapon = $HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/IGun/Sprite
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/LPowerup
 	super = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper/LSuper
-	boss_name = $HContainer/RightScreen/VContainer/VBBoss/TBoss
-	boss_texture = $HContainer/RightScreen/VContainer/VBBoss/IBoss
-	level_name = $HContainer/RightScreen/VContainer/MidleVContainer/LevelName
+	boss_name = $HContainer/RightScreen/Viewport/VContainer/VBBoss/TBoss
+	boss_texture = $HContainer/RightScreen/Viewport/VContainer/VBBoss/IBoss
+	level_name = $HContainer/RightScreen/Viewport/VContainer/MidleVContainer/LevelName
 	
 	game_data = Global.game_data
 	player_data = game_data["Player"]

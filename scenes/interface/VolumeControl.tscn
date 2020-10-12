@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://resources/fontness10.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/interface/VolumeControl.gd" type="Script" id=3]
-[ext_resource path="res://resources/fontx24.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/fontgosub14.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scripts/interface/NButton.gd" type="Script" id=6]
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -17,7 +18,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -30,7 +31,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -43,7 +44,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -56,7 +57,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=25]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -69,7 +70,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -82,7 +83,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -95,7 +96,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=29]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -108,7 +109,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=30]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -121,7 +122,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_left = 2
 border_width_top = 2
@@ -153,7 +154,7 @@ margin_right = 196.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 1 )
 text = "Default Label"
 align = 1
 valign = 1
@@ -171,11 +172,11 @@ margin_right = 37.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 22 )
-custom_styles/pressed = SubResource( 26 )
-custom_styles/focus = SubResource( 23 )
-custom_styles/disabled = SubResource( 24 )
-custom_styles/normal = SubResource( 25 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -193,11 +194,11 @@ margin_right = 78.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 27 )
-custom_styles/pressed = SubResource( 28 )
-custom_styles/focus = SubResource( 29 )
-custom_styles/disabled = SubResource( 30 )
-custom_styles/normal = SubResource( 31 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )

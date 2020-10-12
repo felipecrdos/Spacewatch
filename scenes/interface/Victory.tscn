@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/interface/Victory.gd" type="Script" id=2]
-[ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=7]
+[ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=8]
+
 
 [node name="Victory" type="Control"]
 script = ExtResource( 2 )

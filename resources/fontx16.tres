@@ -5,5 +5,5 @@ antialiased = false
 font_path = "res://assets/font/m5x7.ttf"
 
 [resource]
-outline_color = Color( 0, 0, 0, 1 )
+outline_color = Color( 0.980392, 0.980392, 0.992157, 1 )
 font_data = SubResource( 1 )

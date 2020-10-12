@@ -365,7 +365,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
 frames = SubResource( 11 )
-frame = 4
+frame = 2
 playing = true
 centered = false
 
@@ -416,6 +416,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
 frames = SubResource( 20 )
+frame = 6
 playing = true
 centered = false
 

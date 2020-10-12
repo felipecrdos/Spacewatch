@@ -11,12 +11,12 @@ func _ready():
 	menu.grab_focus()
 
 func on_menu_send_scene(scene):
-	SoundManager.fade_in_music("Menu")
+	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene)
 	
 func on_back_send_scene(scene):
-	SoundManager.fade_in_music("Menu")
+	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene) 
 	

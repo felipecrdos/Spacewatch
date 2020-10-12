@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/interface/Option.gd" type="Script" id=3]
+[ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=4]
+
+[node name="Option" type="Control"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 480.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBContainer"]
+margin_right = 480.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Options"
+align = 1
+valign = 1
+
+[node name="VBOptions" type="VBoxContainer" parent="VBContainer"]
+margin_top = 69.0
+margin_right = 480.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="Audio" parent="VBContainer/VBOptions" instance=ExtResource( 1 )]
+margin_top = 33.0
+margin_bottom = 52.0
+size_flags_vertical = 4
+text = "Audio"
+scene = "res://scenes/interface/Audio.tscn"
+
+[node name="Controller" parent="VBContainer/VBOptions" instance=ExtResource( 1 )]
+margin_top = 56.0
+margin_bottom = 75.0
+size_flags_vertical = 4
+text = "Controlle"
+scene = "res://scenes/interface/Controller.tscn"
+
+[node name="Item" parent="VBContainer/VBOptions" instance=ExtResource( 1 )]
+margin_top = 79.0
+margin_bottom = 98.0
+size_flags_vertical = 4
+text = "Item"
+
+[node name="HBButtons" type="HBoxContainer" parent="VBContainer"]
+margin_left = 220.0
+margin_top = 204.0
+margin_right = 259.0
+margin_bottom = 270.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Menu" parent="VBContainer/HBButtons" instance=ExtResource( 1 )]
+margin_right = 39.0
+margin_bottom = 66.0
+text = "Menu"
+scene = "res://scenes/interface/Menu.tscn"
+[connection signal="tree_exited" from="." to="." method="on_audiovolume_tree_exited"]
+[connection signal="send_scene" from="VBContainer/VBOptions/Audio" to="." method="on_audio_send_scene"]
+[connection signal="send_scene" from="VBContainer/VBOptions/Controller" to="." method="on_controller_send_scene"]
+[connection signal="send_scene" from="VBContainer/VBOptions/Item" to="." method="on_item_send_scene"]
+[connection signal="send_scene" from="VBContainer/HBButtons/Menu" to="." method="on_menu_send_scene"]

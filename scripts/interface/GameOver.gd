@@ -4,8 +4,8 @@ var menu
 var quit
  
 func _ready():
-	menu = $VBoxContainer/Menu
-	quit = $VBoxContainer/Quit
+	menu = $VBoxContainer/VBButtons/Menu
+	quit = $VBoxContainer/VBButtons/Quit
 	menu.grab_focus()
 
 func on_menu_send_scene(scene):

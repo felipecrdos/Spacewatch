@@ -1,49 +1,139 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://scripts/interface/Controller.gd" type="Script" id=1]
 [ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scenes/interface/TButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/sprite/interface/start_normal_button.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprite/interface/start_selected_button.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite/interface/back_normal_button.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite/interface/back_selected_button.png" type="Texture" id=7]
+[ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/fontx16.tres" type="DynamicFont" id=8]
-[ext_resource path="res://assets/sprite/interface/RetroWhite.png" type="Texture" id=9]
+[ext_resource path="res://resources/fontx24.tres" type="DynamicFont" id=9]
+[ext_resource path="res://assets/sprite/interface/ModernWhiteKeyboard.png" type="Texture" id=10]
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.0784314 )
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 10 )
 region = Rect2( 80, 112, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 10 )
+region = Rect2( 112, 112, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 96, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 112, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 19 ) ],
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 448, 85, 16 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 9 )
-region = Rect2( 48, 0, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 144, 32, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
 "frames": [ SubResource( 24 ) ],
 "loop": true,
@@ -51,23 +141,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 9 )
-region = Rect2( 112, 112, 16, 16 )
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 10 )
+region = Rect2( 144, 48, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ SubResource( 25 ) ],
+"frames": [ SubResource( 26 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 32, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=26]
+[sub_resource type="SpriteFrames" id=29]
 animations = [ {
 "frames": [ SubResource( 28 ) ],
 "loop": true,
@@ -75,23 +165,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 96, 16, 16 )
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=31]
 animations = [ {
-"frames": [ SubResource( 29 ) ],
+"frames": [ SubResource( 30 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 32, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ SubResource( 32 ) ],
 "loop": true,
@@ -99,35 +189,35 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 112, 16, 16 )
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 10 )
+region = Rect2( 240, 32, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=31]
+[sub_resource type="SpriteFrames" id=35]
 animations = [ {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 34 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 448, 85, 16 )
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=34]
+[sub_resource type="SpriteFrames" id=37]
 animations = [ {
-"frames": [ SubResource( 35 ) ],
+"frames": [ SubResource( 36 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 9 )
-region = Rect2( 16, 32, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=36]
+[sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [ SubResource( 38 ) ],
 "loop": true,
@@ -135,23 +225,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 9 )
-region = Rect2( 144, 48, 16, 16 )
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=37]
+[sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 39 ) ],
+"frames": [ SubResource( 40 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=40]
+[sub_resource type="SpriteFrames" id=43]
 animations = [ {
 "frames": [ SubResource( 42 ) ],
 "loop": true,
@@ -160,10 +250,10 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=43]
+[sub_resource type="SpriteFrames" id=45]
 animations = [ {
 "frames": [ SubResource( 44 ) ],
 "loop": true,
@@ -171,97 +261,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=53]
-atlas = ExtResource( 9 )
-region = Rect2( 128, 32, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=45]
-animations = [ {
-"frames": [ SubResource( 53 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=54]
-atlas = ExtResource( 9 )
-region = Rect2( 240, 32, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=46]
-animations = [ {
-"frames": [ SubResource( 54 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=55]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=47]
 animations = [ {
-"frames": [ SubResource( 55 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=56]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=48]
-animations = [ {
-"frames": [ SubResource( 56 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=57]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=49]
-animations = [ {
-"frames": [ SubResource( 57 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=58]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=50]
-animations = [ {
-"frames": [ SubResource( 58 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=59]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=51]
-animations = [ {
-"frames": [ SubResource( 59 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=60]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 128, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=52]
-animations = [ {
-"frames": [ SubResource( 60 ) ],
+"frames": [ SubResource( 46 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -304,43 +310,53 @@ margin_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+alignment = 1
 
-[node name="HBMovement" type="HBoxContainer" parent="VBController/VBAction"]
+[node name="MMove" type="MarginContainer" parent="VBController/VBAction"]
 margin_right = 480.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBMovement"]
-margin_right = 92.0
+[node name="HBMove" type="HBoxContainer" parent="VBController/VBAction/MMove"]
+margin_right = 470.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="VBController/VBAction/MMove/HBMove"]
+margin_right = 90.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
 text = "Move"
 align = 1
 valign = 1
 
-[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/HBMovement"]
-margin_left = 96.0
-margin_right = 188.0
+[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/MMove/HBMove"]
+margin_left = 94.0
+margin_right = 184.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBMovement/PKey1"]
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey1"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -351,64 +367,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer/MTexture"]
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
+margin_right = 41.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
-frames = SubResource( 20 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 7 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey1/HBoxContainer/MTexture/VBTexture/TKey2"]
-frames = SubResource( 21 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey1/HBoxContainer/MTexture/VBTexture/TKey2"]
+frames = SubResource( 9 )
 
-[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/HBMovement"]
-margin_left = 192.0
-margin_right = 284.0
+[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/MMove/HBMove"]
+margin_left = 188.0
+margin_right = 278.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBMovement/PKey2"]
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -419,64 +437,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer/MTexture"]
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
+margin_right = 41.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
-frames = SubResource( 22 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 11 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
-frames = SubResource( 23 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
+frames = SubResource( 13 )
 
-[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/HBMovement"]
-margin_left = 288.0
-margin_right = 380.0
+[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/MMove/HBMove"]
+margin_left = 282.0
+margin_right = 372.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBMovement/PKey3"]
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey3"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -487,64 +507,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer/MTexture"]
+[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
+margin_right = 41.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
-frames = SubResource( 26 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
+frames = SubResource( 15 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
-frames = SubResource( 27 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
+frames = SubResource( 17 )
 
-[node name="PKey4" type="PanelContainer" parent="VBController/VBAction/HBMovement"]
-margin_left = 384.0
-margin_right = 480.0
+[node name="PKey4" type="PanelContainer" parent="VBController/VBAction/MMove/HBMove"]
+margin_left = 376.0
+margin_right = 470.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBMovement/PKey4"]
-margin_right = 96.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey4"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 92.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer"]
-margin_right = 46.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -555,89 +577,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer"]
-margin_left = 50.0
-margin_right = 96.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer"]
+margin_left = 47.0
+margin_right = 90.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer/MTexture"]
+[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 46.0
-margin_bottom = 37.0
+margin_right = 43.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 7.0
-margin_right = 23.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 6.0
+margin_right = 21.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer/MTexture/VBTextures/TKey1"]
-frames = SubResource( 30 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer/MTexture/VBTextures/TKey1"]
+frames = SubResource( 19 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 25.0
-margin_right = 23.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 21.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBMovement/PKey4/HBoxContainer/MTexture/VBTextures/TKey2"]
-frames = SubResource( 31 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MMove/HBMove/PKey4/HBoxContainer/MTexture/VBTextures/TKey2"]
+frames = SubResource( 21 )
 
-[node name="HBAttack" type="HBoxContainer" parent="VBController/VBAction"]
+[node name="MAttack" type="MarginContainer" parent="VBController/VBAction"]
 margin_top = 45.0
 margin_right = 480.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBAttack"]
-margin_right = 93.0
+[node name="HBAttack" type="HBoxContainer" parent="VBController/VBAction/MAttack"]
+margin_right = 470.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="VBController/VBAction/MAttack/HBAttack"]
+margin_right = 91.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
 text = "Attack"
 align = 1
 valign = 1
 
-[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/HBAttack"]
-margin_left = 97.0
-margin_right = 284.0
+[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/MAttack/HBAttack"]
+margin_left = 95.0
+margin_right = 278.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBAttack/PKey1"]
-margin_right = 187.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey1"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 181.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MLabel" type="MarginContainer" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer"]
-margin_right = 46.0
-margin_bottom = 41.0
+[node name="MLabel" type="MarginContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer"]
+margin_right = 44.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.34
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer/MLabel"]
-margin_right = 46.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer/MLabel"]
+margin_right = 44.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -648,54 +679,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer"]
-margin_left = 50.0
-margin_right = 187.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer"]
+margin_left = 48.0
+margin_right = 179.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_left = 0
 custom_constants/margin_bottom = 4
 
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer/MTexture"]
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 137.0
-margin_bottom = 37.0
+margin_right = 131.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer/MTexture/VBTexture"]
-margin_left = 68.0
-margin_top = 16.0
-margin_right = 68.0
-margin_bottom = 16.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer/MTexture/VBTexture"]
+margin_left = 65.0
+margin_top = 14.0
+margin_right = 65.0
+margin_bottom = 14.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBAttack/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
-frames = SubResource( 34 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MAttack/HBAttack/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 23 )
 
-[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/HBAttack"]
-margin_left = 288.0
-margin_right = 381.0
+[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/MAttack/HBAttack"]
+margin_left = 282.0
+margin_right = 373.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBAttack/PKey2"]
-margin_right = 93.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 89.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -706,64 +739,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer"]
-margin_left = 48.0
-margin_right = 93.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer/MTexture"]
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 45.0
-margin_bottom = 37.0
+margin_right = 42.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 21.0
+margin_top = 6.0
+margin_right = 21.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
-frames = SubResource( 36 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 25 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 21.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
-frames = SubResource( 37 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MAttack/HBAttack/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
+frames = SubResource( 27 )
 
-[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/HBAttack"]
-margin_left = 385.0
-margin_right = 480.0
+[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/MAttack/HBAttack"]
+margin_left = 377.0
+margin_right = 470.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBAttack/PKey3"]
-margin_right = 95.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey3"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 91.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer"]
-margin_right = 45.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer"]
+margin_right = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -774,81 +809,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer"]
-margin_left = 49.0
-margin_right = 95.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer/MTexture"]
+[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 46.0
-margin_bottom = 37.0
+margin_right = 43.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 7.0
-margin_right = 23.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 6.0
+margin_right = 21.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
-frames = SubResource( 40 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
+frames = SubResource( 29 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 25.0
-margin_right = 23.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 21.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
-frames = SubResource( 43 )
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MAttack/HBAttack/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
+frames = SubResource( 31 )
 
-[node name="HBDefense" type="HBoxContainer" parent="VBController/VBAction"]
+[node name="MDefense" type="MarginContainer" parent="VBController/VBAction"]
 margin_top = 90.0
 margin_right = 480.0
 margin_bottom = 131.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBDefense"]
-margin_right = 92.0
+[node name="HBDefense" type="HBoxContainer" parent="VBController/VBAction/MDefense"]
+margin_right = 470.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="VBController/VBAction/MDefense/HBDefense"]
+margin_right = 90.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
 text = "Defense"
 align = 1
 valign = 1
 
-[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/HBDefense"]
-margin_left = 96.0
-margin_right = 188.0
+[node name="PKey1" type="PanelContainer" parent="VBController/VBAction/MDefense/HBDefense"]
+margin_left = 94.0
+margin_right = 184.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBDefense/PKey1"]
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey1"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
+[node name="Label" type="Label" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
@@ -859,274 +903,272 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 4
 custom_constants/margin_bottom = 4
 
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer/MTexture"]
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer/MTexture"]
 margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
+margin_right = 41.0
+margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 33 )
+
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture/TKey2"]
+frames = SubResource( 35 )
+
+[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/MDefense/HBDefense"]
+margin_left = 188.0
+margin_right = 278.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer/MTexture"]
+margin_top = 4.0
+margin_right = 41.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
+frames = SubResource( 37 )
+
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
+frames = SubResource( 39 )
+
+[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/MDefense/HBDefense"]
+margin_left = 282.0
+margin_right = 372.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey3"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer"]
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture"]
+margin_top = 4.0
+margin_right = 41.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 6.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
+frames = SubResource( 41 )
+
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures"]
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 22.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
+frames = SubResource( 43 )
+
+[node name="PKey4" type="PanelContainer" parent="VBController/VBAction/MDefense/HBDefense"]
+margin_left = 376.0
+margin_right = 470.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey4"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 92.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "???"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer"]
+margin_left = 47.0
+margin_right = 90.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer/MTexture"]
+margin_top = 4.0
+margin_right = 43.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TKey1" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 6.0
+margin_right = 21.0
+margin_bottom = 6.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures/TKey1"]
 frames = SubResource( 45 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
+[node name="TKey2" type="TextureRect" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures"]
+margin_left = 21.0
+margin_top = 22.0
+margin_right = 21.0
+margin_bottom = 22.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey1/HBoxContainer/MTexture/VBTexture/TKey2"]
-frames = SubResource( 46 )
-
-[node name="PKey2" type="PanelContainer" parent="VBController/VBAction/HBDefense"]
-margin_left = 192.0
-margin_right = 284.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBDefense/PKey2"]
-margin_right = 92.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
-text = "???"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_top = 4
-custom_constants/margin_bottom = 4
-
-[node name="VBTexture" type="VBoxContainer" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer/MTexture"]
-margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture/TKey1"]
+[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures/TKey2"]
 frames = SubResource( 47 )
 
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey2/HBoxContainer/MTexture/VBTexture/TKey2"]
-frames = SubResource( 48 )
-
-[node name="PKey3" type="PanelContainer" parent="VBController/VBAction/HBDefense"]
-margin_left = 288.0
-margin_right = 380.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBDefense/PKey3"]
-margin_right = 92.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer"]
-margin_right = 44.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
-text = "???"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer"]
-margin_left = 48.0
-margin_right = 92.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_top = 4
-custom_constants/margin_bottom = 4
-
-[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer/MTexture"]
-margin_top = 4.0
-margin_right = 44.0
-margin_bottom = 37.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 22.0
-margin_top = 7.0
-margin_right = 22.0
-margin_bottom = 7.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures/TKey1"]
-frames = SubResource( 49 )
-
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures"]
-margin_left = 22.0
-margin_top = 25.0
-margin_right = 22.0
-margin_bottom = 25.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
-frames = SubResource( 50 )
-
-[node name="PKey4" type="PanelContainer" parent="VBController/VBAction/HBDefense"]
-margin_left = 384.0
-margin_right = 480.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBController/VBAction/HBDefense/PKey4"]
-margin_right = 96.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer"]
-margin_right = 46.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 8 )
-text = "???"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MTexture" type="MarginContainer" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer"]
-margin_left = 50.0
-margin_right = 96.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/margin_top = 4
-custom_constants/margin_bottom = 4
-
-[node name="VBTextures" type="VBoxContainer" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer/MTexture"]
-margin_top = 4.0
-margin_right = 46.0
-margin_bottom = 37.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TKey1" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 7.0
-margin_right = 23.0
-margin_bottom = 7.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures/TKey1"]
-frames = SubResource( 51 )
-
-[node name="TKey2" type="TextureRect" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures"]
-margin_left = 23.0
-margin_top = 25.0
-margin_right = 23.0
-margin_bottom = 25.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-
-[node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/HBDefense/PKey4/HBoxContainer/MTexture/VBTextures/TKey2"]
-frames = SubResource( 52 )
-
 [node name="HBButtons" type="HBoxContainer" parent="VBController"]
-margin_left = 138.0
 margin_top = 204.0
-margin_right = 342.0
+margin_right = 480.0
 margin_bottom = 270.0
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 1
 
-[node name="Start" parent="VBController/HBButtons" instance=ExtResource( 3 )]
-margin_top = 23.0
-margin_bottom = 43.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-texture_normal = ExtResource( 4 )
-texture_focused = ExtResource( 5 )
-scene = "res://scenes/World.tscn"
+[node name="Menu" parent="VBController/HBButtons" instance=ExtResource( 3 )]
+margin_right = 238.0
+margin_bottom = 66.0
+text = "Menu"
+scene = "res://scenes/interface/Menu.tscn"
 
 [node name="Back" parent="VBController/HBButtons" instance=ExtResource( 3 )]
-margin_left = 104.0
-margin_top = 23.0
-margin_right = 204.0
-margin_bottom = 43.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-texture_normal = ExtResource( 6 )
-texture_focused = ExtResource( 7 )
-scene = "res://scenes/interface/Menu.tscn"
-[connection signal="send_scene" from="VBController/HBButtons/Start" to="." method="on_start_send_scene"]
+margin_left = 242.0
+margin_bottom = 66.0
+text = "Back"
+scene = "res://scenes/interface/Option.tscn"
+[connection signal="send_scene" from="VBController/HBButtons/Menu" to="." method="on_menu_send_scene"]
 [connection signal="send_scene" from="VBController/HBButtons/Back" to="." method="on_back_send_scene"]

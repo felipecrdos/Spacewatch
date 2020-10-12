@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/interface/TButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/interface/Victory.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprite/interface/menu_selected_button.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprite/interface/menu_normal_button.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprite/interface/quit_selected_button.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite/interface/quit_normal_button.png" type="Texture" id=6]
 [ext_resource path="res://resources/fontx64.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=8]
 
 [node name="Victory" type="Control"]
 script = ExtResource( 2 )
@@ -28,7 +24,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 480.0
-margin_bottom = 121.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
@@ -36,25 +32,26 @@ text = "VITORY"
 align = 1
 valign = 1
 
-[node name="Menu" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_left = 190.0
-margin_top = 125.0
-margin_right = 290.0
-margin_bottom = 145.0
-size_flags_horizontal = 6
-size_flags_vertical = 1
-texture_normal = ExtResource( 4 )
-texture_focused = ExtResource( 3 )
+[node name="VBButtons" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 137.0
+margin_right = 480.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Menu" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
+margin_top = 45.0
+margin_bottom = 64.0
+size_flags_vertical = 4
+text = "Menu"
 scene = "res://scenes/interface/Menu.tscn"
 
-[node name="Quit" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_left = 190.0
-margin_top = 149.0
-margin_right = 290.0
-margin_bottom = 270.0
-size_flags_horizontal = 6
-texture_normal = ExtResource( 6 )
-texture_focused = ExtResource( 5 )
+[node name="Quit" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
+margin_top = 68.0
+margin_bottom = 87.0
+size_flags_vertical = 4
+text = "Quit"
 [connection signal="tree_entered" from="." to="." method="on_victory_tree_entered"]
-[connection signal="send_scene" from="VBoxContainer/Menu" to="." method="on_menu_send_scene"]
-[connection signal="send_scene" from="VBoxContainer/Quit" to="." method="on_quit_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/VBButtons/Menu" to="." method="on_menu_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/VBButtons/Quit" to="." method="on_quit_send_scene"]

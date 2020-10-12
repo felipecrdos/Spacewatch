@@ -7,9 +7,10 @@ var menu
 var pause
 
 func _ready():
-	resume = $VContainer/Resume
-	menu = $VContainer/Menu
+	resume = $VContainer/VBButtons/Resume
+	menu = $VContainer/VBButtons/Menu
 	pause = $VContainer/TPause
+	
 	
 	set_buttons_disabled(true)
 	

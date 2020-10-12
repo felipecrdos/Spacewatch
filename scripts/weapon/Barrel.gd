@@ -43,8 +43,8 @@ func shoot():
 		firerate = sfirerate
 
 func on_flash_animation_finished():
-	$Flash.stop()
 	$Flash.set_frame(0)
+	$Flash.stop()
 	
 func set_barrel_sprite(value:SpriteFrames):
 	$ASprite.set_visible(true)

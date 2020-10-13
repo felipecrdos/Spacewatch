@@ -74,3 +74,4 @@ func on_btnplus_focus_entered():
 
 func on_btnminus_focus_entered():
 	SoundManager.play_sfx("ChooseButton")
+

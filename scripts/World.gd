@@ -58,12 +58,7 @@ func update_health(value : int, body=null):
 	player_data["health"] += value
 	player_data["health"] = clamp(	player_data["health"], 
 									0, player_data["maxhealth"])
-#	for t in healths.get_children():
-#		t.visible = false
-#
-#	for h in player_data["health"]:
-#		var t = healths.get_child(h)
-#		t.visible = true
+
 	health.text = str(player_data["health"])
 	if body:
 		body.update_health()
@@ -125,6 +120,7 @@ func load_level():
 func transition_level():
 	Global.transition.start(0, 1, 1, 4);
 	yield(Global.transition.tween, "tween_all_completed")
+	$Pause.set_buttons_color()
 	remove_level()
 	add_level()
 	Global.transition.start(1, 0, 1, 0);
@@ -147,5 +143,3 @@ func on_world_tree_entered():
 	
 func on_world_tree_exited():
 	Global.save_data()
-
-

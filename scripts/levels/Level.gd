@@ -4,11 +4,16 @@ class_name Level
 var level
 var difficulty
 var skycolor
+var hudcolor
+var index
 
 func _ready():
-	skycolor = $Background/SkyColor
-	skycolor.color = Color("#28a0ff")
-	VisualServer.set_default_clear_color(Color("#0089ff"))
+	#skycolor = $Background/SkyColor
+	#skycolor.color = Color("#28a0ff")
+	hudcolor = Global.game_data["Level"]["hudcolor"]
+	index = Global.game_data["Level"]["index"]
+	print("color: ",hudcolor[index])
+	VisualServer.set_default_clear_color(Color(hudcolor[index]))
 	SoundManager.fade_in_level_music()
 	
 func disable_player():

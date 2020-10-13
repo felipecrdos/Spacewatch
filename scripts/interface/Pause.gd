@@ -10,9 +10,9 @@ func _ready():
 	resume = $VContainer/VBButtons/Resume
 	menu = $VContainer/VBButtons/Menu
 	pause = $VContainer/TPause
-	
-	
+
 	set_buttons_disabled(true)
+	set_buttons_color()
 	
 func _input(event):
 	if event is InputEventKey:
@@ -22,7 +22,17 @@ func _input(event):
 			set_visible(true)
 			set_buttons_disabled(false)
 			get_tree().paused = true
-			
+	
+
+func set_buttons_color():
+	var index = Global.game_data["Level"]["index"]
+	var colors = Global.game_data["Level"]["hudcolor"]
+	resume.add_color_override("font_color_hover", Color(colors[index]))
+	resume.add_color_override("font_color_pressed", Color(colors[index]))
+	menu.add_color_override("font_color_hover", Color(colors[index]))
+	menu.add_color_override("font_color_pressed", Color(colors[index]))
+	pause.add_color_override("font_color", Color(colors[index]))
+	
 func on_resume_send_scene(scene):
 	SoundManager.resume_all_music()
 	set_visible(false)

@@ -1,138 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/fontness10.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/interface/RButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/interface/VolumeControl.gd" type="Script" id=3]
-[ext_resource path="res://scripts/interface/NButton.gd" type="Script" id=6]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0.301961, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-anti_aliasing = false
 
 [node name="VolumeControl" type="HBoxContainer"]
 margin_right = 480.0
@@ -154,6 +24,7 @@ margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "Default Label"
 align = 1
 valign = 1
@@ -161,54 +32,25 @@ valign = 1
 [node name="HControl" type="HBoxContainer" parent="."]
 margin_left = 200.0
 margin_top = 5.0
-margin_right = 279.0
+margin_right = 278.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.4
 
-[node name="BtnMinus" type="Button" parent="HControl"]
+[node name="BtnMinus" parent="HControl" instance=ExtResource( 2 )]
 margin_right = 37.0
 margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0.301961, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0.301961, 1 )
 text = "-"
-script = ExtResource( 6 )
-__meta__ = {
-"_editor_description_": ""
-}
 
-[node name="BtnPlus" type="Button" parent="HControl"]
+[node name="BtnPlus" parent="HControl" instance=ExtResource( 2 )]
 margin_left = 41.0
-margin_right = 79.0
+margin_right = 78.0
 margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 0, 0.301961, 1 )
-custom_colors/font_color_pressed = Color( 1, 0, 0.301961, 1 )
 text = "+"
-script = ExtResource( 6 )
 
 [node name="MBars" type="MarginContainer" parent="."]
-margin_left = 283.0
+margin_left = 282.0
 margin_right = 480.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
@@ -221,7 +63,7 @@ custom_constants/margin_bottom = 4
 [node name="HBars" type="HBoxContainer" parent="MBars"]
 margin_left = 20.0
 margin_top = 4.0
-margin_right = 177.0
+margin_right = 178.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -232,6 +74,7 @@ margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar2" type="ColorRect" parent="MBars/HBars"]
 margin_left = 4.0
@@ -240,152 +83,167 @@ margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar3" type="ColorRect" parent="MBars/HBars"]
 margin_left = 9.0
-margin_right = 11.0
+margin_right = 10.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar4" type="ColorRect" parent="MBars/HBars"]
-margin_left = 15.0
-margin_right = 16.0
+margin_left = 14.0
+margin_right = 15.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar5" type="ColorRect" parent="MBars/HBars"]
-margin_left = 20.0
-margin_right = 23.0
+margin_left = 19.0
+margin_right = 21.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar6" type="ColorRect" parent="MBars/HBars"]
-margin_left = 27.0
-margin_right = 29.0
+margin_left = 25.0
+margin_right = 27.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar7" type="ColorRect" parent="MBars/HBars"]
-margin_left = 33.0
-margin_right = 36.0
+margin_left = 31.0
+margin_right = 33.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar8" type="ColorRect" parent="MBars/HBars"]
-margin_left = 40.0
-margin_right = 43.0
+margin_left = 37.0
+margin_right = 40.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar9" type="ColorRect" parent="MBars/HBars"]
-margin_left = 47.0
-margin_right = 51.0
+margin_left = 44.0
+margin_right = 47.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar10" type="ColorRect" parent="MBars/HBars"]
-margin_left = 55.0
-margin_right = 58.0
+margin_left = 51.0
+margin_right = 54.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.1
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar11" type="ColorRect" parent="MBars/HBars"]
-margin_left = 62.0
-margin_right = 67.0
+margin_left = 58.0
+margin_right = 62.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.2
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar12" type="ColorRect" parent="MBars/HBars"]
-margin_left = 71.0
-margin_right = 75.0
+margin_left = 66.0
+margin_right = 70.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.3
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar13" type="ColorRect" parent="MBars/HBars"]
-margin_left = 79.0
-margin_right = 84.0
+margin_left = 74.0
+margin_right = 78.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.4
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar14" type="ColorRect" parent="MBars/HBars"]
-margin_left = 88.0
-margin_right = 93.0
+margin_left = 82.0
+margin_right = 87.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar15" type="ColorRect" parent="MBars/HBars"]
-margin_left = 97.0
-margin_right = 103.0
+margin_left = 91.0
+margin_right = 96.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.6
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar16" type="ColorRect" parent="MBars/HBars"]
-margin_left = 107.0
-margin_right = 113.0
+margin_left = 100.0
+margin_right = 106.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.7
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar17" type="ColorRect" parent="MBars/HBars"]
-margin_left = 117.0
-margin_right = 123.0
+margin_left = 110.0
+margin_right = 116.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.8
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar18" type="ColorRect" parent="MBars/HBars"]
-margin_left = 127.0
-margin_right = 134.0
+margin_left = 120.0
+margin_right = 126.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.9
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar19" type="ColorRect" parent="MBars/HBars"]
-margin_left = 138.0
-margin_right = 145.0
+margin_left = 130.0
+margin_right = 137.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 
 [node name="Bar20" type="ColorRect" parent="MBars/HBars"]
-margin_left = 149.0
-margin_right = 157.0
+margin_left = 141.0
+margin_right = 158.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.1
+color = Color( 0.784314, 0.431373, 0.627451, 1 )
 [connection signal="button_down" from="HControl/BtnMinus" to="." method="on_minus_button_down"]
-[connection signal="focus_entered" from="HControl/BtnMinus" to="." method="on_btnminus_focus_entered"]
-[connection signal="mouse_entered" from="HControl/BtnMinus" to="." method="on_btnminus_mouse_entered"]
 [connection signal="button_down" from="HControl/BtnPlus" to="." method="on_plus_button_down"]
-[connection signal="focus_entered" from="HControl/BtnPlus" to="." method="on_btnplus_focus_entered"]
-[connection signal="mouse_entered" from="HControl/BtnPlus" to="." method="on_btnplus_mouse_entered"]

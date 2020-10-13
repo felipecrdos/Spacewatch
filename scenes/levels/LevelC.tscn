@@ -23,7 +23,7 @@ func _physics_process(delta):
 script = ExtResource( 2 )
 
 [node name="SkyColor" parent="Background" index="0"]
-color = Color( 0.741176, 0.501961, 1, 1 )
+color = Color( 0.623529, 0.52549, 0.752941, 1 )
 
 [node name="BossPath" parent="." index="6"]
 curve = ExtResource( 4 )

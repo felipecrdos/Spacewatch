@@ -12,7 +12,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -94,7 +94,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 32, 16, 16 )
+region = Rect2( 32, 32, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -130,7 +130,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 10 )
-region = Rect2( 144, 32, 16, 16 )
+region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
@@ -140,37 +140,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 10 )
-region = Rect2( 144, 48, 16, 16 )
+region = Rect2( 16, 48, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ SubResource( 22 ) ],
+"frames": [ SubResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 24 ) ],
+"frames": [ SubResource( 45 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ SubResource( 26 ) ],
+"frames": [ SubResource( 46 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -190,7 +190,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 10 )
-region = Rect2( 240, 32, 16, 16 )
+region = Rect2( 112, 32, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
@@ -200,73 +200,73 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
-"frames": [ SubResource( 32 ) ],
+"frames": [ SubResource( 47 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
-"frames": [ SubResource( 34 ) ],
+"frames": [ SubResource( 48 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=37]
 animations = [ {
-"frames": [ SubResource( 36 ) ],
+"frames": [ SubResource( 49 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
-"frames": [ SubResource( 38 ) ],
+"frames": [ SubResource( 50 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 40 ) ],
+"frames": [ SubResource( 51 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
-"frames": [ SubResource( 42 ) ],
+"frames": [ SubResource( 52 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -330,6 +330,7 @@ margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Move"
 align = 1
 valign = 1
@@ -359,6 +360,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "LEFT"
 align = 1
 valign = 1
@@ -429,6 +431,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "RIGHT"
 align = 1
 valign = 1
@@ -499,6 +502,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "UP"
 align = 1
 valign = 1
@@ -569,6 +573,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "DOWN"
 align = 1
 valign = 1
@@ -634,6 +639,7 @@ margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Attack"
 align = 1
 valign = 1
@@ -671,6 +677,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "SHOOT"
 align = 1
 valign = 1
@@ -731,6 +738,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "SUPER"
 align = 1
 valign = 1
@@ -801,6 +809,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "???"
 align = 1
 valign = 1
@@ -866,6 +875,7 @@ margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Defense"
 align = 1
 valign = 1
@@ -895,6 +905,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "SHIELD"
 align = 1
 valign = 1
@@ -965,6 +976,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "???"
 align = 1
 valign = 1
@@ -1035,6 +1047,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "???"
 align = 1
 valign = 1
@@ -1078,6 +1091,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="ASprite" type="AnimatedSprite" parent="VBController/VBAction/MDefense/HBDefense/PKey3/HBoxContainer/MTexture/VBTextures/TKey2"]
+position = Vector2( 0.8909, 0 )
 frames = SubResource( 39 )
 
 [node name="PKey4" type="PanelContainer" parent="VBController/VBAction/MDefense/HBDefense"]
@@ -1105,6 +1119,7 @@ margin_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "???"
 align = 1
 valign = 1

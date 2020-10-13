@@ -189,6 +189,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/pickup/PowerupPickup.gd"
 }, {
+"base": "Button",
+"class": "RButton",
+"language": "GDScript",
+"path": "res://scripts/interface/RButton.gd"
+}, {
 "base": "Ammo",
 "class": "Rocket",
 "language": "GDScript",
@@ -261,6 +266,7 @@ _global_script_class_icons={
 "Pickup": "",
 "Player": "",
 "PowerupPickup": "",
+"RButton": "",
 "Rocket": "",
 "ShieldPickup": "",
 "SpawnEnemy": "",
@@ -366,6 +372,6 @@ quality/shadow_atlas/size.mobile=512
 quality/shadows/filter_mode=0
 quality/reflections/high_quality_ggx=false
 quality/subsurface_scattering/quality=0
-environment/default_clear_color=Color( 0, 0.537255, 1, 1 )
+environment/default_clear_color=Color( 0.156863, 0.156863, 0.27451, 1 )
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

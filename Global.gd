@@ -41,6 +41,7 @@ var game_data = {
 													"res://assets/sprite/boss/levelD_boss.png"]},
 								"index":0,
 								"name":["LevelA", "LevelB", "LevelC", "LevelD"], 
+								"hudcolor":["#489fb5", "#f4978e", "#5e548e", "#0b132b"],
 								"path":["res://scenes/levels/LevelA.tscn",
 										"res://scenes/levels/LevelB.tscn",
 										"res://scenes/levels/LevelC.tscn",
@@ -118,6 +119,7 @@ func add_level_index():
 func change_scene(scene : String, delay:float=0):
 	transition.start(0, 1, 1, delay)
 	yield(transition.tween, "tween_all_completed")
+	VisualServer.set_default_clear_color(Color("#282846"))
 	get_tree().change_scene(scene)
 	transition.start(1, 0, 1, 0)
 #==

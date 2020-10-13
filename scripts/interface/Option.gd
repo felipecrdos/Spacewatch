@@ -29,7 +29,7 @@ func on_controller_send_scene(scene):
 	set_buttons_disabled(true)
 	Global.change_scene(scene)
 
-func on_item_send_scene(scene):
+func on_items_send_scene(scene):
 	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene) 

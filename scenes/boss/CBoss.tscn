@@ -147,7 +147,7 @@ __meta__ = {
 
 [node name="Barrel" parent="Weapons/EBGun" instance=ExtResource( 3 )]
 ammo = ExtResource( 4 )
-firerate = 20.0
+firerate = 10.0
 speed_ammo = Vector2( 150, 150 )
 ammo_animation = "roundA_blue"
 

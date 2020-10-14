@@ -93,6 +93,10 @@ func load_default_data():
 	game_data["Player"]["powerup"] 		= default_game_data["Player"]["powerup"]
 	game_data["Player"]["shieldup"] 	= default_game_data["Player"]["shieldup"]
 
+func new_game():
+	game_data = default_game_data
+	save_data()
+
 func choose(values:Array):
 	if !values.empty():
 		randomize()

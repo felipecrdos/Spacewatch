@@ -15,6 +15,11 @@ func _ready():
 	VisualServer.set_default_clear_color(Color(hudcolor[index]))
 	SoundManager.fade_in_level_music()
 	
+	if has_node("Bosstime") && has_node("Warning/TWarning"):
+		$Warning/TWarning.set_wait_time($Bosstime.get_wait_time()-5)
+		$Warning/TWarning.start()
+	
+	
 func disable_player():
 	if $ActorContainer.has_node("Player"):
 		$ActorContainer/Player/Shape.set_deferred("disabled", true)
@@ -30,3 +35,11 @@ func on_boss_timer_timeout():
 	stop_spawn_enemies()
 	active_boss_attack()
 	$BossPath/APlayer.play("down")
+
+func on_twarning_timeout():
+	$Warning/AWarning.play("down")
+	
+func on_awarning_animation_finished(anim_name):
+	if $Warning:
+		print("Warning deleted")
+		$Warning.queue_free()

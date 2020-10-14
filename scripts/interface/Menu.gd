@@ -33,3 +33,11 @@ func on_options_send_scene(scene):
 	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene)
+
+
+func on_new_game_send_scene(scene):
+	SoundManager.fade_out_music("Menu")
+	set_buttons_disabled(true)
+	Global.new_game()
+	Global.change_scene(scene)
+	

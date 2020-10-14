@@ -21,7 +21,8 @@ func _ready():
 	create_enemies()
 	set_offset_between_enemies()
 	
-	if $Delay:
+	
+	if has_node("Delay"):
 		$Delay.set_wait_time(start_delay)
 		$Delay.start()
 	

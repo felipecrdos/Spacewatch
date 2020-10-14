@@ -12,7 +12,6 @@ func _ready():
 	#skycolor.color = Color("#28a0ff")
 	hudcolor = Global.game_data["Level"]["hudcolor"]
 	index = Global.game_data["Level"]["index"]
-	print("color: ",hudcolor[index])
 	VisualServer.set_default_clear_color(Color(hudcolor[index]))
 	SoundManager.fade_in_level_music()
 	

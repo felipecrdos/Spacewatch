@@ -140,37 +140,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 10 )
 region = Rect2( 16, 48, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ SubResource( 44 ) ],
+"frames": [ SubResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 45 ) ],
+"frames": [ SubResource( 24 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ SubResource( 46 ) ],
+"frames": [ SubResource( 26 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -200,73 +200,73 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
-"frames": [ SubResource( 47 ) ],
+"frames": [ SubResource( 32 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
-"frames": [ SubResource( 48 ) ],
+"frames": [ SubResource( 34 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=37]
 animations = [ {
-"frames": [ SubResource( 49 ) ],
+"frames": [ SubResource( 36 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
-"frames": [ SubResource( 50 ) ],
+"frames": [ SubResource( 38 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 51 ) ],
+"frames": [ SubResource( 40 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 10 )
 region = Rect2( 32, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
-"frames": [ SubResource( 52 ) ],
+"frames": [ SubResource( 42 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -298,6 +298,7 @@ margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Controllers"
 align = 1
 valign = 1

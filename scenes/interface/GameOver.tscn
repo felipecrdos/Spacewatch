@@ -4,7 +4,6 @@
 [ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=8]
 
-
 [node name="GameOver" type="Control"]
 script = ExtResource( 2 )
 __meta__ = {
@@ -29,6 +28,7 @@ margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "GAME OVER"
 align = 1
 valign = 1
@@ -42,7 +42,7 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Menu" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
-margin_top = 45.0
+margin_top = 52.0
 margin_bottom = 64.0
 size_flags_vertical = 4
 text = "Menu"
@@ -50,7 +50,7 @@ scene = "res://scenes/interface/Menu.tscn"
 
 [node name="Quit" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
 margin_top = 68.0
-margin_bottom = 87.0
+margin_bottom = 80.0
 size_flags_vertical = 4
 text = "Quit"
 [connection signal="tree_entered" from="." to="." method="on_gameover_tree_entered"]

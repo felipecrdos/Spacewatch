@@ -34,7 +34,7 @@ func _ready():
 	shield = $HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield/LShield
 	curr_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/LScore
 	high_score = $HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/LScore
-	weapon = $HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/IGun/Sprite
+	weapon = $HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/MPlayer/IGun/Sprite
 	powerup = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/LPowerup
 	super = $HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper/LSuper
 	boss_name = $HContainer/RightScreen/Viewport/VContainer/VBBoss/TBoss

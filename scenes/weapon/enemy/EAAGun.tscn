@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ammo/enemy/EBullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/weapon/Barrel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/weapon/enemy/EAAGun.gd" type="Script" id=3]
+
+[node name="EAAGun" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MidleBarrel" parent="." instance=ExtResource( 2 )]
+aim = true
+ammo = ExtResource( 1 )
+firerate = 40.0
+speed_ammo = Vector2( 80, 80 )
+ammo_animation = "roundA_yellow"
+
+[node name="StartShoot" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StopShoot" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="StartShoot" to="." method="on_start_shoot_timeout"]
+[connection signal="timeout" from="StopShoot" to="." method="on_stop_shoot_timeout"]

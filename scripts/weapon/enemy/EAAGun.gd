@@ -1,0 +1,30 @@
+extends Weapon
+class_name EAAGun
+
+var can_shooting = false
+var active = false
+
+func _ready():
+	get_barrels()
+	$StartShoot.start()
+
+func _physics_process(delta):
+	if active && can_shooting:
+		aim_player()
+		shoot()
+		
+func on_start_shoot_timeout():
+	can_shooting = true
+	$StopShoot.start()
+
+func on_stop_shoot_timeout():
+	can_shooting = false
+	$StartShoot.start()
+
+func aim_player():
+	if Global.player:
+		var angle = global_position.angle_to(Global.player.global_position) 
+		for child in get_children():
+			if child is Barrel:
+				child.rotation = angle
+

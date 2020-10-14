@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 256, -256, 0, 0, 0, 0, 256, 0, 0, 0, 0, 0, 128, 96, 0, 0, 0, 0, 128, 224, 0, 0, 0, 0, 256, 256, 0, 0, 0, 0, 256, 416 )
+"points": PoolVector2Array( 0, 0, 0, 0, 256, -256, 0, 0, 0, 0, 256, 0, 0, -46.8283, 0, 46.8283, 128, 96, 0.7937, -35.7165, -0.7937, 35.7165, 128, 224, 0, 0, 0, 0, 256, 256, 0, 0, 0, 0, 256, 416 )
 }
 
 [node name="SpawnBEnemy" instance=ExtResource( 1 )]
@@ -16,8 +16,8 @@ follow_speed = 80.0
 number_follows = 3
 enemy_offset = 50.0
 enemy = ExtResource( 2 )
-restart_time = 5.0
-start_delay = 3.0
+restart_time = 4.0
+start_delay = 10.0
 follow_loop = true
 follow_rotate = true
 
@@ -27,7 +27,7 @@ follow_speed = 80.0
 number_follows = 3
 enemy_offset = 50.0
 enemy = ExtResource( 2 )
-restart_time = 5.0
-start_delay = 3.0
+restart_time = 4.0
+start_delay = 10.0
 follow_loop = true
 follow_rotate = true

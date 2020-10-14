@@ -3,6 +3,7 @@ class_name Barrel
 
 var sfirerate : float
 export (bool) var flash_on
+export (bool) var aim
 export (PackedScene) var ammo
 export (float) var firerate setget set_firerate
 export (Vector2) var speed_ammo setget set_speed_ammo
@@ -37,11 +38,18 @@ func shoot():
 		var new = ammo.instance()
 		new.set_deferred("global_position", global_position)
 		new.set_deferred("speed", speed_ammo)
-		new.set_deferred("direction", Vector2(cos(rotation),sin(rotation)))
+		new.set_deferred("direction", ammo_direction())
 		new.set_animation(ammo_animation)
 		Global.findnode("AmmoContainer").call_deferred("add_child", new)
 		firerate = sfirerate
 
+func ammo_direction():
+	var dir = Vector2(cos(rotation),sin(rotation))
+	var target = Global.player
+	if target && aim:
+		dir = global_position.direction_to(target.global_position)
+	return dir
+	
 func on_flash_animation_finished():
 	$Flash.set_frame(0)
 	$Flash.stop()

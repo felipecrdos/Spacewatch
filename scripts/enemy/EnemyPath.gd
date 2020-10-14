@@ -31,7 +31,7 @@ func _physics_process(delta):
 			follow.offset += follow_speed * delta
 	
 func create_follow():
-	for i in range(number_follows):
+	for i in range(0, number_follows, 1):
 		add_child(PathFollow2D.new())
 		
 func restart_follows():
@@ -47,6 +47,12 @@ func recreate_enemies():
 func followers_finished():
 	for follow in follows:
 		if follow.unit_offset != 1.0:
+			return false
+	return true
+	
+func all_enemies_destroyed():
+	for follow in follows:
+		if follow.get_children().size() > 0:
 			return false
 	return true
 	
@@ -85,7 +91,6 @@ func destroy_all_enemies():
 			if child is Enemy:
 				child.destroy()
 #===
-
 func set_restart_time(value:float):
 	restart_time = value
 
@@ -119,7 +124,7 @@ func set_ready(value:bool):
 
 func on_finished_timeout():
 	
-	if followers_finished():
+	if followers_finished() || all_enemies_destroyed():
 		set_ready(false)
 		$Finished.stop()
 		

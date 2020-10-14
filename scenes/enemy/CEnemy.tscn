@@ -59,6 +59,8 @@ material = SubResource( 3 )
 frames = SubResource( 6 )
 playing = true
 
+[node name="Weapons" type="Node2D" parent="."]
+
 [node name="Flash" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
@@ -69,6 +71,11 @@ autostart = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Shoot" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
 [connection signal="timeout" from="Flash" to="." method="on_flash_timeout"]
 [connection signal="timeout" from="Outscreen" to="." method="on_outscreen_timeout"]
+[connection signal="timeout" from="Shoot" to="." method="on_shoot_timeout"]

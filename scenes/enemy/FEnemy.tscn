@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/enemy/FEnemy.gd" type="Script" id=2]
+[ext_resource path="res://scenes/weapon/enemy/EBGun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -52,10 +53,21 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Weapons" type="Node2D" parent="."]
+
+[node name="EBGun" parent="Weapons" instance=ExtResource( 3 )]
+
+[node name="Barrel" parent="Weapons/EBGun" index="0"]
+speed_ammo = Vector2( 50, 50 )
+ammo_animation = "roundA_green"
+
+[node name="StartShoot" parent="Weapons/EBGun" index="1"]
+wait_time = 2.0
+
+[node name="StopShoot" parent="Weapons/EBGun" index="2"]
+wait_time = 2.0
 
 [node name="Flash" type="Timer" parent="."]
 wait_time = 0.05
@@ -72,3 +84,5 @@ autostart = true
 [connection signal="timeout" from="Flash" to="." method="on_flash_timeout"]
 [connection signal="timeout" from="Outscreen" to="." method="on_outscreen_timeout"]
 [connection signal="timeout" from="Shoot" to="." method="on_shoot_timeout"]
+
+[editable path="Weapons/EBGun"]

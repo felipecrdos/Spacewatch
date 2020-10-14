@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/super_particle.png-2f8f2e138759dee9ec6bcd0139b89d1c.stex"
+path="res://.import/gold_particle.png-e06d7318b4b58395f6ed4d15153e2866.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/effect/super_particle.png"
-dest_files=[ "res://.import/super_particle.png-2f8f2e138759dee9ec6bcd0139b89d1c.stex" ]
+source_file="res://assets/sprite/effect/gold_particle.png"
+dest_files=[ "res://.import/gold_particle.png-e06d7318b4b58395f6ed4d15153e2866.stex" ]
 
 [params]
 

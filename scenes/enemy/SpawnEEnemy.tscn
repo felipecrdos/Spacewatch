@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/enemy/SpawnEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/enemy/EEnemy.tscn" type="PackedScene" id=2]
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 256, -256, -36.5269, -64.1448, 36.5269, 64.1448, 160, 64, 69.4902, -5.3454, -69.4902, 5.3454, 160, 176, 0, 0, 0, 0, 48, 272, 0, 0, 0, 0, 48, 352 )
 }
@@ -11,7 +11,7 @@ _data = {
 [node name="SpawnEEnemy" instance=ExtResource( 1 )]
 
 [node name="EnemyRigth" parent="." index="0"]
-curve = SubResource( 4 )
+curve = SubResource( 1 )
 follow_speed = 80.0
 number_follows = 3
 enemy_offset = 50.0
@@ -22,7 +22,7 @@ follow_loop = true
 follow_rotate = true
 
 [node name="EnemyLeft" parent="." index="1"]
-curve = SubResource( 4 )
+curve = SubResource( 1 )
 follow_speed = 80.0
 number_follows = 3
 enemy_offset = 50.0

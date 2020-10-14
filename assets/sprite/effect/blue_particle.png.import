@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/powerup_particle.png-00eaca54224001830a59673f5c46e635.stex"
+path="res://.import/blue_particle.png-f575b61fd9e000320acea5b80c8b68bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/effect/powerup_particle.png"
-dest_files=[ "res://.import/powerup_particle.png-00eaca54224001830a59673f5c46e635.stex" ]
+source_file="res://assets/sprite/effect/blue_particle.png"
+dest_files=[ "res://.import/blue_particle.png-f575b61fd9e000320acea5b80c8b68bd.stex" ]
 
 [params]
 

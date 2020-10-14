@@ -1,18 +1,12 @@
 extends Path2D
 
-var index : int
-var speed : float
 var follow : PathFollow2D
-var level_data : Dictionary
 var screen_width : float
 var screen_height : float
+export (float) var speed = 50
 
 func _ready():
-	speed = 45
 	follow = $Follow
-	index = level_data["index"]
-	level_data = Global.game_data["Level"]
-	
 	screen_width = get_viewport_rect().size.x
 	screen_height = get_viewport_rect().size.y
 	position.x = screen_width/2

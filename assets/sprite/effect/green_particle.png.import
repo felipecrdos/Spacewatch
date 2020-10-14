@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin_particle.png-ae7140ab62380b0dc8dd22209bb55d81.stex"
+path="res://.import/green_particle.png-55ebd2363f18cb683259b9a23220871e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/effect/coin_particle.png"
-dest_files=[ "res://.import/coin_particle.png-ae7140ab62380b0dc8dd22209bb55d81.stex" ]
+source_file="res://assets/sprite/effect/green_particle.png"
+dest_files=[ "res://.import/green_particle.png-55ebd2363f18cb683259b9a23220871e.stex" ]
 
 [params]
 

@@ -59,7 +59,7 @@ one_shot = true
 autostart = true
 
 [node name="Shoot" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
 [connection signal="area_entered" from="." to="." method="on_enemy_area_entered"]
 [connection signal="timeout" from="Flash" to="." method="on_flash_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=1]
 [ext_resource path="res://scripts/enemy/EEnemy.gd" type="Script" id=2]
+[ext_resource path="res://scenes/weapon/enemy/ECGun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 12 )
@@ -53,9 +54,56 @@ shape = SubResource( 1 )
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Weapons" type="Node2D" parent="."]
+
+[node name="ECGun" parent="Weapons" instance=ExtResource( 3 )]
+position = Vector2( 14, 0 )
+
+[node name="N90Barrel" parent="Weapons/ECGun" index="0"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="N45Barrel" parent="Weapons/ECGun" index="1"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="Z0Barrel" parent="Weapons/ECGun" index="2"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="P45Barrel" parent="Weapons/ECGun" index="3"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="P90Barrel" parent="Weapons/ECGun" index="4"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="P135Barrel" parent="Weapons/ECGun" index="5"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="P180Barrel" parent="Weapons/ECGun" index="6"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="P225Barrel" parent="Weapons/ECGun" index="7"]
+firerate = 80.0
+speed_ammo = Vector2( 40, 40 )
+ammo_animation = "roundA_purple"
+
+[node name="StopShoot" parent="Weapons/ECGun" index="9"]
+wait_time = 1.0
 
 [node name="Flash" type="Timer" parent="."]
 wait_time = 0.05
@@ -72,3 +120,5 @@ autostart = true
 [connection signal="timeout" from="Flash" to="." method="on_flash_timeout"]
 [connection signal="timeout" from="Outscreen" to="." method="on_outscreen_timeout"]
 [connection signal="timeout" from="Shoot" to="." method="on_shoot_timeout"]
+
+[editable path="Weapons/ECGun"]

@@ -15,7 +15,7 @@ aim = true
 ammo = ExtResource( 1 )
 firerate = 40.0
 speed_ammo = Vector2( 80, 80 )
-ammo_animation = "roundA_yellow"
+ammo_animation = "roundA_green"
 
 [node name="StartShoot" type="Timer" parent="."]
 wait_time = 2.0

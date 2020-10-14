@@ -1,23 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/LevelD.gd" type="Script" id=2]
 [ext_resource path="res://scenes/boss/DBoss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/bosspathD.tres" type="Curve2D" id=4]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Path2D
-
-var speed : float
-var follow : PathFollow2D
-
-func _ready():
-	follow = $Follow
-	speed = 45
-
-func _physics_process(delta):
-	follow.offset += speed * delta
-"
+[ext_resource path="res://scenes/enemy/SpawnEEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemy/SpawnDEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/enemy/SpawnFEnemy.tscn" type="PackedScene" id=12]
 
 [node name="Level" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -25,9 +15,51 @@ script = ExtResource( 2 )
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.109804, 0.145098, 0.254902, 1 )
 
+[node name="SpawnCEnemy" parent="SpawnContainer" index="0" instance=ExtResource( 10 )]
+
+[node name="EnemyRigth" parent="SpawnContainer/SpawnCEnemy" index="0"]
+restart_time = 4.0
+
+[node name="EnemyLeft" parent="SpawnContainer/SpawnCEnemy" index="1"]
+restart_time = 4.0
+
+[node name="SpawnDEnemy" parent="SpawnContainer" index="1" instance=ExtResource( 9 )]
+
+[node name="EnemyRigth" parent="SpawnContainer/SpawnDEnemy" index="0"]
+restart_time = 5.0
+
+[node name="EnemyLeft" parent="SpawnContainer/SpawnDEnemy" index="1"]
+restart_time = 5.0
+
+[node name="SpawnEEnemy" parent="SpawnContainer" index="2" instance=ExtResource( 8 )]
+
+[node name="EnemyRigth" parent="SpawnContainer/SpawnEEnemy" index="0"]
+restart_time = 8.0
+start_delay = 7.0
+
+[node name="EnemyLeft" parent="SpawnContainer/SpawnEEnemy" index="1"]
+restart_time = 8.0
+start_delay = 7.0
+
+[node name="SpawnFEnemy" parent="SpawnContainer" index="3" instance=ExtResource( 12 )]
+
+[node name="EnemyRigth" parent="SpawnContainer/SpawnFEnemy" index="0"]
+number_follows = 2
+enemy_offset = 60.0
+restart_time = 10.0
+start_delay = 10.0
+follow_rotate = true
+
+[node name="EnemyLeft" parent="SpawnContainer/SpawnFEnemy" index="1"]
+number_follows = 2
+enemy_offset = 60.0
+restart_time = 10.0
+start_delay = 10.0
+follow_rotate = true
+
 [node name="BossPath" parent="." index="6"]
 curve = ExtResource( 4 )
-script = SubResource( 1 )
+speed = 80.0
 
 [node name="Follow" parent="BossPath" index="0"]
 position = Vector2( 16, 0 )
@@ -36,3 +68,11 @@ position = Vector2( 16, 0 )
 
 [node name="Bosstime" parent="." index="7"]
 wait_time = 60.0
+
+[editable path="SpawnContainer/SpawnCEnemy"]
+
+[editable path="SpawnContainer/SpawnDEnemy"]
+
+[editable path="SpawnContainer/SpawnEEnemy"]
+
+[editable path="SpawnContainer/SpawnFEnemy"]

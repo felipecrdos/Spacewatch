@@ -4,7 +4,8 @@
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=2]
 [ext_resource path="res://scenes/effect/Popup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/effect/PickupParticles.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sprite/effect/coin_particle.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/effect/gold_particle.png" type="Texture" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 5 )

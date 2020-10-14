@@ -2,7 +2,7 @@ extends Enemy
 class_name EEnemy
 
 func _ready():
-	health = 25
+	health = 40
 	damage = 8
 	score = 2
 	

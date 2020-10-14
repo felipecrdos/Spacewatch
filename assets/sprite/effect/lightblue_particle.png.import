@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health_particle.png-81d5f818072f029ab434b022b61f8d44.stex"
+path="res://.import/lightblue_particle.png-91e643a6c2854f54096c8b2ebfe37891.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/effect/health_particle.png"
-dest_files=[ "res://.import/health_particle.png-81d5f818072f029ab434b022b61f8d44.stex" ]
+source_file="res://assets/sprite/effect/lightblue_particle.png"
+dest_files=[ "res://.import/lightblue_particle.png-91e643a6c2854f54096c8b2ebfe37891.stex" ]
 
 [params]
 

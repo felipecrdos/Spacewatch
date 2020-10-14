@@ -21,6 +21,7 @@ void fragment(){
 	else
 		COLOR = color;
 }"
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
@@ -149,7 +150,7 @@ __meta__ = {
 position = Vector2( 0, -5 )
 ammo = ExtResource( 4 )
 firerate = 15.0
-speed_ammo = Vector2( 80, 80 )
+speed_ammo = Vector2( 150, 150 )
 barrel_sprite = SubResource( 7 )
 ammo_animation = "roundA_yellow"
 
@@ -158,7 +159,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StopShoot" type="Timer" parent="Weapons/EBGun"]
-wait_time = 4.0
+wait_time = 8.0
 one_shot = true
 
 [node name="Exhaust" type="Node2D" parent="."]
@@ -171,7 +172,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -184,6 +184,7 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 13 )
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

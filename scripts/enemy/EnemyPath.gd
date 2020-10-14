@@ -21,8 +21,10 @@ func _ready():
 	create_enemies()
 	set_offset_between_enemies()
 	
-	$Delay.set_wait_time(start_delay)
-	$Delay.start()
+	if $Delay:
+		$Delay.set_wait_time(start_delay)
+		$Delay.start()
+	
 
 func _physics_process(delta):
 	followers_finished()

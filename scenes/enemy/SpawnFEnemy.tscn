@@ -12,20 +12,20 @@ _data = {
 
 [node name="EnemyRigth" parent="." index="0"]
 curve = SubResource( 1 )
-follow_speed = 80.0
-number_follows = 4
+follow_speed = 60.0
+number_follows = 3
 enemy_offset = 50.0
 enemy = ExtResource( 2 )
-restart_time = 10.0
-start_delay = 4.0
+restart_time = 5.0
+start_delay = 7.0
 follow_loop = true
 
 [node name="EnemyLeft" parent="." index="1"]
 curve = SubResource( 1 )
-follow_speed = 80.0
-number_follows = 4
+follow_speed = 60.0
+number_follows = 3
 enemy_offset = 50.0
 enemy = ExtResource( 2 )
-restart_time = 10.0
-start_delay = 4.0
+restart_time = 5.0
+start_delay = 7.0
 follow_loop = true

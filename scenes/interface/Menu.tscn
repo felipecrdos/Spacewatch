@@ -41,18 +41,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Start" parent="VBoxContainer/VButtons" instance=ExtResource( 3 )]
+[node name="NewGame" parent="VBoxContainer/VButtons" instance=ExtResource( 3 )]
 margin_top = 36.0
 margin_bottom = 48.0
 size_flags_vertical = 4
-text = "Start"
+text = "new game"
 scene = "res://scenes/World.tscn"
 
-[node name="NewGame" parent="VBoxContainer/VButtons" instance=ExtResource( 3 )]
+[node name="Continue" parent="VBoxContainer/VButtons" instance=ExtResource( 3 )]
 margin_top = 52.0
 margin_bottom = 64.0
 size_flags_vertical = 4
-text = "new game"
+text = "Continue"
 scene = "res://scenes/World.tscn"
 
 [node name="Options" parent="VBoxContainer/VButtons" instance=ExtResource( 3 )]
@@ -67,7 +67,7 @@ margin_top = 84.0
 margin_bottom = 96.0
 size_flags_vertical = 4
 text = "Quit"
-[connection signal="send_scene" from="VBoxContainer/VButtons/Start" to="." method="on_start_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/VButtons/NewGame" to="." method="on_new_game_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/VButtons/Continue" to="." method="on_continue_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/VButtons/Options" to="." method="on_options_send_scene"]
 [connection signal="send_scene" from="VBoxContainer/VButtons/Quit" to="." method="on_quit_send_scene"]

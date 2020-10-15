@@ -340,9 +340,9 @@ align = 1
 valign = 1
 
 [node name="ScoreContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 151.0
+margin_top = 150.0
 margin_right = 118.0
-margin_bottom = 187.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
@@ -388,7 +388,6 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
 frames = SubResource( 11 )
-frame = 3
 playing = true
 centered = false
 
@@ -439,7 +438,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
 frames = SubResource( 20 )
-frame = 7
+frame = 4
 playing = true
 centered = false
 

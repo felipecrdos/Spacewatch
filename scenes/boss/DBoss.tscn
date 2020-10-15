@@ -199,7 +199,7 @@ __meta__ = {
 ammo = ExtResource( 2 )
 firerate = 15.0
 speed_ammo = Vector2( 100, 100 )
-ammo_animation = "roundA_green"
+ammo_animation = "roundA_purple"
 
 [node name="StartShoot" type="Timer" parent="Weapons/EBGun"]
 wait_time = 6.0

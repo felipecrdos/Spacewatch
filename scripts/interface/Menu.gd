@@ -1,19 +1,19 @@
 extends Control
 
-var start
+var _continue
 var quit
 var options
  
 func _ready():
-	start = $VBoxContainer/VButtons/Start
+	_continue = $VBoxContainer/VButtons/Continue
 	quit = $VBoxContainer/VButtons/Quit
 	options = $VBoxContainer/VButtons/Options
 	
 	SoundManager.fade_in_music("Menu")
 	set_buttons_disabled(false)
-	start.grab_focus()
+	_continue.grab_focus()
 
-func on_start_send_scene(scene):
+func on_continue_send_scene(scene):
 	SoundManager.fade_out_music("Menu")
 	set_buttons_disabled(true)
 	Global.change_scene(scene)
@@ -25,7 +25,7 @@ func on_quit_send_scene(scene):
 	get_tree().quit()
 
 func set_buttons_disabled(value:bool):
-	start.set_deferred("disabled",value)
+	_continue.set_deferred("disabled",value)
 	quit.set_deferred("disabled",value)
 	options.set_deferred("disabled", value)
 	

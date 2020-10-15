@@ -108,7 +108,7 @@ rotation = 1.5708
 ammo = ExtResource( 6 )
 firerate = 40.0
 speed_ammo = Vector2( 120, 120 )
-ammo_animation = "roundA_yellow"
+ammo_animation = "roundA_red"
 
 [node name="RightBarrel" parent="Weapons/EAGun" instance=ExtResource( 3 )]
 position = Vector2( 8, 12 )
@@ -116,7 +116,7 @@ rotation = 1.5708
 ammo = ExtResource( 6 )
 firerate = 40.0
 speed_ammo = Vector2( 120, 120 )
-ammo_animation = "roundA_yellow"
+ammo_animation = "roundA_red"
 
 [node name="StartShoot" type="Timer" parent="Weapons/EAGun"]
 wait_time = 2.0
@@ -136,7 +136,6 @@ scale = Vector2( 0.6, 0.8 )
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Left"]
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Right" type="Position2D" parent="Exhaust"]
@@ -149,7 +148,6 @@ __meta__ = {
 
 [node name="ASprite" type="AnimatedSprite" parent="Exhaust/Right"]
 frames = SubResource( 9 )
-frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

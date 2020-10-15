@@ -53,7 +53,7 @@ scene = "res://scenes/interface/Audio.tscn"
 margin_top = 59.0
 margin_bottom = 71.0
 size_flags_vertical = 4
-text = "Controlle"
+text = "Controls"
 scene = "res://scenes/interface/Controller.tscn"
 
 [node name="Items" parent="VBContainer/VBOptions" instance=ExtResource( 1 )]

@@ -49,7 +49,10 @@ func destroy():
 	
 	randomize()
 	var chance = randi() % 100 + 1 # 1 a 100
-	if(chance%10 == 0): # 10% chance de dropar algum pickup
+	var t = 10
+	if Global.game_data["Level"]["index"] == 3:
+		t = 5
+	if(chance%t == 0): # 10% chance de dropar algum pickup
 		# Ao dropar o pickup
 			# 33.33% chance HEALTH
 			# 33.33% chance SHIELD

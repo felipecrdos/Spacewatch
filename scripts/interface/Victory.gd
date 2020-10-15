@@ -2,10 +2,19 @@ extends Control
 
 var menu
 var quit
+var hscore
+var score
  
 func _ready():
 	menu = $VBoxContainer/VBButtons/Menu
 	quit = $VBoxContainer/VBButtons/Quit
+	
+	hscore = $VBoxContainer/VBScore/HBHScore/LHScore
+	score = $VBoxContainer/VBScore/HBScore/LScore
+	
+	hscore.text = "%04d"%(Global.game_data["Player"]["hscore"])
+	score.text = "%04d"%(Global.game_data["Player"]["cscore"])
+	
 	menu.grab_focus()
 
 func on_menu_send_scene(scene):

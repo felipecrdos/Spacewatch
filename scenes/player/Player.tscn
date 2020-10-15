@@ -7,11 +7,11 @@
 [ext_resource path="res://scenes/weapon/player/BGun.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/weapon/player/DGun.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=11]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=12]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id=13]
 code = "shader_type canvas_item;
 const vec3 white = vec3(1.0, 1.0, 1.0);
 uniform bool flashing = false;
@@ -25,24 +25,24 @@ void fragment(){
 		COLOR = color;
 }"
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=14]
 resource_local_to_scene = true
-shader = SubResource( 3 )
+shader = SubResource( 13 )
 shader_param/flashing = false
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 288, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 288, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 256, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 256, 32, 32 )
 
@@ -54,14 +54,14 @@ region = Rect2( 32, 224, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 64, 224, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
@@ -72,8 +72,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=12]
-resource_name = "blink"
+[sub_resource type="Animation" id=20]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:monitoring")
@@ -82,10 +81,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, false, true ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:monitorable")
@@ -94,10 +93,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false, false, true ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("ASprite:modulate")
@@ -121,21 +120,20 @@ __meta__ = {
 
 [node name="Body" type="Area2D" parent="."]
 position = Vector2( 2, 1 )
-monitoring = false
-monitorable = false
 collision_layer = 0
 collision_mask = 66
 
 [node name="Shape" type="CollisionShape2D" parent="Body"]
-shape = SubResource( 1 )
+shape = SubResource( 11 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 12 )
 
 [node name="ASprite" type="AnimatedSprite" parent="."]
-material = SubResource( 4 )
-frames = SubResource( 11 )
+material = SubResource( 14 )
+frames = SubResource( 19 )
 animation = "left"
+frame = 1
 speed_scale = 3.0
 playing = true
 
@@ -157,7 +155,7 @@ visible = false
 visible = false
 
 [node name="Blink" type="AnimationPlayer" parent="."]
-anims/blink = SubResource( 12 )
+anims/blink = SubResource( 20 )
 [connection signal="area_entered" from="Body" to="." method="on_area_entered"]
 [connection signal="timeout" from="TShader" to="." method="on_tshader_timeout"]
 [connection signal="animation_finished" from="Blink" to="." method="on_blink_animation_finished"]

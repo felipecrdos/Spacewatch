@@ -1,0 +1,293 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/fontness10.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/interface/Credits.gd" type="Script" id=2]
+[ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=8]
+
+[node name="Credits" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 480.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="VBScore" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 480.0
+margin_bottom = 222.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_constants/separation = 13
+
+[node name="VBProgrammers" type="VBoxContainer" parent="VBoxContainer/VBScore"]
+margin_right = 480.0
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBScore/VBProgrammers"]
+margin_right = 480.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "Programmers"
+align = 1
+valign = 1
+
+[node name="Felipe" type="Label" parent="VBoxContainer/VBScore/VBProgrammers"]
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Felipe Cardoso"
+align = 1
+valign = 1
+
+[node name="Paulo" type="Label" parent="VBoxContainer/VBScore/VBProgrammers"]
+margin_top = 32.0
+margin_right = 480.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Paulo André Lima Flôres"
+align = 1
+valign = 1
+
+[node name="VBArtists" type="VBoxContainer" parent="VBoxContainer/VBScore"]
+margin_top = 57.0
+margin_right = 480.0
+margin_bottom = 101.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBScore/VBArtists"]
+margin_right = 480.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "Artists/Game Design"
+align = 1
+valign = 1
+
+[node name="Felipe" type="Label" parent="VBoxContainer/VBScore/VBArtists"]
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Felipe Cardoso"
+align = 1
+valign = 1
+
+[node name="Paulo" type="Label" parent="VBoxContainer/VBScore/VBArtists"]
+margin_top = 32.0
+margin_right = 480.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Paulo André Lima Flôres"
+align = 1
+valign = 1
+
+[node name="VBAssets" type="VBoxContainer" parent="VBoxContainer/VBScore"]
+margin_top = 114.0
+margin_right = 480.0
+margin_bottom = 174.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBScore/VBAssets"]
+margin_right = 480.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "used Assets"
+align = 1
+valign = 1
+
+[node name="VBSounds" type="VBoxContainer" parent="VBoxContainer/VBScore/VBAssets"]
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 44.0
+
+[node name="HBAuthorA" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBSounds"]
+margin_right = 480.0
+margin_bottom = 12.0
+
+[node name="Title" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorA"]
+margin_right = 157.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "Musics/sfx"
+align = 2
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorA"]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Cactusdude"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorA"]
+margin_left = 322.0
+margin_right = 480.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "cactusdude.itch.io"
+
+[node name="HBAuthorB" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBSounds"]
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 28.0
+
+[node name="Title" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorB"]
+margin_right = 157.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+align = 2
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorB"]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Murkje"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSounds/HBAuthorB"]
+margin_left = 322.0
+margin_right = 480.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "murkje.itch.io"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBScore/VBAssets"]
+margin_top = 48.0
+margin_right = 480.0
+margin_bottom = 60.0
+size_flags_vertical = 3
+
+[node name="HBSprites" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 12.0
+
+[node name="Sprite" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+margin_right = 157.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "Sprites"
+align = 2
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Cluly"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+margin_left = 322.0
+margin_right = 480.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "cluly.itch.io"
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBButtons" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 226.0
+margin_right = 480.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Menu" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
+margin_right = 238.0
+margin_bottom = 44.0
+text = "Menu"
+scene = "res://scenes/interface/Menu.tscn"
+
+[node name="Quit" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
+margin_left = 242.0
+margin_bottom = 44.0
+text = "Quit"
+scene = "res://scenes/interface/Menu.tscn"
+[connection signal="tree_entered" from="." to="." method="on_credits_tree_entered"]
+[connection signal="send_scene" from="VBoxContainer/VBButtons/Menu" to="." method="on_menu_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/VBButtons/Quit" to="." method="on_quit_send_scene"]

@@ -58,7 +58,12 @@ func stop_sfx(audio:String):
 	var stream = $Sfx.get_node(audio)
 	if stream.playing:
 		stream.stop()
-
+		
+func stop_all_sfx():
+	for stream in $Sfx.get_children():
+		if stream.playing:
+			stream.stop()
+	
 func play_music(audio:String):
 	$Music.get_node(audio).play()
 

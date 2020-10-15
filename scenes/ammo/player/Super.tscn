@@ -22,7 +22,6 @@ void fragment(){
 	    COLOR = vec4(mix(color.rgb, white, whitening), color.a);
 
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -148,6 +147,7 @@ disabled = true
 [node name="ASprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Stop" type="Timer" parent="."]

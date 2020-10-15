@@ -30,7 +30,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
-text = "VITORY"
+text = "VICTORY"
 align = 1
 valign = 1
 
@@ -49,30 +49,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/VBScore/HBHScore"]
-margin_right = 157.0
+margin_right = 238.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "HIGH SCORE"
-align = 2
-valign = 1
-
-[node name="Space" type="Label" parent="VBoxContainer/VBScore/HBHScore"]
-margin_left = 161.0
-margin_right = 318.0
-margin_bottom = 63.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "-"
 align = 1
 valign = 1
 
 [node name="LHScore" type="Label" parent="VBoxContainer/VBScore/HBHScore"]
-margin_left = 322.0
+margin_left = 242.0
 margin_right = 480.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
@@ -80,6 +68,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "HIGH SCORE"
+align = 1
 valign = 1
 
 [node name="HBScore" type="HBoxContainer" parent="VBoxContainer/VBScore"]
@@ -88,32 +77,21 @@ margin_right = 480.0
 margin_bottom = 131.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/VBScore/HBScore"]
-margin_right = 157.0
+margin_right = 240.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "SCORE"
-align = 2
-valign = 1
-
-[node name="Space" type="Label" parent="VBoxContainer/VBScore/HBScore"]
-margin_left = 161.0
-margin_right = 318.0
-margin_bottom = 64.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "-"
 align = 1
 valign = 1
 
 [node name="LScore" type="Label" parent="VBoxContainer/VBScore/HBScore"]
-margin_left = 322.0
+margin_left = 240.0
 margin_right = 480.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
@@ -121,6 +99,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "SCORE"
+align = 1
 valign = 1
 
 [node name="VBButtons" type="VBoxContainer" parent="VBoxContainer"]
@@ -131,20 +110,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Menu" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
-margin_top = 19.0
-margin_bottom = 31.0
-size_flags_vertical = 4
-custom_colors/font_color_disabled = Color( 0.431373, 0.431373, 0.627451, 1 )
-custom_colors/font_color_hover = Color( 0.784314, 0.431373, 0.627451, 1 )
-text = "Menu"
-scene = "res://scenes/interface/Menu.tscn"
-
-[node name="Quit" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
-margin_top = 35.0
-margin_bottom = 47.0
-size_flags_vertical = 4
-text = "Quit"
+[node name="Credits" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
+margin_bottom = 66.0
+text = "Credits"
+scene = "res://scenes/interface/Credits.tscn"
 [connection signal="tree_entered" from="." to="." method="on_victory_tree_entered"]
-[connection signal="send_scene" from="VBoxContainer/VBButtons/Menu" to="." method="on_menu_send_scene"]
-[connection signal="send_scene" from="VBoxContainer/VBButtons/Quit" to="." method="on_quit_send_scene"]
+[connection signal="send_scene" from="VBoxContainer/VBButtons/Credits" to="." method="on_credits_send_scene"]

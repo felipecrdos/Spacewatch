@@ -23,6 +23,11 @@ func _ready():
 	
 	texture_size = $ASprite.get_sprite_frames().get_frame("default", 0).get_size()
 
+func _process(delta):
+	if Global.is_on_screen(global_position, texture_size):
+		SoundManager.play_sfx("BossEngine")
+		set_process(false)
+	
 func destroy():
 	SoundManager.play_sfx("MainExplosion")
 	for i in score:

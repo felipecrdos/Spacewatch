@@ -24,10 +24,10 @@ func on_super_animation_finished(anim_name):
 	queue_free()
 
 func play_super_spawn():
-	SoundManager.play_sfx("super_loading")
+	SoundManager.play_sfx("SuperLoading")
 	
 func play_super_explosion():
-	SoundManager.play_sfx("super_explosion")
+	SoundManager.play_sfx("SuperExplosion")
 
 func camera_shake():
 	Global.findnode("MCamera").shake(25, 50)

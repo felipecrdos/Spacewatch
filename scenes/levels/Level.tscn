@@ -157,6 +157,7 @@ one_shot = true
 
 [node name="AWarning" type="AnimationPlayer" parent="Warning"]
 anims/down = SubResource( 6 )
+[connection signal="tree_exited" from="." to="." method="on_level_tree_exited"]
 [connection signal="timeout" from="Bosstime" to="." method="on_boss_timer_timeout"]
 [connection signal="timeout" from="Warning/TWarning" to="." method="on_twarning_timeout"]
 [connection signal="animation_finished" from="Warning/AWarning" to="." method="on_awarning_animation_finished"]

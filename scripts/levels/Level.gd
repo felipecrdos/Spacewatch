@@ -19,6 +19,8 @@ func _ready():
 		$Warning/TWarning.set_wait_time($Bosstime.get_wait_time()-5)
 		$Warning/TWarning.start()
 	
+#	Global.game_data["Player"]["powerup"] = 3
+#	Global.game_data["Player"]["super"] = 3
 	
 func disable_player():
 	if $ActorContainer.has_node("Player"):
@@ -44,7 +46,10 @@ func on_awarning_animation_finished(anim_name):
 		$Warning.queue_free()
 
 func play_warning_sfx():
-	SoundManager.play_sfx("boss_warning")
+	SoundManager.play_sfx("BossWarning")
 
 func stop_warning_sfx():
-	SoundManager.stop_sfx("boss_warning")
+	SoundManager.stop_sfx("BossWarning")
+	
+func on_level_tree_exited():
+	SoundManager.stop_all_sfx()

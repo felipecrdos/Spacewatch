@@ -41,5 +41,10 @@ func on_twarning_timeout():
 	
 func on_awarning_animation_finished(anim_name):
 	if $Warning:
-		print("Warning deleted")
 		$Warning.queue_free()
+
+func play_warning_sfx():
+	SoundManager.play_sfx("boss_warning")
+
+func stop_warning_sfx():
+	SoundManager.stop_sfx("boss_warning")

@@ -20,7 +20,6 @@ void fragment(){
 	else
 		COLOR = color;
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -63,42 +62,42 @@ playing = true
 position = Vector2( 14, 0 )
 
 [node name="N90Barrel" parent="Weapons/ECGun" index="0"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="N45Barrel" parent="Weapons/ECGun" index="1"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="Z0Barrel" parent="Weapons/ECGun" index="2"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="P45Barrel" parent="Weapons/ECGun" index="3"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="P90Barrel" parent="Weapons/ECGun" index="4"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="P135Barrel" parent="Weapons/ECGun" index="5"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="P180Barrel" parent="Weapons/ECGun" index="6"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 
 [node name="P225Barrel" parent="Weapons/ECGun" index="7"]
-firerate = 80.0
+firerate = 100.0
 speed_ammo = Vector2( 40, 40 )
 ammo_animation = "roundA_purple"
 

@@ -54,6 +54,11 @@ func fade_in_level_music(duration:float=2, volume:float=0):
 func play_sfx(audio:String):
 	$Sfx.get_node(audio).play()
 
+func stop_sfx(audio:String):
+	var stream = $Sfx.get_node(audio)
+	if stream.playing:
+		stream.stop()
+
 func play_music(audio:String):
 	$Music.get_node(audio).play()
 

@@ -81,10 +81,7 @@ func input():
 	if Input.is_action_just_pressed("ui_super"):
 		if player_data["super"] > 0:
 			create_super()
-	
-	if Input.is_key_pressed(KEY_1):
-		SoundManager.play_sfx("SelectButton")
-		
+
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 
@@ -117,9 +114,6 @@ func remain_shield():
 
 func create_super():
 	var new = super.instance()
-	#new.set_deferred("speed", speed_ammo)
-	#new.set_deferred("direction", Vector2(cos(rotation),sin(rotation)))
-	#new.set_animation(ammo_animation)
 	Global.findnode("AmmoContainer").call_deferred("add_child", new)
 	new.set_deferred("global_position", global_position)
 	get_tree().call_group("world", "update_super", -1)
@@ -136,10 +130,7 @@ func update_weapon():
 		weapon.visible = false
 	weapons[player_data["powerup"]].visible = true
 
-func idle_state(delta):
-	$ASprite.play("default")
-	
-func flying_state(delta):
+func set_animation():
 	if direction.x > 0:
 		$ASprite.play("right")
 	elif direction.x < 0:
@@ -147,9 +138,16 @@ func flying_state(delta):
 	else:
 		$ASprite.play("default")
 	
-func invulnerable_state(delta):
+func idle_state(delta):
 	$ASprite.play("default")
-	state = State.FLYING
+	
+func flying_state(delta):
+	set_animation()
+	
+func invulnerable_state(delta):
+	if !$Blink.is_playing():
+		$Blink.play("blink")
+	set_animation()
 	
 func dying_state(delta):
 	SoundManager.play_sfx("MainExplosion")
@@ -175,3 +173,6 @@ func set_flash_effect(value : bool):
 	
 func on_tshader_timeout():
 	set_flash_effect(false)
+	
+func on_blink_animation_finished(anim_name):
+	state = State.FLYING 

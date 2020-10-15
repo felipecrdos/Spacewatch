@@ -34,11 +34,11 @@ restart_time = 5.0
 [node name="SpawnEEnemy" parent="SpawnContainer" index="2" instance=ExtResource( 8 )]
 
 [node name="EnemyRigth" parent="SpawnContainer/SpawnEEnemy" index="0"]
-restart_time = 8.0
+restart_time = 10.0
 start_delay = 7.0
 
 [node name="EnemyLeft" parent="SpawnContainer/SpawnEEnemy" index="1"]
-restart_time = 8.0
+restart_time = 10.0
 start_delay = 7.0
 
 [node name="SpawnFEnemy" parent="SpawnContainer" index="3" instance=ExtResource( 12 )]
@@ -68,6 +68,9 @@ position = Vector2( 16, 0 )
 
 [node name="Bosstime" parent="." index="7"]
 wait_time = 60.0
+
+[node name="ASprite" parent="Warning" index="0"]
+frame = 2
 
 [editable path="SpawnContainer/SpawnCEnemy"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/sound/SoundManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/sfx/enemy_explosion.ogg" type="AudioStream" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/sound/sfx/super_pickup.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/sound/sfx/super_explosion.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/sound/sfx/super_loading.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/sound/sfx/warning.ogg" type="AudioStream" id=22]
 
 [node name="SoundManager" type="Node2D"]
 pause_mode = 2
@@ -119,4 +120,8 @@ bus = "SfxBus"
 
 [node name="super_loading" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 21 )
+bus = "SfxBus"
+
+[node name="boss_warning" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource( 22 )
 bus = "SfxBus"

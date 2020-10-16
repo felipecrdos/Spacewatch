@@ -57,6 +57,9 @@ speed = 60.0
 
 [node name="ABoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
 
+[node name="Bosstime" parent="." index="7"]
+wait_time = 60.0
+
 [editable path="SpawnContainer/SpawnAEnemy"]
 
 [editable path="SpawnContainer/SpawnBEnemy"]

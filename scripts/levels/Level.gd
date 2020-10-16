@@ -20,8 +20,8 @@ func _ready():
 		$Warning/TWarning.set_wait_time($Bosstime.get_wait_time()-5)
 		$Warning/TWarning.start()
 	
-	Global.game_data["Player"]["powerup"] = 3
-	Global.game_data["Player"]["super"] = 3
+#	Global.game_data["Player"]["powerup"] = 3
+#	Global.game_data["Player"]["super"] = 3
 #	Global.game_data["Level"]["index"] = 3
 	
 func disable_player():

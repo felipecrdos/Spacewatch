@@ -70,8 +70,11 @@ position = Vector2( 16, 0 )
 
 [node name="DBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
 
+[node name="Bosstime" parent="." index="7"]
+wait_time = 90.0
+
 [node name="ASprite" parent="Warning" index="0"]
-frame = 2
+frame = 1
 
 [editable path="SpawnContainer/SpawnCEnemy"]
 

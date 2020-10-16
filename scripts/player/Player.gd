@@ -151,7 +151,7 @@ func invulnerable_state(delta):
 	
 func dying_state(delta):
 	SoundManager.play_sfx("MainExplosion")
-	SoundManager.fade_out_music(level_data["name"][level_data["index"]])
+	SoundManager.fade_out_music(level_data["music"][level_data["index"]])
 	Global.create_explosion(explosion, position, "fire", Vector2(2.0, 2.0))
 	set_deferred("visible", false)
 	Global.change_scene("res://scenes/interface/GameOver.tscn")

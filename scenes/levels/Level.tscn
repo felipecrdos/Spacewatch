@@ -163,7 +163,7 @@ position = Vector2( 118, -10 )
 [node name="ASprite" type="AnimatedSprite" parent="Warning"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="TWarning" type="Timer" parent="Warning"]

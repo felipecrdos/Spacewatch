@@ -73,9 +73,6 @@ position = Vector2( 16, 0 )
 [node name="Bosstime" parent="." index="7"]
 wait_time = 60.0
 
-[node name="ASprite" parent="Warning" index="0"]
-frame = 1
-
 [editable path="SpawnContainer/SpawnCEnemy"]
 
 [editable path="SpawnContainer/SpawnDEnemy"]

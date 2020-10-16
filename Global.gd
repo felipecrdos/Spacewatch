@@ -25,10 +25,10 @@ var game_data = {
 								"cscore":0,
 								"hscore":0,
 								"shieldinfo":{"name":"PlayerShield", "strength":0},
-								"weapon":["res://assets/sprite/weapon/mg_side.png",
-										  "res://assets/sprite/weapon/matter_side.png",
-										  "res://assets/sprite/weapon/laser_side.png",
-										  "res://assets/sprite/weapon/rocket_side.png"]
+								"weapon":["res://assets/sprite/weapon/agun.png",
+										  "res://assets/sprite/weapon/bgun.png",
+										  "res://assets/sprite/weapon/cgun.png",
+										  "res://assets/sprite/weapon/dgun.png"]
 							},
 					"Level":{	"difficulty":"Easy", 
 								"boss":{"name":["Destroyer", 

@@ -74,11 +74,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/weapon/CGun.gd"
 }, {
-"base": "Pickup",
-"class": "CoinPickup",
-"language": "GDScript",
-"path": "res://scripts/pickup/CoinPickup.gd"
-}, {
 "base": "Boss",
 "class": "DBoss",
 "language": "GDScript",
@@ -210,6 +205,11 @@ _global_script_classes=[ {
 "path": "res://scripts/ammo/player/Rocket.gd"
 }, {
 "base": "Pickup",
+"class": "ScorePickup",
+"language": "GDScript",
+"path": "res://scripts/pickup/ScorePickup.gd"
+}, {
+"base": "Pickup",
 "class": "ShieldPickup",
 "language": "GDScript",
 "path": "res://scripts/pickup/ShieldPickup.gd"
@@ -253,7 +253,6 @@ _global_script_class_icons={
 "CBoss": "",
 "CEnemy": "",
 "CGun": "",
-"CoinPickup": "",
 "DBoss": "",
 "DEnemy": "",
 "DGun": "",
@@ -280,6 +279,7 @@ _global_script_class_icons={
 "PowerupPickup": "",
 "RButton": "",
 "Rocket": "",
+"ScorePickup": "",
 "ShieldPickup": "",
 "SpawnEnemy": "",
 "SuperAttack": "",
@@ -307,6 +307,8 @@ SoundManager="*res://scenes/sound/SoundManager.tscn"
 
 window/size/width=480
 window/size/height=270
+window/size/fullscreen=true
+window/size/always_on_top=true
 window/size/test_width=960
 window/size/test_height=540
 window/vsync/use_vsync=false

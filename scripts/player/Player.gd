@@ -14,6 +14,7 @@ var velocity 	: Vector2
 var direction   : Vector2
 var speed    	: Vector2
 var screen_size : Vector2
+var texture_size : Vector2
 var player_data	: Dictionary
 var level_data	: Dictionary
 
@@ -50,6 +51,7 @@ func _ready():
 		
 	weapons = $Weapon.get_children()
 	update_weapon()
+	texture_size = $ASprite.get_sprite_frames().get_frame($ASprite.animation, 0).get_size()
 
 func _physics_process(delta):
 	if funcs_mask[state][Func.INPUT]:
@@ -92,8 +94,10 @@ func vmove():
 func move():
 	velocity = move_and_slide(velocity, Vector2.UP)
 func set_limits():
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	var tw = texture_size.x/2
+	var ty = texture_size.y/2
+	position.x = clamp(position.x, 0+tw, screen_size.x-tw)
+	position.y = clamp(position.y, 0+ty, screen_size.y-ty)
 
 func update_health():
 	if player_data["health"] > 0:

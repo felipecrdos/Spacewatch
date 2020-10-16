@@ -15,9 +15,9 @@ var is_alive : bool
 var screen_width : float
 var screen_height : float
 
-enum {COIN, HEALTH, SHIELD, POWERUP, SUPER}
+enum {SCORE, HEALTH, SHIELD, POWERUP, SUPER}
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
-onready var pickups = [	preload("res://scenes/pickup/CoinPickup.tscn"),
+onready var pickups = [	preload("res://scenes/pickup/ScorePickup.tscn"),
 						preload("res://scenes/pickup/HealthPickup.tscn"),
 						preload("res://scenes/pickup/ShieldPickup.tscn"),
 						preload("res://scenes/pickup/PowerupPickup.tscn"),
@@ -67,7 +67,7 @@ func destroy():
 		Global.create_pickup(pickups[chosen], global_position)
 		
 	for i in score:
-		Global.create_pickup(pickups[COIN], global_position)
+		Global.create_pickup(pickups[SCORE], global_position)
 	queue_free()
 
 # Sinal recebido quando uma área (attack player) entra na área do inimigo.

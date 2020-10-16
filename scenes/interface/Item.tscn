@@ -56,7 +56,7 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 96, 16, 16 )
+region = Rect2( 160, 160, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
@@ -114,7 +114,7 @@ size_flags_vertical = 3
 columns = 4
 
 [node name="LIcon" type="Label" parent="VBItem/MItem/GItem"]
-margin_right = 67.0
+margin_right = 73.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -123,8 +123,8 @@ align = 1
 valign = 1
 
 [node name="LName" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
-margin_right = 138.0
+margin_left = 77.0
+margin_right = 150.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -134,8 +134,8 @@ text = "Name"
 valign = 1
 
 [node name="LType" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
-margin_right = 209.0
+margin_left = 154.0
+margin_right = 227.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -145,8 +145,8 @@ text = "Type"
 valign = 1
 
 [node name="LDescription" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
-margin_right = 458.0
+margin_left = 231.0
+margin_right = 459.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -156,9 +156,9 @@ text = "Description"
 valign = 1
 
 [node name="IHealth" type="TextureRect" parent="VBItem/MItem/GItem"]
-margin_left = 33.0
+margin_left = 36.0
 margin_top = 31.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 31.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -167,9 +167,9 @@ size_flags_vertical = 6
 frames = SubResource( 2 )
 
 [node name="NHealth" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
+margin_left = 77.0
 margin_top = 22.0
-margin_right = 138.0
+margin_right = 150.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -179,9 +179,9 @@ text = "Health"
 valign = 1
 
 [node name="THealth" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
+margin_left = 154.0
 margin_top = 22.0
-margin_right = 209.0
+margin_right = 227.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -191,21 +191,21 @@ text = "pickup"
 valign = 1
 
 [node name="DHealth" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
+margin_left = 231.0
 margin_top = 22.0
-margin_right = 458.0
+margin_right = 459.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "recover five health points"
+text = "recovers five health points"
 valign = 1
 
 [node name="IShield" type="TextureRect" parent="VBItem/MItem/GItem"]
-margin_left = 33.0
+margin_left = 36.0
 margin_top = 53.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 53.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -214,9 +214,9 @@ size_flags_vertical = 6
 frames = SubResource( 4 )
 
 [node name="NShield" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
+margin_left = 77.0
 margin_top = 44.0
-margin_right = 138.0
+margin_right = 150.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -226,9 +226,9 @@ text = "Shield"
 valign = 1
 
 [node name="TShield" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
+margin_left = 154.0
 margin_top = 44.0
-margin_right = 209.0
+margin_right = 227.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -238,9 +238,9 @@ text = "pickup"
 valign = 1
 
 [node name="DShield" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
+margin_left = 231.0
 margin_top = 44.0
-margin_right = 458.0
+margin_right = 459.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -250,9 +250,9 @@ text = "protects the jet with a shield"
 valign = 1
 
 [node name="IPowerup" type="TextureRect" parent="VBItem/MItem/GItem"]
-margin_left = 33.0
+margin_left = 36.0
 margin_top = 75.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 75.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -261,9 +261,9 @@ size_flags_vertical = 6
 frames = SubResource( 6 )
 
 [node name="NPowerup" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
+margin_left = 77.0
 margin_top = 66.0
-margin_right = 138.0
+margin_right = 150.0
 margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -273,9 +273,9 @@ text = "Powerup"
 valign = 1
 
 [node name="TPowerup" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
+margin_left = 154.0
 margin_top = 66.0
-margin_right = 209.0
+margin_right = 227.0
 margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -285,21 +285,21 @@ text = "pickup"
 valign = 1
 
 [node name="DPowerup" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
+margin_left = 231.0
 margin_top = 66.0
-margin_right = 458.0
+margin_right = 459.0
 margin_bottom = 84.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "upgrade the jet gun"
+text = "upgrades the jet gun"
 valign = 1
 
 [node name="ISuper" type="TextureRect" parent="VBItem/MItem/GItem"]
-margin_left = 33.0
+margin_left = 36.0
 margin_top = 97.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 97.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -308,9 +308,9 @@ size_flags_vertical = 6
 frames = SubResource( 8 )
 
 [node name="NSuper" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
+margin_left = 77.0
 margin_top = 88.0
-margin_right = 138.0
+margin_right = 150.0
 margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -320,9 +320,9 @@ text = "Super"
 valign = 1
 
 [node name="TSuper" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
+margin_left = 154.0
 margin_top = 88.0
-margin_right = 209.0
+margin_right = 227.0
 margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -332,9 +332,9 @@ text = "pickup"
 valign = 1
 
 [node name="DSuper" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
+margin_left = 231.0
 margin_top = 88.0
-margin_right = 458.0
+margin_right = 459.0
 margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -344,9 +344,9 @@ text = "powerful area attack"
 valign = 1
 
 [node name="ICoin" type="TextureRect" parent="VBItem/MItem/GItem"]
-margin_left = 33.0
+margin_left = 36.0
 margin_top = 119.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 119.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -355,21 +355,21 @@ size_flags_vertical = 6
 frames = SubResource( 10 )
 
 [node name="NCoin" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 71.0
+margin_left = 77.0
 margin_top = 110.0
-margin_right = 138.0
+margin_right = 150.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "Coin"
+text = "crystal"
 valign = 1
 
 [node name="TCoin" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 142.0
+margin_left = 154.0
 margin_top = 110.0
-margin_right = 209.0
+margin_right = 227.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -379,16 +379,15 @@ text = "pickup"
 valign = 1
 
 [node name="DCoin" type="Label" parent="VBItem/MItem/GItem"]
-margin_left = 213.0
+margin_left = 231.0
 margin_top = 110.0
-margin_right = 458.0
+margin_right = 459.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "coin represents the player score"
-align = 1
+text = "adds to the player score"
 valign = 1
 
 [node name="HBButtons" type="HBoxContainer" parent="VBItem"]

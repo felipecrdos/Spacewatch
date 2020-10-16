@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/sprite/boss/levelA_boss.png" type="Texture" id=6]
 [ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
 [ext_resource path="res://resources/fontness10.tres" type="DynamicFont" id=8]
-[ext_resource path="res://assets/sprite/weapon/mg_side.png" type="Texture" id=22]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -25,91 +24,59 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
+region = Rect2( 160, 160, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 176, 160, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 26 )
-region = Rect2( 32, 96, 16, 16 )
+region = Rect2( 192, 160, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 26 )
-region = Rect2( 48, 96, 16, 16 )
+region = Rect2( 208, 160, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 26 )
-region = Rect2( 64, 96, 16, 16 )
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 26 )
-region = Rect2( 80, 96, 16, 16 )
+region = Rect2( 160, 160, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 26 )
-region = Rect2( 96, 96, 16, 16 )
+region = Rect2( 176, 160, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 26 )
-region = Rect2( 112, 96, 16, 16 )
+region = Rect2( 192, 160, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 26 )
+region = Rect2( 208, 160, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 10.0
 } ]
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 26 )
-region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 26 )
-region = Rect2( 16, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 26 )
-region = Rect2( 32, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 26 )
-region = Rect2( 48, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 26 )
-region = Rect2( 64, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 26 )
-region = Rect2( 80, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 26 )
-region = Rect2( 96, 96, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 26 )
-region = Rect2( 112, 96, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=20]
-animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 26 )
 region = Rect2( 64, 112, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 21 ) ],
+"frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -206,7 +173,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 3
 
 [node name="Sprite" type="Sprite" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer/HBPlayer/MPlayer/IGun"]
-texture = ExtResource( 22 )
 
 [node name="HealthContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
 margin_top = 78.0
@@ -233,7 +199,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0.431373, 0.431373, 0.627451, 1 )
-text = "LIVE/SHIELD"
+text = "LIVES/SHIELDS"
 align = 1
 valign = 1
 script = ExtResource( 4 )
@@ -393,8 +359,8 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
-frames = SubResource( 11 )
-frame = 5
+frames = SubResource( 7 )
+frame = 3
 playing = true
 centered = false
 
@@ -405,11 +371,10 @@ margin_bottom = 12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.996078, 0.823529, 0.298039, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -422,10 +387,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.996078, 0.823529, 0.298039, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="HBCurrentScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
 margin_top = 24.0
@@ -444,8 +409,7 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
-frames = SubResource( 20 )
-frame = 1
+frames = SubResource( 12 )
 playing = true
 centered = false
 
@@ -528,7 +492,7 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IPowerup"]
-frames = SubResource( 22 )
+frames = SubResource( 14 )
 centered = false
 
 [node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
@@ -777,16 +741,12 @@ alignment = 1
 margin_top = 52.0
 margin_bottom = 64.0
 size_flags_vertical = 4
-custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-custom_colors/font_color_pressed = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Resume"
 
 [node name="Menu" parent="Pause/VContainer/VBButtons" instance=ExtResource( 1 )]
 margin_top = 68.0
 margin_bottom = 80.0
 size_flags_vertical = 4
-custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
-custom_colors/font_color_pressed = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Menu"
 scene = "res://scenes/interface/Menu.tscn"
 [connection signal="tree_entered" from="." to="." method="on_world_tree_entered"]

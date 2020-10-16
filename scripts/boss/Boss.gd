@@ -8,7 +8,7 @@ var max_health : int
 var is_damaged : bool
 var is_alive   : bool
 var texture_size : Vector2
-onready var coin = preload("res://scenes/pickup/CoinPickup.tscn")
+onready var coin = preload("res://scenes/pickup/ScorePickup.tscn")
 onready var explosion = preload("res://scenes/effect/Explosion.tscn")
 
 # Inicialização

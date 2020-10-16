@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/sound/sfx/bullet_hit_2.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/sound/music/Checking Manifest.ogg" type="AudioStream" id=16]
 [ext_resource path="res://assets/sound/music/Smooth Sailing.ogg" type="AudioStream" id=17]
-[ext_resource path="res://assets/sound/sfx/coin_pickup.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sound/sfx/score_pickup.ogg" type="AudioStream" id=18]
 [ext_resource path="res://assets/sound/sfx/super_pickup.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/sound/sfx/super_explosion.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/sound/sfx/super_loading.ogg" type="AudioStream" id=21]
@@ -115,7 +115,7 @@ bus = "SfxBus"
 stream = ExtResource( 19 )
 bus = "SfxBus"
 
-[node name="CoinPickup" type="AudioStreamPlayer" parent="Sfx"]
+[node name="ScorePickup" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 18 )
 bus = "SfxBus"
 

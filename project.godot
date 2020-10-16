@@ -384,6 +384,6 @@ quality/shadow_atlas/size.mobile=512
 quality/shadows/filter_mode=0
 quality/reflections/high_quality_ggx=false
 quality/subsurface_scattering/quality=0
-environment/default_clear_color=Color( 0.156863, 0.156863, 0.27451, 1 )
+environment/default_clear_color=Color( 0.0588235, 0.00392157, 0.0980392, 1 )
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

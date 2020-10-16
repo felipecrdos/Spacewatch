@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/LevelA.gd" type="Script" id=2]
@@ -6,7 +6,16 @@
 [ext_resource path="res://scenes/enemy/SpawnAEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/enemy/SpawnBEnemy.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/spaceA.png-5651777c403aff4ae3733b985452b228.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/starA.png-57b134935242c400cd513c53e2ddce31.stex"
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/starB.png-a887f2b659f010174cb51343d66afb63.stex"
+
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 8.49487, 23.5969, -8.49487, -23.5969, 10.4032, 14.7755, -12.7423, -19.8214, 12.7423, 19.8214, 80.2498, 3.92094, -16.5178, 22.653, 16.5178, -22.653, 188.795, 11.9439, -4.71937, -7.55099, 4.71937, 7.55099, 220.887, 32.2372, 2.83162, -15.102, -2.83162, 15.102, 225.135, 66.6886, 28.3162, 26.4285, -28.3162, -26.4285, 137.354, 79.9028, 16.5178, -23.5969, -16.5178, 23.5969, 48.1581, 70.936, -28.7882, 22.181, 28.7882, -22.181, 14.6506, 52.5305, 0, 0, 0, 0, 10.4032, 14.7755 )
 }
@@ -16,6 +25,15 @@ script = ExtResource( 2 )
 
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.509804, 0.752941, 0.8, 1 )
+
+[node name="Sprite" parent="Background/ScrollBackground/SpaceLayer" index="0"]
+texture = SubResource( 1 )
+
+[node name="Sprite" parent="Background/ScrollBackground/StarALayer" index="0"]
+texture = SubResource( 2 )
+
+[node name="Sprite" parent="Background/ScrollBackground/StarBLayer" index="0"]
+texture = SubResource( 3 )
 
 [node name="SpawnAEnemy" parent="SpawnContainer" index="0" instance=ExtResource( 4 )]
 
@@ -33,16 +51,14 @@ restart_time = 3.0
 start_delay = 6.0
 
 [node name="BossPath" parent="." index="6"]
-curve = SubResource( 1 )
+position = Vector2( 0, -250 )
+curve = SubResource( 4 )
 speed = 60.0
 
 [node name="ABoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
 
-[node name="Bosstime" parent="." index="7"]
-wait_time = 60.0
-
 [node name="ASprite" parent="Warning" index="0"]
-frame = 2
+frame = 0
 
 [editable path="SpawnContainer/SpawnAEnemy"]
 

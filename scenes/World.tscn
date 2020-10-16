@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/World.gd" type="Script" id=3]
+[ext_resource path="res://scripts/interface/Labelcolor.gd" type="Script" id=4]
 [ext_resource path="res://scripts/interface/Pause.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprite/boss/levelA_boss.png" type="Texture" id=6]
 [ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
@@ -165,11 +166,10 @@ margin_bottom = 12.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "PLAYER"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="HBPlayer" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PlayerContainer"]
 margin_top = 16.0
@@ -236,6 +236,7 @@ custom_colors/font_outline_modulate = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "LIVE/SHIELD"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="HBHealth" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth"]
 margin_top = 16.0
@@ -271,6 +272,7 @@ custom_colors/font_outline_modulate = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="LHealth" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MHealth/VBHealth/HBHealth"]
 margin_left = 52.0
@@ -285,6 +287,7 @@ custom_colors/font_outline_modulate = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="MShield" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer"]
 margin_top = 32.0
@@ -325,6 +328,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="LShield" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/HealthContainer/MShield/HBShield"]
 margin_left = 52.0
@@ -338,6 +342,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="ScoreContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
 margin_top = 150.0
@@ -369,6 +374,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "HSCORE/SCORE"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="HBHighScore" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore"]
 margin_top = 12.0
@@ -388,6 +394,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
 frames = SubResource( 11 )
+frame = 5
 playing = true
 centered = false
 
@@ -438,7 +445,7 @@ stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
 frames = SubResource( 20 )
-frame = 4
+frame = 1
 playing = true
 centered = false
 
@@ -453,6 +460,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -469,6 +477,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="PowerContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
 margin_top = 215.0
@@ -500,6 +509,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "POWERUP/SUPER"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="HBPowerup" type="HBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup"]
 margin_top = 16.0
@@ -532,6 +542,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="LPowerup" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]
 margin_left = 52.0
@@ -545,6 +556,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="MSuper" type="MarginContainer" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer"]
 margin_top = 32.0
@@ -585,6 +597,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "x"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="LSuper" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MSuper/HBSuper"]
 margin_left = 52.0
@@ -598,6 +611,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="MidleScreen" type="ViewportContainer" parent="HContainer"]
 margin_left = 122.0
@@ -662,6 +676,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "BOSS"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 
 [node name="IBoss" type="TextureRect" parent="HContainer/RightScreen/Viewport/VContainer/VBBoss"]
 margin_top = 16.0
@@ -689,6 +704,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "LEVEL"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -702,6 +718,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "LEVELA"
 align = 1
 valign = 1
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -743,6 +760,7 @@ margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "PAUSE"
 align = 1
 valign = 1
@@ -759,20 +777,16 @@ alignment = 1
 margin_top = 52.0
 margin_bottom = 64.0
 size_flags_vertical = 4
-custom_colors/font_color_disabled = Color( 0.996078, 0.996078, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Resume"
 
 [node name="Menu" parent="Pause/VContainer/VBButtons" instance=ExtResource( 1 )]
 margin_top = 68.0
 margin_bottom = 80.0
 size_flags_vertical = 4
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "Menu"
 scene = "res://scenes/interface/Menu.tscn"
 [connection signal="tree_entered" from="." to="." method="on_world_tree_entered"]

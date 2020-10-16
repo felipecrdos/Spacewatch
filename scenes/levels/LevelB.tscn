@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/boss/BBoss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/bosspathB.tres" type="Curve2D" id=4]
 [ext_resource path="res://scenes/enemy/SpawnCEnemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/enemy/SpawnEnemy.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprite/environment/spaceB.png" type="Texture" id=6]
 [ext_resource path="res://scenes/enemy/AEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/enemy/EnemyPath.gd" type="Script" id=8]
 [ext_resource path="res://scenes/enemy/BEnemy.tscn" type="PackedScene" id=9]
@@ -28,11 +28,10 @@ script = ExtResource( 2 )
 [node name="SkyColor" parent="Background" index="0"]
 color = Color( 0.972549, 0.678431, 0.615686, 1 )
 
-[node name="SpawnAEnemy" type="Position2D" parent="SpawnContainer" index="0" instance=ExtResource( 10 )]
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Sprite" parent="Background/ScrollBackground/SpaceLayer" index="0"]
+texture = ExtResource( 6 )
+
+[node name="SpawnAEnemy" parent="SpawnContainer" index="0" instance=ExtResource( 10 )]
 
 [node name="EnemyRigth" type="Path2D" parent="SpawnContainer/SpawnAEnemy" index="0"]
 curve = SubResource( 1 )
@@ -74,11 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpawnBEnemy" type="Position2D" parent="SpawnContainer" index="1" instance=ExtResource( 11 )]
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnBEnemy" parent="SpawnContainer" index="1" instance=ExtResource( 11 )]
 
 [node name="EnemyRigth" type="Path2D" parent="SpawnContainer/SpawnBEnemy" index="0"]
 curve = SubResource( 2 )
@@ -143,8 +138,8 @@ position = Vector2( 16, 64 )
 
 [node name="BBoss" parent="BossPath/Follow" index="0" instance=ExtResource( 3 )]
 
-[node name="Bosstime" parent="." index="7"]
-wait_time = 60.0
+[node name="ASprite" parent="Warning" index="0"]
+frame = 1
 
 [editable path="SpawnContainer/SpawnAEnemy"]
 

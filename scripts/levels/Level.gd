@@ -8,6 +8,7 @@ var hudcolor
 var index
 
 func _ready():
+	#282846
 	#skycolor = $Background/SkyColor
 	#skycolor.color = Color("#28a0ff")
 	hudcolor = Global.game_data["Level"]["hudcolor"]
@@ -19,8 +20,8 @@ func _ready():
 		$Warning/TWarning.set_wait_time($Bosstime.get_wait_time()-5)
 		$Warning/TWarning.start()
 	
-#	Global.game_data["Player"]["powerup"] = 3
-#	Global.game_data["Player"]["super"] = 3
+	Global.game_data["Player"]["powerup"] = 3
+	Global.game_data["Player"]["super"] = 3
 #	Global.game_data["Level"]["index"] = 3
 	
 func disable_player():

@@ -26,12 +26,22 @@ func _input(event):
 
 func set_buttons_color():
 	var index = Global.game_data["Level"]["index"]
-	var colors = Global.game_data["Level"]["hudcolor"]
-	resume.add_color_override("font_color_hover", Color(colors[index]))
-	resume.add_color_override("font_color_pressed", Color(colors[index]))
-	menu.add_color_override("font_color_hover", Color(colors[index]))
-	menu.add_color_override("font_color_pressed", Color(colors[index]))
-	pause.add_color_override("font_color", Color(colors[index]))
+	var colors = Global.game_data["Level"]["labelcolor"]
+	var normal = Color(colors[index]["normal"])
+	var hover  = Color(colors[index]["hover"])
+	
+	resume.add_color_override("font_color_hover", hover)
+	resume.add_color_override("font_color_pressed", hover)
+	resume.add_color_override("font_color_disabled", hover)
+	resume.add_color_override("font_color", normal)
+	
+	menu.add_color_override("font_color_hover", hover)
+	menu.add_color_override("font_color_pressed", hover)
+	menu.add_color_override("font_color_disabled", hover)
+	menu.add_color_override("font_color", normal)
+	
+	
+	pause.add_color_override("font_color", hover)
 	
 func on_resume_send_scene(scene):
 	SoundManager.resume_all_music()

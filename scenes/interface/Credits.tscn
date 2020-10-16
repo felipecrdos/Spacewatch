@@ -25,7 +25,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 480.0
-margin_bottom = 44.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
@@ -35,9 +35,9 @@ align = 1
 valign = 1
 
 [node name="VBScore" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 48.0
+margin_top = 42.0
 margin_right = 480.0
-margin_bottom = 222.0
+margin_bottom = 232.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -113,7 +113,7 @@ valign = 1
 [node name="VBAssets" type="VBoxContainer" parent="VBoxContainer/VBScore"]
 margin_top = 114.0
 margin_right = 480.0
-margin_bottom = 174.0
+margin_bottom = 190.0
 
 [node name="Label" type="Label" parent="VBoxContainer/VBScore/VBAssets"]
 margin_right = 480.0
@@ -215,17 +215,17 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
 text = "murkje.itch.io"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBScore/VBAssets"]
+[node name="VBSprites" type="VBoxContainer" parent="VBoxContainer/VBScore/VBAssets"]
 margin_top = 48.0
 margin_right = 480.0
-margin_bottom = 60.0
+margin_bottom = 76.0
 size_flags_vertical = 3
 
-[node name="HBSprites" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer"]
+[node name="HBAuthorA" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBSprites"]
 margin_right = 480.0
 margin_bottom = 12.0
 
-[node name="Sprite" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+[node name="Sprite" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorA"]
 margin_right = 157.0
 margin_bottom = 12.0
 size_flags_horizontal = 3
@@ -239,7 +239,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorA"]
 margin_left = 161.0
 margin_right = 318.0
 margin_bottom = 12.0
@@ -255,7 +255,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBoxContainer/HBSprites"]
+[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorA"]
 margin_left = 322.0
 margin_right = 480.0
 margin_bottom = 12.0
@@ -269,8 +269,56 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="HBAuthorB" type="HBoxContainer" parent="VBoxContainer/VBScore/VBAssets/VBSprites"]
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 28.0
+
+[node name="Sprite" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorB"]
+margin_right = 157.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+align = 2
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Author" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorB"]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
+text = "Viktor"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Link" type="Label" parent="VBoxContainer/VBScore/VBAssets/VBSprites/HBAuthorB"]
+margin_left = 322.0
+margin_right = 480.0
+margin_bottom = 12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.431373, 0.627451, 1 )
+text = "v-ktor.itch.io"
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="VBButtons" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 226.0
+margin_top = 236.0
 margin_right = 480.0
 margin_bottom = 270.0
 size_flags_horizontal = 3
@@ -279,13 +327,13 @@ alignment = 1
 
 [node name="Menu" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
 margin_right = 238.0
-margin_bottom = 44.0
+margin_bottom = 34.0
 text = "Menu"
 scene = "res://scenes/interface/Menu.tscn"
 
 [node name="Quit" parent="VBoxContainer/VBButtons" instance=ExtResource( 8 )]
 margin_left = 242.0
-margin_bottom = 44.0
+margin_bottom = 34.0
 text = "Quit"
 scene = "res://scenes/interface/Menu.tscn"
 [connection signal="tree_entered" from="." to="." method="on_credits_tree_entered"]

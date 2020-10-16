@@ -123,8 +123,13 @@ func transition_level():
 	$Pause.set_buttons_color()
 	remove_level()
 	add_level()
+	update_hudlabel_color()
 	Global.transition.start(1, 0, 1, 0);
 
+func update_hudlabel_color():
+	for label in get_tree().get_nodes_in_group("hudlabel"):
+		label.set_label_color()
+		
 # Add current level
 func add_level():
 	load_level()

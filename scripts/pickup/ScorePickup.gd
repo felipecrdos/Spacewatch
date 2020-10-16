@@ -30,7 +30,7 @@ func on_pickup_body_entered(body):
 # É criado um popup com o valor da moeda. Também é
 # criado particulas para efeito de coleta da moeda.
 func destroy():
-	Global.create_popup(popup, position, value, Color.greenyellow, Color.bisque)
+	Global.create_popup(popup, position, value, Color.goldenrod, Color.bisque)
 	Global.create_particle(particle, position, particle_texture)
 	queue_free()
 

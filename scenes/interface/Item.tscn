@@ -54,14 +54,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 160, 160, 16, 16 )
+region = Rect2( 180, 140, 12, 14 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
+"frames": [ SubResource( 11 ) ],
+"loop": false,
 "name": "default",
 "speed": 5.0
 } ]
@@ -343,7 +343,7 @@ custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "powerful area attack"
 valign = 1
 
-[node name="ICoin" type="TextureRect" parent="VBItem/MItem/GItem"]
+[node name="IScore" type="TextureRect" parent="VBItem/MItem/GItem"]
 margin_left = 36.0
 margin_top = 119.0
 margin_right = 36.0
@@ -351,10 +351,12 @@ margin_bottom = 119.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="ASprite" type="AnimatedSprite" parent="VBItem/MItem/GItem/ICoin"]
+[node name="ASprite" type="AnimatedSprite" parent="VBItem/MItem/GItem/IScore"]
+scale = Vector2( 2, 2 )
 frames = SubResource( 10 )
+offset = Vector2( -2, -1 )
 
-[node name="NCoin" type="Label" parent="VBItem/MItem/GItem"]
+[node name="NScore" type="Label" parent="VBItem/MItem/GItem"]
 margin_left = 77.0
 margin_top = 110.0
 margin_right = 150.0
@@ -366,7 +368,7 @@ custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "crystal"
 valign = 1
 
-[node name="TCoin" type="Label" parent="VBItem/MItem/GItem"]
+[node name="TScore" type="Label" parent="VBItem/MItem/GItem"]
 margin_left = 154.0
 margin_top = 110.0
 margin_right = 227.0
@@ -378,7 +380,7 @@ custom_colors/font_color = Color( 0.431373, 0.431373, 0.627451, 1 )
 text = "pickup"
 valign = 1
 
-[node name="DCoin" type="Label" parent="VBItem/MItem/GItem"]
+[node name="DScore" type="Label" parent="VBItem/MItem/GItem"]
 margin_left = 231.0
 margin_top = 110.0
 margin_right = 459.0

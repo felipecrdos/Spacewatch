@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
@@ -24,59 +24,35 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 26 )
-region = Rect2( 160, 160, 16, 16 )
+region = Rect2( 180, 140, 12, 14 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 26 )
-region = Rect2( 176, 160, 16, 16 )
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 26 )
-region = Rect2( 192, 160, 16, 16 )
+region = Rect2( 180, 140, 12, 14 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 26 )
-region = Rect2( 208, 160, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 26 )
-region = Rect2( 160, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 26 )
-region = Rect2( 176, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 26 )
-region = Rect2( 192, 160, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 26 )
-region = Rect2( 208, 160, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-} ]
-
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 26 )
 region = Rect2( 64, 112, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -359,10 +335,10 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore/IScore"]
-frames = SubResource( 7 )
-frame = 3
+frames = SubResource( 4 )
 playing = true
 centered = false
+offset = Vector2( 0, -1 )
 
 [node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBHighScore"]
 margin_left = 26.0
@@ -409,9 +385,10 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore/IScore"]
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 playing = true
 centered = false
+offset = Vector2( 0, -1 )
 
 [node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/ScoreContainer/MScore/VBScore/HBCurrentScore"]
 margin_left = 26.0
@@ -492,7 +469,7 @@ size_flags_vertical = 3
 stretch_mode = 4
 
 [node name="ASprite" type="AnimatedSprite" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup/IPowerup"]
-frames = SubResource( 14 )
+frames = SubResource( 8 )
 centered = false
 
 [node name="Lx" type="Label" parent="HContainer/LeftScreen/Viewport/VContainer/PowerContainer/MPowerup/VBPowerup/HBPowerup"]

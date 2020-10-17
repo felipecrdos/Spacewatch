@@ -16,7 +16,6 @@ void fragment(){
 	    COLOR = vec4(mix(color.rgb, white, whitening), color.a);
 
 }"
-custom_defines = ""
 
 [resource]
 resource_local_to_scene = true

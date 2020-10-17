@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/interface/VolumeControl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/interface/VideoPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/interface/Audio.gd" type="Script" id=3]
 [ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=4]
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=5]
 
 [node name="Audio" type="Control"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VideoPlayer" parent="." instance=ExtResource( 2 )]
+self_modulate = Color( 1, 1, 1, 0.0392157 )
+margin_right = 480.0
+margin_bottom = 270.0
 
 [node name="VBAudio" type="VBoxContainer" parent="."]
 anchor_right = 1.0

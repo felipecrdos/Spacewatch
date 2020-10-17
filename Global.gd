@@ -42,7 +42,7 @@ var game_data = {
 								"index":0,
 								"name":["Phobos", "Deimos", "Tarvos", "Ymir"],
 								"music":["LevelA", "LevelB", "LevelC", "LevelD"], 
-								"hudcolor":["#01040c", "#021010", "#110104", "#140608"],
+								"hudcolor":["#01040c", "#000501", "#080104", "#070101"],
 								"labelcolor":[	{"normal":"#66b4f2", "hover":"#a7d6fc"}, 
 												{"normal":"#50bca1", "hover":"#78f4d5"}, 
 												{"normal":"#d35fd3", "hover":"#fc95fc"}, 

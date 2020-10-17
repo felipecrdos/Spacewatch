@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/interface/NButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interface/Camera.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/sprite/boss/levelA_boss.png" type="Texture" id=6]
 [ext_resource path="res://resources/fontness31.tres" type="DynamicFont" id=7]
 [ext_resource path="res://resources/fontness10.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/sprite/interface/left_hud.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/interface/right_hud.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprite/other/pico8_invaders_sprites_LARGE.png" type="Texture" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -86,6 +88,14 @@ render_target_update_mode = 3
 gui_disable_input = true
 
 [node name="LCamera" parent="HContainer/LeftScreen/Viewport" instance=ExtResource( 2 )]
+
+[node name="BGTexture" type="TextureRect" parent="HContainer/LeftScreen/Viewport"]
+self_modulate = Color( 1, 1, 1, 0.0784314 )
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 9 )
 
 [node name="VContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport"]
 margin_right = 118.0
@@ -287,9 +297,9 @@ valign = 1
 script = ExtResource( 4 )
 
 [node name="ScoreContainer" type="VBoxContainer" parent="HContainer/LeftScreen/Viewport/VContainer"]
-margin_top = 150.0
+margin_top = 151.0
 margin_right = 118.0
-margin_bottom = 186.0
+margin_bottom = 187.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
@@ -591,6 +601,12 @@ render_target_update_mode = 3
 gui_disable_input = true
 
 [node name="RCamera" parent="HContainer/RightScreen/Viewport" instance=ExtResource( 2 )]
+
+[node name="BGTexture" type="TextureRect" parent="HContainer/RightScreen/Viewport"]
+self_modulate = Color( 1, 1, 1, 0.0784314 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 10 )
 
 [node name="VContainer" type="VBoxContainer" parent="HContainer/RightScreen/Viewport"]
 margin_right = 118.0

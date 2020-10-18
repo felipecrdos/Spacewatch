@@ -101,7 +101,8 @@ func set_limits():
 
 func update_health():
 	if player_data["health"] > 0:
-		state = State.INVULNERABLE
+		#state = State.INVULNERABLE
+		pass
 	elif player_data["health"] <= 0:
 		state = State.DYING
 
@@ -168,6 +169,7 @@ func on_area_entered(area):
 	Global.findnode("MCamera").shake(5, 30)
 	set_flash_effect(true)
 	$TShader.start()
+	state = State.INVULNERABLE
 	
 	if area is Enemy:
 		area.destroy()
